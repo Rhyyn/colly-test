@@ -1,0 +1,736 @@
+{
+    "accessories": {
+        "title": {
+            "en": "Accessories",
+            "fr": "Accesoires"
+        },
+        "id": [
+            1015
+        ],
+        "index_url": {
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/accessories?page=",
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/accessoires?page="
+        },
+        "item_url": {
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/accessories/",
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/accessoires/"
+        },
+        "max_page": 0,
+        "sub_categories": [
+            {
+                "title": {
+                    "en": "Embles",
+                    "fr": "Emblèmes"
+                },
+                "id": [
+                    646
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Tools",
+                    "fr": "Outils"
+                },
+                "id": [
+                    537
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Torches",
+                    "fr": "Toches"
+                },
+                "id": null,
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Bags",
+                    "fr": "Sacs"
+                },
+                "id": [
+                    218
+                ],
+                "index_url": {
+                    "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/items/109-todo-equipements/static.ankama.com?text=\u0026type_1[0]=218\u0026level_min=0\u0026level_max=230\u0026page=",
+                    "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/objets/109-todo-equipements/static.ankama.com?text=\u0026type_1[0]=218\u0026level_min=0\u0026level_max=230\u0026page="
+                },
+                "item_url": {
+                    "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/accessories",
+                    "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/accessoires/"
+                },
+                "max_page": 0,
+                "max_items": 0
+            }
+        ]
+    },
+    "armors": {
+        "title": {
+            "en": "Armors",
+            "fr": "Armures"
+        },
+        "id": [
+            333
+        ],
+        "index_url": {
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/armors?page=",
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/armures?page="
+        },
+        "item_url": {
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/armors",
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/armures"
+        },
+        "max_page": 0,
+        "sub_categories": [
+            {
+                "title": {
+                    "en": "Amulet",
+                    "fr": "Amulette"
+                },
+                "id": [
+                    120
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 29,
+                "max_items": 681
+            },
+            {
+                "title": {
+                    "en": "Ring",
+                    "fr": "Anneau"
+                },
+                "id": [
+                    103
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Boots",
+                    "fr": "Bottes"
+                },
+                "id": [
+                    119
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Cloak",
+                    "fr": "Cape"
+                },
+                "id": [
+                    132
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Helmet",
+                    "fr": "Casque"
+                },
+                "id": [
+                    134
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Belt",
+                    "fr": "Ceinture"
+                },
+                "id": [
+                    133
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Epaulettes",
+                    "fr": "Epaulettes"
+                },
+                "id": [
+                    138
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Breastplate",
+                    "fr": "Plastron"
+                },
+                "id": [
+                    136
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            }
+        ]
+    },
+    "bestiary": {
+        "title": {
+            "en": "Bestiary",
+            "fr": "Bestiaire"
+        },
+        "id": [
+            70
+        ],
+        "index_url": {
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/monsters?page=",
+            "fr": "https://www.wakfu.com/en/mmorpg/encyclopedia/monsters?page="
+        },
+        "item_url": {
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/monsters/",
+            "fr": "https://www.wakfu.com/en/mmorpg/encyclopedia/monsters/"
+        },
+        "max_page": 0,
+        "sub_categories": null
+    },
+    "consumables": {
+        "title": {
+            "en": "Consumables",
+            "fr": "Consommable"
+        },
+        "id": [
+            757
+        ],
+        "index_url": {
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/consumables?page=",
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/consommables?page="
+        },
+        "item_url": {
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/consumables/",
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/consommables/"
+        },
+        "max_page": 0,
+        "sub_categories": null
+    },
+    "customization": {
+        "title": {
+            "en": "customization",
+            "fr": "Personnalisation"
+        },
+        "id": [
+            1012
+        ],
+        "index_url": {
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/customization?page=",
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/personnalisation?page="
+        },
+        "item_url": {
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/customization/",
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/personnalisation/"
+        },
+        "max_page": 0,
+        "sub_categories": [
+            {
+                "title": {
+                    "en": "Costumes",
+                    "fr": "Costumes"
+                },
+                "id": null,
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Events",
+                    "fr": "Events"
+                },
+                "id": null,
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Mount skins",
+                    "fr": "Costumes de Montures"
+                },
+                "id": null,
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Titles",
+                    "fr": "Titres"
+                },
+                "id": [
+                    512
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            }
+        ]
+    },
+    "jobs": {
+        "title": {
+            "en": "Professions",
+            "fr": "Métiers"
+        },
+        "id": [
+            69
+        ],
+        "index_url": null,
+        "item_url": {
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/jobs/71-lumberjack/recipes",
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/metiers/71-lumberjack/recettes"
+        },
+        "max_page": 0,
+        "sub_categories": [
+            {
+                "title": {
+                    "en": "Fisherman",
+                    "fr": "Pêcheur"
+                },
+                "id": [
+                    75
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Lumberjack",
+                    "fr": "Forestier"
+                },
+                "id": [
+                    71
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Herbalist",
+                    "fr": "Herboriste"
+                },
+                "id": [
+                    72
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Farmer",
+                    "fr": "Paysan"
+                },
+                "id": [
+                    64
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Miner",
+                    "fr": "Mineur"
+                },
+                "id": [
+                    73
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Trapper",
+                    "fr": "Trappeur"
+                },
+                "id": [
+                    74
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Armorer",
+                    "fr": "Armurier"
+                },
+                "id": [
+                    77
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Jeweler",
+                    "fr": "Bijoutier"
+                },
+                "id": [
+                    78
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Baker",
+                    "fr": "Boulanger"
+                },
+                "id": [
+                    40
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Chef",
+                    "fr": "Cuisinier"
+                },
+                "id": [
+                    76
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Handyman",
+                    "fr": "Ébéniste"
+                },
+                "id": [
+                    81
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Weapons Master",
+                    "fr": "Maitre d'armes"
+                },
+                "id": [
+                    83
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Leather Dealer",
+                    "fr": "Maroquinier"
+                },
+                "id": [
+                    80
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Tailor",
+                    "fr": "Tailleur"
+                },
+                "id": [
+                    79
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            }
+        ]
+    },
+    "mounts": {
+        "title": {
+            "en": "Mounts",
+            "fr": "Montures"
+        },
+        "id": [
+            611
+        ],
+        "index_url": {
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/mounts?page=",
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/montures?page="
+        },
+        "item_url": {
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/mounts/",
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/montures/"
+        },
+        "max_page": 0,
+        "sub_categories": null
+    },
+    "pets": {
+        "title": {
+            "en": "Pets",
+            "fr": "Familiers"
+        },
+        "id": [
+            582
+        ],
+        "index_url": {
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/pets?page=",
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/familiers?page="
+        },
+        "item_url": {
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/pets/",
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/familiers/"
+        },
+        "max_page": 0,
+        "sub_categories": null
+    },
+    "resources": {
+        "title": {
+            "en": "Resources",
+            "fr": "Ressources"
+        },
+        "id": [
+            1016
+        ],
+        "index_url": {
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/resources?page=",
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/ressources?page="
+        },
+        "item_url": {
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/resources",
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/ressources/"
+        },
+        "max_page": 0,
+        "sub_categories": [
+            {
+                "title": {
+                    "en": "Crops",
+                    "fr": "Récoltes"
+                },
+                "id": [
+                    758
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Improvements",
+                    "fr": "Améliorations"
+                },
+                "id": [
+                    602
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Miscellaneous Resources",
+                    "fr": "Ressources diverses"
+                },
+                "id": [
+                    822
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Monster resources",
+                    "fr": "Ressources de monstres"
+                },
+                "id": [
+                    531
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Recipes",
+                    "fr": "Recettes"
+                },
+                "id": [
+                    719
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Refinements \u0026 Components",
+                    "fr": "Raffinages \u0026 Composants"
+                },
+                "id": [
+                    761
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Relic Fragments",
+                    "fr": "Fragments de Reliques"
+                },
+                "id": [
+                    687
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Souper-Glous",
+                    "fr": "Sioupère-Glous"
+                },
+                "id": [
+                    739
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            }
+        ]
+    },
+    "weapons": {
+        "title": {
+            "en": "Weapons",
+            "fr": "Armes"
+        },
+        "id": [
+            334
+        ],
+        "index_url": {
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/weapons?page=",
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/armes?page="
+        },
+        "item_url": {
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/weapons/",
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/armes/"
+        },
+        "max_page": 0,
+        "sub_categories": [
+            {
+                "title": {
+                    "en": "1 Handed Weapon",
+                    "fr": "Arme 1 Main"
+                },
+                "id": [
+                    254,
+                    108,
+                    110,
+                    115,
+                    113
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "2 Handed Weapon",
+                    "fr": "Arme 2 Main"
+                },
+                "id": [
+                    223,
+                    114,
+                    101,
+                    111,
+                    253,
+                    117
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            },
+            {
+                "title": {
+                    "en": "Off-hand",
+                    "fr": "Seconde Main"
+                },
+                "id": [
+                    112,
+                    189
+                ],
+                "index_url": null,
+                "item_url": null,
+                "max_page": 0,
+                "max_items": 0
+            }
+        ]
+    }
+}

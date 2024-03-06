@@ -1,0 +1,86 @@
+
+- Scrapers :
+    - IDs for individual Category then items
+    - Ids for whole Category then items
+
+
+Categories :
+    - Jobs :
+            - Recipes : https://www.wakfu.com/fr/mmorpg/encyclopedie/metiers/71-forestier/recettes
+
+    - Bestiary :
+            - Monsters : https://www.wakfu.com/en/mmorpg/encyclopedia/monsters?page=1
+
+    - Armors : https://www.wakfu.com/en/mmorpg/encyclopedia/armors/
+            - Amulet : https://www.wakfu.com/en/mmorpg/encyclopedia/armors?text=&level_min=0&level_max=230&type_1%5B%5D=120#jt_list
+            - Belt : https://www.wakfu.com/en/mmorpg/encyclopedia/armors?text=&level_min=0&level_max=230&type_1%5B%5D=133#jt_list
+            - Boots : https://www.wakfu.com/en/mmorpg/encyclopedia/armors?text=&level_min=0&level_max=230&type_1%5B%5D=119#jt_list
+            - Breastplate : https://www.wakfu.com/en/mmorpg/encyclopedia/armors?text=&level_min=0&level_max=230&type_1%5B%5D=136#jt_list
+            - Cloack : https://www.wakfu.com/en/mmorpg/encyclopedia/armors?text=&level_min=0&level_max=230&type_1%5B%5D=132#jt_list
+            - Epaulettes : https://www.wakfu.com/en/mmorpg/encyclopedia/armors?text=&level_min=0&level_max=230&type_1%5B%5D=138#jt_list
+            - Helmet : https://www.wakfu.com/en/mmorpg/encyclopedia/armors?text=&level_min=0&level_max=230&type_1%5B%5D=134#jt_list
+            - Ring : https://www.wakfu.com/en/mmorpg/encyclopedia/armors?text=&level_min=0&level_max=230&type_1%5B%5D=103#jt_list
+    
+    - Weapons : https://www.wakfu.com/en/mmorpg/encyclopedia/weapons/
+            - One-Handed Weapons : https://www.wakfu.com/en/mmorpg/encyclopedia/weapons?text=&level_min=0&level_max=230&type_1%5B%5D=518#jt_list
+            - Second Hand : https://www.wakfu.com/en/mmorpg/encyclopedia/weapons?text=&level_min=0&level_max=230&type_1%5B%5D=520#jt_list
+            - Two-Handed Weapons: https://www.wakfu.com/en/mmorpg/encyclopedia/weapons?text=&level_min=0&level_max=230&type_1%5B%5D=519#jt_list
+
+    - Pets : https://www.wakfu.com/en/mmorpg/encyclopedia/pets
+
+    - Customization : https://www.wakfu.com/en/mmorpg/encyclopedia/customization
+            - Costumes : --
+            - Events : --
+            - Mount Skins : --  
+            - Titles : https://www.wakfu.com/en/mmorpg/encyclopedia/customization?text=&level_min=0&level_max=230&type_1%5B%5D=512#jt_list
+
+    - Accessories : https://www.wakfu.com/en/mmorpg/encyclopedia/accessories
+            - Emblem : https://www.wakfu.com/en/mmorpg/encyclopedia/accessories?text=&level_min=0&level_max=230&type_1%5B%5D=646#jt_list
+            - Tools : https://www.wakfu.com/en/mmorpg/encyclopedia/accessories?text=&level_min=0&level_max=230&type_1%5B%5D=537#jt_list
+            - Torches: --
+            - Bags (hidden) : https://www.wakfu.com/fr/mmorpg/encyclopedie/objets/109-todo-equipements/static.ankama.com?text=&type_1[0]=218&level_min=0&level_max=230&page=1
+    
+    - Sets : --
+
+    - Consumables : https://www.wakfu.com/en/mmorpg/encyclopedia/consumables
+
+    - Resources : https://www.wakfu.com/en/mmorpg/encyclopedia/resources
+            - Crops :
+            - Improvements :
+            - Kamas :
+            - Miscellaneous resources :
+            - Monster Resrouces :
+            - Recipes :
+            - Refinements & Components :
+            - Relic Fragments :
+            - Souper-Glous :
+
+    - Mounts : https://www.wakfu.com/en/mmorpg/encyclopedia/mounts
+
+
+
+
+
+
+### CHECK FOR MISSING IDS ###
+
+1. If does not exists, run it
+    Open file "item_categories.json"
+    assign the value of the number of items scraped to key "item_id": length: value
+
+2. "max_page": 4,
+    Crawl last page : 4
+    Count every item in the page
+    last_page_length: 18
+    reminder_pages_length = Multiply the rest of the page by max_items_per_page 24
+
+    ex : reminder_pages_length = max_items_per_page * (max_page - 1) = 72
+    total_items_length = last_page_length + reminder_pages_length
+    If total_items_length != value inside item_categories.json
+    Render : and re check
+    "New Items Detected..Updating IDs.."
+
+3. If IDs are correct
+    Execute command
+
+

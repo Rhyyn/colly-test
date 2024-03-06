@@ -1,0 +1,565 @@
+{
+    "jobs": {
+        "title": {
+            "fr": "Métiers",
+            "en": "Professions"
+        },
+        "id": [
+            69
+        ],
+        "max_page": "",
+        "item_url": {
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/metiers/71-lumberjack/recettes",
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/jobs/71-lumberjack/recipes"
+        },
+        "sub_categories": [
+            {
+                "id": [
+                    75
+                ],
+                "title": {
+                    "fr": "Pêcheur",
+                    "en": "Fisherman"
+                }
+            },
+            {
+                "id": [
+                    71
+                ],
+                "title": {
+                    "fr": "Forestier",
+                    "en": "Lumberjack"
+                }
+            },
+            {
+                "id": [
+                    72
+                ],
+                "title": {
+                    "fr": "Herboriste",
+                    "en": "Herbalist"
+                }
+            },
+            {
+                "id": [
+                    64
+                ],
+                "title": {
+                    "fr": "Paysan",
+                    "en": "Farmer"
+                }
+            },
+            {
+                "id": [
+                    73
+                ],
+                "title": {
+                    "fr": "Mineur",
+                    "en": "Miner"
+                }
+            },
+            {
+                "id": [
+                    74
+                ],
+                "title": {
+                    "fr": "Trappeur",
+                    "en": "Trapper"
+                }
+            },
+            {
+                "id": [
+                    77
+                ],
+                "title": {
+                    "fr": "Armurier",
+                    "en": "Armorer"
+                }
+            },
+            {
+                "id": [
+                    78
+                ],
+                "title": {
+                    "fr": "Bijoutier",
+                    "en": "Jeweler"
+                }
+            },
+            {
+                "id": [
+                    40
+                ],
+                "title": {
+                    "fr": "Boulanger",
+                    "en": "Baker"
+                }
+            },
+            {
+                "id": [
+                    76
+                ],
+                "title": {
+                    "fr": "Cuisinier",
+                    "en": "Chef"
+                }
+            },
+            {
+                "id": [
+                    81
+                ],
+                "title": {
+                    "fr": "Ébéniste",
+                    "en": "Handyman"
+                }
+            },
+            {
+                "id": [
+                    83
+                ],
+                "title": {
+                    "fr": "Maitre d'armes",
+                    "en": "Weapons Master"
+                }
+            },
+            {
+                "id": [
+                    80
+                ],
+                "title": {
+                    "fr": "Maroquinier",
+                    "en": "Leather Dealer"
+                }
+            },
+            {
+                "id": [
+                    79
+                ],
+                "title": {
+                    "fr": "Tailleur",
+                    "en": "Tailor"
+                }
+            }
+        ]
+    },
+    "bestiary": {
+        "title": {
+            "fr": "Bestiaire",
+            "en": "Bestiary"
+        },
+        "id": [
+            70
+        ],
+        "max_page": "",
+        "index_url": {
+            "fr": "https://www.wakfu.com/en/mmorpg/encyclopedia/monsters?page=",
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/monsters?page="
+        },
+        "item_url": {
+            "fr": "https://www.wakfu.com/en/mmorpg/encyclopedia/monsters/",
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/monsters/"
+        }
+    },
+    "armors": {
+        "title": {
+            "fr": "Armures",
+            "en": "Armors"
+        },
+        "id": [
+            333
+        ],
+        "max_page": "",
+        "index_url": {
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/armures?page=",
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/armors?page="
+        },
+        "item_url": {
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/armures",
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/armors"
+        },
+        "sub_categories": [
+            {
+                "title": {
+                    "fr": "Amulette",
+                    "en": "Amulet"
+                },
+                "id": [
+                    120
+                ]
+            },
+            {
+                "title": {
+                    "fr": "Anneau",
+                    "en": "Ring"
+                },
+                "id": [
+                    103
+                ]
+            },
+            {
+                "title": {
+                    "fr": "Bottes",
+                    "en": "Boots"
+                },
+                "id": [
+                    119
+                ]
+            },
+            {
+                "title": {
+                    "fr": "Cape",
+                    "en": "Cloak"
+                },
+                "id": [
+                    132
+                ]
+            },
+            {
+                "title": {
+                    "fr": "Casque",
+                    "en": "Helmet"
+                },
+                "id": [
+                    134
+                ]
+            },
+            {
+                "title": {
+                    "fr": "Ceinture",
+                    "en": "Belt"
+                },
+                "id": [
+                    133
+                ]
+            },
+            {
+                "title": {
+                    "fr": "Epaulettes",
+                    "en": "Epaulettes"
+                },
+                "id": [
+                    138
+                ]
+            },
+            {
+                "title": {
+                    "fr": "Plastron",
+                    "en": "Breastplate"
+                },
+                "id": [
+                    136
+                ]
+            }
+        ]
+    },
+    "weapons": {
+        "title": {
+            "fr": "Armes",
+            "en": "Weapons"
+        },
+        "id": [
+            334
+        ],
+        "max_page": "",
+        "index_url": {
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/armes?page=",
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/weapons?page="
+        },
+        "item_url": {
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/armes/",
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/weapons/"
+        },
+        "sub_categories": [
+            {
+                "title": {
+                    "fr": "Arme 1 Main",
+                    "en": "1 Handed Weapon"
+                },
+                "id": [
+                    254,
+                    108,
+                    110,
+                    115,
+                    113
+                ]
+            },
+            {
+                "title": {
+                    "fr": "Arme 2 Main",
+                    "en": "2 Handed Weapon"
+                },
+                "id": [
+                    223,
+                    114,
+                    101,
+                    111,
+                    253,
+                    117
+                ]
+            },
+            {
+                "title": {
+                    "fr": "Seconde Main",
+                    "en": "Off-hand"
+                },
+                "id": [
+                    112,
+                    189
+                ]
+            }
+        ]
+    },
+    "pets": {
+        "title": {
+            "fr": "Familiers",
+            "en": "Pets"
+        },
+        "id": [
+            582
+        ],
+        "max_page": "",
+        "index_url": {
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/familiers?page=",
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/pets?page="
+        },
+        "item_url": {
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/familiers/",
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/pets/"
+        }
+    },
+    "customization": {
+        "title": {
+            "fr": "Personnalisation",
+            "en": "customization"
+        },
+        "id": [
+            1012
+        ],
+        "max_page": "",
+        "index_url": {
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/personnalisation?page=",
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/customization?page="
+        },
+        "item_url": {
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/personnalisation/",
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/customization/"
+        },
+        "sub_categories": [
+            {
+                "title": {
+                    "fr": "Costumes",
+                    "en": "Costumes"
+                }
+            },
+            {
+                "title": {
+                    "fr": "Events",
+                    "en": "Events"
+                }
+            },
+            {
+                "title": {
+                    "fr": "Costumes de Montures",
+                    "en": "Mount skins"
+                }
+            },
+            {
+                "title": {
+                    "fr": "Titres",
+                    "en": "Titles"
+                },
+                "id": [
+                    512
+                ]
+            }
+        ]
+    },
+    "accessories": {
+        "title": {
+            "fr": "Accesoires",
+            "en": "Accessories"
+        },
+        "id": [
+            1015
+        ],
+        "max_page": "",
+        "index_url": {
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/accessoires?page=",
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/accessories?page="
+        },
+        "item_url": {
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/accessoires/",
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/accessories/"
+        },
+        "sub_categories": [
+            {
+                "title": {
+                    "fr": "Emblèmes",
+                    "en": "Embles"
+                },
+                "id": [
+                    646
+                ]
+            },
+            {
+                "title": {
+                    "fr": "Outils",
+                    "en": "Tools"
+                },
+                "id": [
+                    537
+                ]
+            },
+            {
+                "title": {
+                    "fr": "Toches",
+                    "en": "Torches"
+                }
+            },
+            {
+                "title": {
+                    "fr": "Sacs",
+                    "en": "Bags"
+                },
+                "id": [
+                    218
+                ],
+                "index_url": {
+                    "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/objets/109-todo-equipements/static.ankama.com?text=&type_1[0]=218&level_min=0&level_max=230&page=",
+                    "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/items/109-todo-equipements/static.ankama.com?text=&type_1[0]=218&level_min=0&level_max=230&page="
+                },
+                "item_url": {
+                    "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/accessoires/",
+                    "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/accessories"
+                }
+            }
+        ]
+    },
+    "consumables": {
+        "title": {
+            "fr": "Consommable",
+            "en": "Consumables"
+        },
+        "id": [
+            757
+        ],
+        "max_page": "",
+        "index_url": {
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/consommables?page=",
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/consumables?page="
+        },
+        "item_url": {
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/consommables/",
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/consumables/"
+        }
+    },
+    "resources": {
+        "title": {
+            "fr": "Ressources",
+            "en": "Resources"
+        },
+        "id": [
+            1016
+        ],
+        "max_page": "",
+        "index_url": {
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/ressources?page=",
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/resources?page="
+        },
+        "item_url": {
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/ressources/",
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/resources"
+        },
+        "sub_categories": [
+            {
+                "title": {
+                    "fr": "Récoltes",
+                    "en": "Crops"
+                },
+                "id": [
+                    758
+                ]
+            },
+            {
+                "title": {
+                    "fr": "Améliorations",
+                    "en": "Improvements"
+                },
+                "id": [
+                    602
+                ]
+            },
+            {
+                "title": {
+                    "fr": "Ressources diverses",
+                    "en": "Miscellaneous Resources"
+                },
+                "id": [
+                    822
+                ]
+            },
+            {
+                "title": {
+                    "fr": "Ressources de monstres",
+                    "en": "Monster resources"
+                },
+                "id": [
+                    531
+                ]
+            },
+            {
+                "title": {
+                    "fr": "Recettes",
+                    "en": "Recipes"
+                },
+                "id": [
+                    719
+                ]
+            },
+            {
+                "title": {
+                    "fr": "Raffinages & Composants",
+                    "en": "Refinements & Components"
+                },
+                "id": [
+                    761
+                ]
+            },
+            {
+                "title": {
+                    "fr": "Fragments de Reliques",
+                    "en": "Relic Fragments"
+                },
+                "id": [
+                    687
+                ]
+            },
+            {
+                "title": {
+                    "fr": "Sioupère-Glous",
+                    "en": "Souper-Glous"
+                },
+                "id": [
+                    739
+                ]
+            }
+        ]
+    },
+    "mounts": {
+        "title": {
+            "fr": "Montures",
+            "en": "Mounts"
+        },
+        "id": [
+            611
+        ],
+        "max_page": "",
+        "index_url": {
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/montures?page=",
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/mounts?page="
+        },
+        "item_url": {
+            "fr": "https://www.wakfu.com/fr/mmorpg/encyclopedie/montures/",
+            "en": "https://www.wakfu.com/en/mmorpg/encyclopedia/mounts/"
+        }
+    }
+}
