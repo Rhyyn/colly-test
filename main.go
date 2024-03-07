@@ -1,6 +1,8 @@
 package main
 
-import cli "github.com/Rhyyn/wakfukiscraper/CLI"
+import (
+	cli "github.com/Rhyyn/wakfukiscraper/CLI"
+)
 
 func main() {
 	cli.Execute()

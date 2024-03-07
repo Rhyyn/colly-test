@@ -14,7 +14,7 @@ type SubCategory struct {
 	ID        []int             `json:"id"`
 	Index_url map[string]string `json:"index_url"`
 	Item_url  map[string]string `json:"item_url"`
-	Max_page  int               `json:"max_page"`
+	MaxPage   int               `json:"max_page"`
 	MaxItems  int               `json:"max_items"`
 }
 
@@ -23,7 +23,7 @@ type ItemInfo struct {
 	ID             []int             `json:"id"`
 	Index_url      map[string]string `json:"index_url"`
 	Item_url       map[string]string `json:"item_url"`
-	Max_page       int               `json:"max_page"`
+	MaxPage        int               `json:"max_page"`
 	Sub_categories []SubCategory     `json:"sub_categories"`
 }
 
@@ -62,15 +62,23 @@ func parseJSON(content []byte) map[string]ItemInfo {
 	return allItemsInfo
 }
 
-func WriteJSON(allCategoriesInfo map[string]ItemInfo) {
-	// fmt.Println(allCategoriesInfo)
-	updatedJSON, err := json.Marshal(allCategoriesInfo)
+func GetJSON(file_name string) map[string]ItemInfo {
+	opened_file := openFile(file_name)
+	defer opened_file.Close()
+	file_content := readFile(opened_file)
+	allItemsInfo := parseJSON(file_content)
+	return allItemsInfo
+}
+
+// allCategoriesInfo map[string]ItemInfo
+func WriteJSON(data interface{}) {
+	fileContent, err := json.MarshalIndent(data, "", "    ")
 	if err != nil {
 		fmt.Println("Error marshaling JSON:", err)
 		return
 	}
 
-	err = os.WriteFile("item_categories.json", updatedJSON, 0o644)
+	err = os.WriteFile("./DATA/STATIC/updated_item_categories.json", fileContent, 0o644)
 	if err != nil {
 		fmt.Println("Error writing file:", err)
 		return
@@ -110,22 +118,31 @@ func GetFileContent(file_name string) []ItemInfo {
 	return sortedItems
 }
 
+func GetMaxItems(ID int) int {
+	allCategoriesInfo := GetJSON("updated_item_categories.json")
+	var MaxItems int
+	for _, category := range allCategoriesInfo {
+		for _, subCategory := range category.Sub_categories {
+			if len(subCategory.ID) > 0 {
+				if ID == subCategory.ID[0] {
+					MaxItems = subCategory.MaxItems
+				}
+			}
+		}
+	}
+	return MaxItems
+}
+
+// Updates MaxItems and MaxPage
 func EditItemsCats(editFileOptions EditFileOptions) {
-	fmt.Println(editFileOptions.SubCat.Max_page)
 	ID := editFileOptions.ID
-	isSubCat := editFileOptions.IsSubCat
-	fmt.Printf("ID : %d , isSubCat %t\n", ID, isSubCat)
-	opened_file := openFile("item_categories.json")
-	defer opened_file.Close()
-	file_content := readFile(opened_file)
-	allCategoriesInfo := parseJSON(file_content)
+	allCategoriesInfo := GetJSON("updated_item_categories.json")
 	for _, category := range allCategoriesInfo {
 		for i, subCategory := range category.Sub_categories {
 			if len(subCategory.ID) > 0 {
-				fmt.Println(subCategory.ID[0])
 				if ID == subCategory.ID[0] {
 					category.Sub_categories[i].MaxItems = editFileOptions.SubCat.MaxItems
-					category.Sub_categories[i].Max_page = editFileOptions.SubCat.Max_page
+					category.Sub_categories[i].MaxPage = editFileOptions.SubCat.MaxPage
 					break
 				}
 			}

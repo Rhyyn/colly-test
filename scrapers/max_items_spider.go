@@ -2,9 +2,9 @@ package scrapers
 
 import (
 	"fmt"
+	"os"
 	"strconv"
 	"strings"
-	"time"
 
 	"github.com/Rhyyn/wakfukiscraper/utils"
 	"github.com/gocolly/colly"
@@ -14,25 +14,6 @@ type IndexOptions struct {
 	Title     string
 	Index_url string
 	ID        []int
-}
-
-var (
-	BaseURL   = "https://www.wakfu.com"
-	userAgent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
-)
-
-func GetNewCollector() *colly.Collector {
-	c := colly.NewCollector()
-
-	c.Limit(&colly.LimitRule{
-		Delay: 2 * time.Second,
-	})
-
-	c.OnRequest(func(r *colly.Request) {
-		r.Headers.Set("User-Agent", userAgent)
-	})
-
-	return c
 }
 
 func CountItemsInPage(url string) int {
@@ -78,14 +59,31 @@ func UpdateMaxItemsAndPages(IndexOptions IndexOptions) {
 		}
 		numOfItemPerPage := 24
 		maxItems = lastPageLength + ((maxPages - 1) * numOfItemPerPage)
-		fmt.Printf("maxPages %d, maxItems %d\n", maxPages, maxItems)
+		// fmt.Printf("maxPages %d, maxItems %d\n", maxPages, maxItems)
+
+		// If MaxItems already set and equal to currernt maxItems ask if want to continue
+		MaxItemsInFile := utils.GetMaxItems(ID)
+		if MaxItemsInFile == maxItems {
+
+			fmt.Printf("------CHOICE------\n")
+			fmt.Printf("No new items detected, do you still want to proceed ? (y/n)\n")
+			var userInput string
+			fmt.Scanln(&userInput)
+
+			if userInput != "y" && userInput != "n" {
+				fmt.Printf("wrong input please use y/n, exiting..\n")
+				os.Exit(0)
+			} else if userInput == "n" {
+				os.Exit(0)
+			}
+		}
 
 		utils.EditItemsCats(utils.EditFileOptions{
 			IsSubCat: true,
 			ID:       ID,
-			SubCat:   utils.SubCategory{Max_page: maxPages, MaxItems: maxItems},
+			SubCat:   utils.SubCategory{MaxPage: maxPages, MaxItems: maxItems},
 		})
-		fmt.Printf("max_items for %s is %d\n", IndexOptions.Title, maxItems)
+		// fmt.Printf("max_items for %s is %d\n", IndexOptions.Title, maxItems)
 	})
 
 	c.OnError(func(r *colly.Response, err error) {
@@ -97,7 +95,4 @@ func UpdateMaxItemsAndPages(IndexOptions IndexOptions) {
 	})
 
 	c.Visit(startingUrl)
-}
-
-func UpdateAllIDs() {
 }
