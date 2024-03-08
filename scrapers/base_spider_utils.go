@@ -15,7 +15,9 @@ func GetNewCollector() *colly.Collector {
 	c := colly.NewCollector()
 
 	c.Limit(&colly.LimitRule{
-		Delay: 2 * time.Second,
+		DomainGlob:  "*",
+		Parallelism: 1,
+		Delay:       3 * time.Second,
 	})
 
 	c.OnRequest(func(r *colly.Request) {

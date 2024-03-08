@@ -37,6 +37,7 @@ func CountItemsInPage(url string) int {
 }
 
 func UpdateMaxItemsAndPages(IndexOptions IndexOptions) {
+	fmt.Printf("Starting to update max_items and max_page for %s\n", IndexOptions.Title)
 	startingUrl := IndexOptions.Index_url
 	var ID int
 	// If we selected a subcategory we need to filter by its type
@@ -63,7 +64,7 @@ func UpdateMaxItemsAndPages(IndexOptions IndexOptions) {
 
 		// If MaxItems already set and equal to currernt maxItems ask if want to continue
 		MaxItemsInFile := utils.GetMaxItems(ID)
-		if MaxItemsInFile == maxItems {
+		if MaxItemsInFile == maxItems && MaxItemsInFile != 0 {
 
 			fmt.Printf("------CHOICE------\n")
 			fmt.Printf("No new items detected, do you still want to proceed ? (y/n)\n")
