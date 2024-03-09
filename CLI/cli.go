@@ -32,7 +32,6 @@ func Execute() {
 		selectedCategory := allCategoriesInfo[categoryChoice]
 		fmt.Printf("You selected %s\n", selectedCategory.Title["fr"])
 
-
 		// Ask for SubCategory choice
 		typeChoice := selectSubCategory(selectedCategory)
 		selectedType := selectedCategory.Sub_categories[typeChoice]
@@ -52,7 +51,8 @@ func Execute() {
 				ID:        selectedType.ID,
 			})
 			maxPage := utils.GetMaxPage(selectedId)
-			scrapers.ScrapItems(selectedCategory.Index_url["fr"], maxPage, selectedId)
+			scrapers.ScrapItems(selectedCategory.Index_url, selectedCategory.Item_url, maxPage, selectedId)
+			// scrapers.ScrapRedirect(selectedCategory.Index_url["fr"], maxPage, selectedId)
 		}
 		// defer scrapers.CrawlIndexURL(selected_category.Index_url["fr"])
 		// scrapers.CrawlSingleAccesoryType(selectedType.ID[0])
@@ -98,9 +98,11 @@ func checkForNewItems(selectedType utils.SubCategory, selectedCategory utils.Ite
 			ID:        selectedType.ID,
 		})
 		maxPage := utils.GetMaxPage(selectedId)
-		scrapers.ScrapItems(selectedCategory.Index_url["fr"], maxPage, selectedId)
+		scrapers.ScrapItems(selectedCategory.Index_url, selectedCategory.Item_url, maxPage, selectedId)
+		// scrapers.ScrapRedirect(selectedCategory.Index_url["fr"], maxPage, selectedId)
 	} else {
 		maxPage := utils.GetMaxPage(selectedId)
-		scrapers.ScrapItems(selectedCategory.Index_url["fr"], maxPage, selectedId)
+		scrapers.ScrapItems(selectedCategory.Index_url, selectedCategory.Item_url, maxPage, selectedId)
+		// scrapers.ScrapRedirect(selectedCategory.Index_url["fr"], maxPage, selectedId)
 	}
 }

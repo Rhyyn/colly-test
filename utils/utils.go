@@ -10,6 +10,8 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+
+	"github.com/Rhyyn/wakfukiscraper/structs"
 )
 
 type ScrapedItem struct {
@@ -207,16 +209,99 @@ func StatPrefixToStringAndSetFormat(str string) (string, int) {
 	}
 }
 
-func FormatElementsString(str string) string {
-	switch str {
-	case "Maîtrise sur X éléments aléatoires":
-		return "Maîtrise dans X éléments"
-	case "Mastery of X random elements":
-		return "Mastery in X elements"
-	case "Résistance sur X éléments aléatoires":
-		return "Résistance dans X éléments"
-	case "Resistance to 3 random elements":
-		return "Resistance in X elements"
+func FormatElementsString(str string, format string) string {
+	if format == "negative" {
+		switch str {
+		case "- Maîtrise sur X éléments aléatoires":
+			return "- Maîtrise dans X éléments"
+		case "- Mastery of X random elements":
+			return "- Mastery in X elements"
+		case "- Résistance sur X éléments aléatoires":
+			return "- Résistance dans X éléments"
+		case "- Resistance to X random elements":
+			return "- Resistance in X elements"
+		}
+	} else {
+		switch str {
+		case "Maîtrise sur X éléments aléatoires":
+			return "Maîtrise dans X éléments"
+		case "Mastery of X random elements":
+			return "Mastery in X elements"
+		case "Résistance sur X éléments aléatoires":
+			return "Résistance dans X éléments"
+		case "Resistance to X random elements":
+			return "Resistance in X elements"
+		}
+		return str
 	}
-	return "FormatElementsString failed"
+	return str
+}
+
+func FormatCritString(statString string, format string) string {
+	if format == "negative" {
+		switch statString {
+		case "- Critical Hit":
+			return "- Critical Chance (%)"
+		case "- Coup critique":
+			return "- Coup Critique (%)"
+		}
+	} else {
+		switch statString {
+		case "Critical Hit":
+			return "Critical Chance (%)"
+		case "Coup critique":
+			return "Coup Critique (%)"
+		}
+		return statString
+	}
+	return statString
+}
+
+func FormatSingleResStrng(statString string, format string) string {
+	if strings.Contains(statString, "Resistance") {
+		prefix, suffix := strings.Split(statString, " ")[0], strings.Split(statString, " ")[1]
+		newString := suffix + " " + prefix
+		return newString
+	}
+	return statString
+}
+
+func FormatStatString(statString string, format string) string {
+	newStatString := statString
+	newStatString = FormatSingleResStrng(statString, format)
+	if format == "negative" {
+		newStatString = "- " + newStatString
+	}
+	newStatString = FormatElementsString(newStatString, format)
+	newStatString = FormatCritString(newStatString, format)
+	return newStatString
+}
+
+// This create the map of properties for stats
+func HandleStatsProperties(data []byte) map[string]structs.StatProperties {
+	var translations map[string]structs.StatProperties
+
+	err := json.Unmarshal([]byte(data), &translations)
+	if err != nil {
+		panic(err)
+	}
+
+	return translations
+}
+
+func GetLangFromURL(str string) string {
+	if strings.Contains(str, "/fr") {
+		return "Fr"
+	} else {
+		return "En"
+	}
+}
+
+func GetItemIDFromString(str string) (int, error) {
+	ID, err := strconv.Atoi(strings.Split(str, "-")[0])
+	if err != nil {
+		fmt.Println(err)
+		return 0, err
+	}
+	return ID, nil
 }

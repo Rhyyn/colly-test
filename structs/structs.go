@@ -62,3 +62,8 @@ type StatProperties struct {
 	Fr string `json:"fr"`
 	En string `json:"en"`
 }
+
+type ParamsStatsProperties struct {
+	AllPositivesStats map[string]StatProperties
+	AllNegativesStats map[string]StatProperties
+}

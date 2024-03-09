@@ -1,7 +1,7 @@
 package scrapers
 
 import (
-	"encoding/json"
+	"errors"
 	"fmt"
 	"os"
 	"strconv"
@@ -30,35 +30,244 @@ func GetEnglishURL(frenchUrl string) string {
 	return englishURL
 }
 
-var StatPropertiesMap = make(map[string]structs.StatProperties)
-
-// This create the map of properties for stats
-func handleStatsProperties(data []byte) map[string]structs.StatProperties {
-	var translations map[string]structs.StatProperties
-
-	err := json.Unmarshal([]byte(data), &translations)
+func GetIdFromKey(key string) (int, error) {
+	id, err := strconv.Atoi(key)
 	if err != nil {
-		panic(err)
+		return 0, err
 	}
-
-	return translations
+	return id, nil
 }
 
-func ScrapItems(urlPrefix string, maxPage int, selectedId int) {
-	// construct the suffix
+func GetStatId(statString string, ParamsStatsProperties structs.ParamsStatsProperties, format string, lang string) (int, error) {
+	var id int
+	var err error
+	if format == "negative" {
+		for key, property := range ParamsStatsProperties.AllNegativesStats {
+			if lang == "Fr" {
+				if strings.Contains(statString, property.Fr) {
+					id, err = GetIdFromKey(key)
+					return id, err
+				}
+			} else {
+				if strings.Contains(statString, property.En) {
+					id, err = GetIdFromKey(key)
+					return id, err
+				}
+			}
+		}
+	} else {
+		for key, property := range ParamsStatsProperties.AllPositivesStats {
+			if lang == "Fr" {
+				if strings.Contains(statString, property.Fr) {
+					id, err = GetIdFromKey(key)
+					return id, err
+				}
+			} else {
+				if strings.Contains(statString, property.En) {
+					id, err = GetIdFromKey(key)
+					return id, err
+				}
+			}
+		}
+	}
+	return id, nil
+}
+
+func GetStats(htmlElement *colly.HTMLElement, Item *structs.Item, lang string, ParamsStatsProperties structs.ParamsStatsProperties) {
+	statElement := htmlElement.DOM.Find(".ak-container.ak-content-list.ak-displaymode-col")
+	Stats := make(map[int]structs.Stat)
+	statElement.Each(func(i int, s *goquery.Selection) {
+		statsDiv := s.Find("div.ak-title")
+
+		statsDiv.Each(func(i int, stat *goquery.Selection) {
+			var id int
+			var idError error
+			var displayString string
+			var format string
+			var value int
+			var numElements int
+
+			entireStatString := strings.SplitN(StandardizeSpaces(stat.Text()), " ", 2)
+			// "160"
+			prefixString := StandardizeSpaces(entireStatString[0])
+			// "Esquive"
+			suffixString := StandardizeSpaces(entireStatString[1])
+
+			// Used to check if stat is either flat/percent/negative
+			format, value = utils.StatPrefixToStringAndSetFormat(prefixString)
+
+			// Check if has 2 values (Mastery of 3 random elements)
+			// If it has set numElements and format it to (Mastery in X elements)
+			if hasNumber, number := utils.HasNumberInString(suffixString); hasNumber {
+				numElements = number
+				suffixString = utils.ReplaceAnyNumberInString(suffixString, "X")
+			}
+			// Format the strings because Ankama's english is dogshit
+			suffixString = utils.FormatStatString(suffixString, format)
+
+			// Gets the ID
+			id, idError = GetStatId(suffixString, ParamsStatsProperties, format, lang)
+			if idError != nil {
+				fmt.Printf("Error GetStatId %v", idError)
+			}
+
+			if id == 0 {
+				fmt.Printf("id of stat %s is 0", suffixString)
+				os.Exit(0)
+			}
+
+			displayString = suffixString
+
+			// If scraping english vesion modify the stats to add english string
+			if lang == "En" && len(Item.Stats) > 0 {
+				for key, stat := range Item.Stats {
+					if stat.ID == id {
+						stat.Display.En = displayString
+						Item.Stats[key] = stat
+					}
+				}
+			}
+
+			if lang == "Fr" {
+				newStat := structs.Stat{
+					Display: structs.Display{
+						Fr: displayString,
+						En: displayString,
+					},
+					ID:          id,
+					Format:      format,
+					Value:       value,
+					NumElements: numElements,
+				}
+
+				Stats[newStat.ID] = newStat
+			}
+		})
+	})
+	if lang == "Fr" {
+		Item.Stats = Stats
+	}
+}
+
+func GetRarity(htmlElement *colly.HTMLElement, Item *structs.Item, lang string) {
+	rarityElement := htmlElement.DOM.Find(".ak-object-rarity span span")
+	rarityNumber, err := strconv.Atoi(strings.Split(rarityElement.AttrOr("class", ""), "ak-rarity-")[1])
+	if err != nil {
+		fmt.Println(err)
+	}
+	Item.Params.Rarity = rarityNumber
+}
+
+func GetLevel(htmlElement *colly.HTMLElement, Item *structs.Item, lang string) {
+	levelElement := htmlElement.DOM.Find(".ak-encyclo-detail-level.col-xs-6.text-right")
+	levelElementFr := StandardizeSpaces(levelElement.Text())
+	level, err := strconv.Atoi(strings.TrimSpace(strings.Split(levelElementFr, ": ")[1]))
+	if err != nil {
+		fmt.Printf("Error converting level")
+		os.Exit(0)
+	}
+	Item.Params.Level = level
+}
+
+func GetTypeID(htmlElement *colly.HTMLElement, Item *structs.Item, lang string) {
+	typeElement := htmlElement.DOM.Find(".ak-encyclo-detail-type.col-xs-6 span img").First()
+	src, exist := typeElement.Attr("src")
+	if !exist {
+		fmt.Println("typeElement does not exist")
+	}
+	typeParts := strings.Split(src, "/")
+	category := typeParts[len(typeParts)-1]
+	typeId, err := strconv.Atoi(strings.Split(category, ".")[0])
+	if err != nil {
+		fmt.Printf("Error converting typeId")
+		os.Exit(0)
+	}
+	Item.Params.TypeId = typeId
+}
+
+func GetTitle(htmlElement *colly.HTMLElement, Item *structs.Item, lang string) {
+	titleElement := htmlElement.DOM.Find("h1").First()
+	title := StandardizeSpaces(titleElement.Text())
+	if lang == "Fr" {
+		Item.Title.Fr = title
+	} else {
+		Item.Title.En = title
+	}
+}
+
+func ScrapItemDetails(url string, Item *structs.Item, ParamsStatsProperties structs.ParamsStatsProperties) {
+	c := GetNewCollector()
+	c.OnHTML(".ak-container.ak-panel-stack.ak-glue", func(h *colly.HTMLElement) {
+		Lang := utils.GetLangFromURL(h.Request.URL.String())
+		GetTitle(h, Item, Lang)
+		GetTypeID(h, Item, Lang)
+		GetRarity(h, Item, Lang)
+		GetLevel(h, Item, Lang)
+		GetStats(h, Item, Lang, ParamsStatsProperties)
+	})
+
+	c.OnError(func(r *colly.Response, err error) {
+		fmt.Println("Request URL:", r.Request.URL, "failed with response:", r, "\nError:", err)
+	})
+
+	c.OnRequest(func(r *colly.Request) {
+		fmt.Println("ScrapItemDetails visiting:\n", r.URL)
+	})
+	c.Visit(url)
+}
+
+func GetItemURLArg(url string) (string, error) {
+	// /fr/mmorpg/encyclopedie/armures/29086-bottes-vaal-enthia
+	parts := strings.Split(url, "/")
+	if len(parts) >= 5 {
+		return parts[5], nil
+	} else {
+		return "", errors.New("URL format error: invalid number of parts")
+	}
+}
+
+func ScrapItems(indexURL map[string]string, itemURL map[string]string, maxPage int, selectedId int) {
 	urlSuffix := "&" + "type_1%5B%5D=" + strconv.Itoa(selectedId)
+	AllPositivesStats := utils.HandleStatsProperties(utils.ReadFile(utils.OpenFile("all_positives_stats.json")))
+	AllNegativesStats := utils.HandleStatsProperties(utils.ReadFile(utils.OpenFile("all_negatives_stats.json")))
 
 	fmt.Printf("ScrapItems called for id %d with maxPage %d\n", selectedId, maxPage)
 	c := GetNewCollector()
 
+	// ON EVERY TR IN THE TABLE
 	c.OnHTML(".ak-table.ak-responsivetable tbody tr", func(h *colly.HTMLElement) {
-		// finds all the tds, only follow the href inside the 2nd
-		tds := h.DOM.Find("td")
-		secondTd := tds.Eq(1)
-		link := secondTd.Find("a[href]")
-		href, _ := link.Attr("href")
-		frenchUrl := h.Request.AbsoluteURL(href)
-		scrapeItemPage(frenchUrl)
+		// extract each item href from each td
+		href, exists := h.DOM.Find("td").Eq(1).Find("a[href]").Attr("href")
+		if !exists {
+			fmt.Printf("NO TD FOUND FOR %s\n", href)
+		}
+		itemArgName, err := GetItemURLArg(href)
+		if err != nil {
+			fmt.Println(err)
+			fmt.Printf("error getting item url arg")
+			os.Exit(0)
+		}
+
+		frenchURL := itemURL["fr"] + "/" + itemArgName
+		englishURL := itemURL["en"] + "/" + itemArgName
+
+		var Item structs.Item
+		ParamsStatsProperties := structs.ParamsStatsProperties{AllPositivesStats: AllPositivesStats, AllNegativesStats: AllNegativesStats}
+
+		Item.ID, _ = utils.GetItemIDFromString(itemArgName)
+		// Scrap both FR/EN version of the item
+		ScrapItemDetails(frenchURL, &Item, ParamsStatsProperties)
+		ScrapItemDetails(englishURL, &Item, ParamsStatsProperties)
+
+		// TODO: Add to separate map of item and write to file
+
+		// Useless pretty print for debug
+		// PrettyItem, err := json.MarshalIndent(Item, "", "    ")
+		// if err != nil {
+		// 	fmt.Println("Error marshaling item:", err)
+		// 	return
+		// }
+		// fmt.Println("Item after scraping:\n", string(PrettyItem))
 	})
 
 	c.OnError(func(r *colly.Response, err error) {
@@ -71,160 +280,116 @@ func ScrapItems(urlPrefix string, maxPage int, selectedId int) {
 
 	// visit each page until = maxPage
 	for i := 1; i < maxPage; i++ {
-		c.Visit(urlPrefix + strconv.Itoa(i) + urlSuffix)
+		c.Visit(indexURL["fr"] + strconv.Itoa(i) + urlSuffix)
 		fmt.Printf("setting page to %d\n", i)
 	}
 }
 
-func scrapeItemPage(url string) {
-	c := GetNewCollector()
-	defer c.Wait()
-	all_positives_stats := handleStatsProperties(utils.ReadFile(utils.OpenFile("all_positives_stats.json")))
-	all_negatives_stats := handleStatsProperties(utils.ReadFile(utils.OpenFile("all_negatives_stats.json")))
+// func ScrapItems(urlPrefix string, maxPage int, selectedId int) {
+// 	urlSuffix := "&" + "type_1%5B%5D=" + strconv.Itoa(selectedId)
+// 	// all_positives_stats := handleStatsProperties(utils.ReadFile(utils.OpenFile("all_positives_stats.json")))
+// 	// all_negatives_stats := handleStatsProperties(utils.ReadFile(utils.OpenFile("all_negatives_stats.json")))
 
-	// This gets english href
-	// c.OnHTML(".ak-idbar-box.ak-box-lang .ak-flag-en", func(h *colly.HTMLElement) {
-	// 	enHref := h.Attr("href")
-	// 	fmt.Println(enHref)
-	// })
+// 	fmt.Printf("ScrapItems called for id %d with maxPage %d\n", selectedId, maxPage)
+// 	c := GetNewCollector()
 
-	var FrItem structs.Item
-	// channel for FrItem pop
-	done := make(chan bool)
-	// item page -- /fr/
-	c.OnHTML(".ak-container.ak-panel-stack.ak-glue ", func(e *colly.HTMLElement) {
-		// Title
-		titleElement := e.DOM.Find("h1").First()
-		titleFr := StandardizeSpaces(titleElement.Text())
+// 	// ON EVERY TR IN THE TABLE
+// 	c.OnHTML(".ak-table.ak-responsivetable tbody tr", func(h *colly.HTMLElement) {
+// 		// extract each item href from each td
+// 		href, exists := h.DOM.Find("td").Eq(1).Find("a[href]").Attr("href")
+// 		if !exists {
+// 			fmt.Printf("NO TD FOUND FOR %s\n", href)
+// 		}
+// 		frenchUrl := h.Request.AbsoluteURL(href)
+// 		Lang := utils.GetLangFromURL(h.Request.URL.String())
 
-		// typeId
-		typeElement := e.DOM.Find(".ak-encyclo-detail-type.col-xs-6 span img").First()
-		src, _ := typeElement.Attr("src")
-		typeParts := strings.Split(src, "/")
-		category := typeParts[len(typeParts)-1]
-		typeId, err := strconv.Atoi(strings.Split(category, ".")[0])
-		if err != nil {
-			fmt.Printf("Error converting typeId")
-			os.Exit(0)
-		}
+// 		var Item structs.Item
+// 		// new english collector
+// 		englishCollector := GetNewCollector()
+// 		var enURL string
+// 		// visit french url and scrap data
+// 		// Append to Item
+// 		ScrapDone := make(chan bool)
+// 		if Lang == "Fr" && h.Request.URL.String() != "https://www.wakfu.com/fr/mmorpg/encyclopedie/armures" {
+// 			FrenchDone := make(chan bool)
+// 			c.OnHTML(".ak-container.ak-panel-stack.ak-glue", func(f *colly.HTMLElement) {
+// 				fmt.Println("Found french TITLE")
+// 				Lang := utils.GetLangFromURL(f.Request.URL.String())
+// 				GetTitle(f, &Item, Lang)
+// 				GetTypeID(f, &Item, Lang)
+// 				fmt.Println("French Scraping done")
+// 			})
+// 			// Extracting english item page URL
+// 			c.OnHTML(".ak-idbar-box.ak-box-lang .ak-flag-en", func(h *colly.HTMLElement) {
+// 				enHref := h.Attr("href")
+// 				enURL = "https://wakfu.com" + enHref
+// 			})
+// 			c.Visit(frenchUrl)
+// 			fmt.Println("Visit french url")
+// 			fmt.Println("Visited french url")
 
-		// level
-		levelElement := e.DOM.Find(".ak-encyclo-detail-level.col-xs-6.text-right")
-		levelElementFr := StandardizeSpaces(levelElement.Text())
-		level, err := strconv.Atoi(strings.TrimSpace(strings.Split(levelElementFr, ": ")[1]))
-		if err != nil {
-			fmt.Printf("Error converting level")
-			os.Exit(0)
-		}
+// 			FrenchDone <- true
+// 			<-FrenchDone
 
-		// Rarity
-		rarityElement := e.DOM.Find(".ak-object-rarity span span")
-		rarityNumber, _ := strconv.Atoi(strings.Split(rarityElement.AttrOr("class", ""), "ak-rarity-")[1])
+// 			if strings.Contains(h.Request.URL.String(), "/fr") {
+// 				fmt.Printf("englishCollector visiting enURL : %s\n", enURL)
+// 				englishCollector.Visit(enURL)
+// 				englishCollector.OnHTML(".ak-container.ak-panel-stack.ak-glue", func(e *colly.HTMLElement) {
+// 					fmt.Println("FOUND ENGLISH TITLE")
+// 					GetTitle(e, &Item, "En")
+// 					fmt.Println("english scraping done")
+// 					ScrapDone <- true
+// 				})
+// 				englishCollector.OnError(func(r *colly.Response, err error) {
+// 					fmt.Println("Request URL:", r.Request.URL, "failed with response:", r, "\nError:", err)
+// 				})
+// 				englishCollector.OnRequest(func(r *colly.Request) {
+// 					fmt.Println("englishCollector visiting:\n", r.URL)
+// 				})
+// 				// EnglishDone <- true
+// 			}
+// 		}
+// 		// fmt.Println(strings.Contains(h.Request.URL.String(), "/fr"))
+// 		// fmt.Println("Right before FrenchDone completion")
+// 		// <-FrenchDone
+// 		// fmt.Println("Right after FrenchDone completion")
+// 		// Once French DATA has been scraped
+// 		// Visit and scrap English DATA
+// 		// EnglishDone := make(chan bool)
 
-		// Stats
-		statElement := e.DOM.Find(".ak-container.ak-content-list.ak-displaymode-col")
-		Stats := make(map[int]structs.Stat)
-		statElement.Each(func(i int, s *goquery.Selection) {
-			statsDiv := s.Find("div.ak-title")
+// 		// visit english url using english collecotr
+// 		// scrap english data
+// 		// append item
+// 		<- ScrapDone
+// 		PrettyItem, err := json.MarshalIndent(Item, "", "    ")
+// 		if err != nil {
+// 			fmt.Println("Error marshaling item:", err)
+// 			return
+// 		}
+// 		fmt.Println("Item after scraping:\n", string(PrettyItem))
 
-			statsDiv.Each(func(i int, stat *goquery.Selection) {
-				var id int
-				var displayFr string
-				var displayEn string
-				var format string
-				var value int
-				var numElements int
+// 		// go func() {
+// 		// 	// <-EnglishDone
+// 		// 	PrettyItem, err := json.MarshalIndent(Item, "", "    ")
+// 		// 	if err != nil {
+// 		// 		fmt.Println("Error marshaling item:", err)
+// 		// 		return
+// 		// 	}
+// 		// 	fmt.Println("Item after scraping:\n", string(PrettyItem))
+// 		// }()
+// 	})
 
-				entireStatString := strings.SplitN(StandardizeSpaces(stat.Text()), " ", 2)
-				// "160"
-				prefixString := StandardizeSpaces(entireStatString[0])
-				// "Esquive"
-				suffixString := StandardizeSpaces(entireStatString[1])
+// 	c.OnError(func(r *colly.Response, err error) {
+// 		fmt.Println("Request URL:", r.Request.URL, "failed with response:", r, "\nError:", err)
+// 	})
 
-				format, value = utils.StatPrefixToStringAndSetFormat(prefixString)
+// 	c.OnRequest(func(r *colly.Request) {
+// 		fmt.Println("ScrapItems visiting:\n", r.URL)
+// 	})
 
-				// Check if has 2 values (Mastery of 3 random elements)
-				// If it has set numElements and format it to (Mastery in X elements)
-				if hasNumber, number := utils.HasNumberInString(suffixString); hasNumber {
-					numElements = number
-					suffixString = utils.FormatElementsString(utils.ReplaceAnyNumberInString(suffixString, "X"))
-				}
-
-				displayFr = suffixString
-				displayEn = suffixString
-				if strings.HasPrefix(suffixString, "-") {
-					fmt.Println("NEGATIVE SUFFIX")
-					for key, property := range all_negatives_stats {
-						if strings.Contains(suffixString, property.Fr) {
-							id, _ = strconv.Atoi(key)
-						}
-					}
-				} else {
-					for key, property := range all_positives_stats {
-						if strings.Contains(suffixString, property.Fr) {
-							id, _ = strconv.Atoi(key)
-						}
-					}
-				}
-				newStat := structs.Stat{
-					Display: structs.Display{
-						Fr: displayFr,
-						En: displayEn,
-					},
-					ID:          id,
-					Format:      format,
-					Value:       value,
-					NumElements: numElements,
-				}
-
-				Stats[newStat.ID] = newStat
-				// fmt.Println(newStat.ID)
-				// fmt.Println(Stats)
-				// fmt.Printf("prefixValue : %d | suffixString %s\n", prefixValue, suffixString)
-			})
-
-			// need to fetch IDs from separate file (manual)
-		})
-
-		// Droprates
-
-		// Recipe
-		fmt.Printf("titleFr %s\n", titleFr)
-		fmt.Printf("typeId %d\n", typeId)
-		fmt.Printf("level : %d\n", level)
-		fmt.Printf("rarityNumber %d\n", rarityNumber)
-		fmt.Printf("Stats : %v\n", Stats)
-
-		FrItem.Title.Fr = titleFr
-		FrItem.Params.TypeId = typeId
-		FrItem.Params.Level = level
-		FrItem.Params.Rarity = rarityNumber
-		FrItem.Stats = Stats
-
-		fmt.Println("------VV FrItem INSIDE c.OnHTML VV-----")
-		fmt.Println(FrItem)
-		fmt.Println("end of c.OnHTML")
-		done <- true
-	})
-
-	go func() {
-		<-done
-		// useless pretty print
-		PrettyFrItem, err := json.MarshalIndent(FrItem, "", "    ")
-		if err != nil {
-			fmt.Println("Error marshaling item:", err)
-			return
-		}
-		fmt.Println("FrItem after scraping:\n", string(PrettyFrItem))
-	}()
-
-	c.OnError(func(r *colly.Response, err error) {
-		fmt.Println("Request URL:", r.Request.URL, "failed with response:", r, "\nError:", err)
-	})
-
-	c.OnRequest(func(r *colly.Request) {
-		fmt.Println("scrapeItemPage visiting :\n", r.URL)
-	})
-
-	c.Visit(url)
-}
+// 	// visit each page until = maxPage
+// 	for i := 1; i < maxPage; i++ {
+// 		c.Visit(urlPrefix + strconv.Itoa(i) + urlSuffix)
+// 		fmt.Printf("setting page to %d\n", i)
+// 	}
+// }

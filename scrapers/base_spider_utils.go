@@ -12,7 +12,9 @@ var (
 )
 
 func GetNewCollector() *colly.Collector {
-	c := colly.NewCollector()
+	c := colly.NewCollector(colly.AllowedDomains("wakfu.com", "www.wakfu.com", "account.ankama.com"))
+
+	// colly.CacheDir("./wakfu_cache"))
 
 	c.Limit(&colly.LimitRule{
 		DomainGlob:  "*",
