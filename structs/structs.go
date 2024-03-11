@@ -2,12 +2,12 @@ package structs
 
 // region ScrapedItem
 type Item struct {
-	ID        int          `json:"id"`
-	Title     Title        `json:"title"`
-	Params    Params       `json:"params"`
-	Stats     map[int]Stat `json:"stats"`
-	Droprates []Droprate   `json:"droprates"`
-	Recipes   []Recipe     `json:"recipes"`
+	ID        int              `json:"id"`
+	Title     Title            `json:"title"`
+	Params    Params           `json:"params"`
+	Stats     map[int]Stat     `json:"stats"`
+	Droprates map[int]Droprate `json:"droprates"`
+	Recipes   []Recipe         `json:"recipes"`
 }
 
 type Params struct {
@@ -30,9 +30,9 @@ type Stat struct {
 }
 
 type Droprate struct {
-	MonsterID  int     `json:"monster_id"`
-	DropChance float64 `json:"drop_chance"`
-	GfxID      int     `json:"gfx_id"`
+	MonsterID   int     `json:"monster_id"`
+	MonsterName Display `json:"monster_name"`
+	DropChance  float64 `json:"drop_chance"`
 }
 
 type Recipe struct {
