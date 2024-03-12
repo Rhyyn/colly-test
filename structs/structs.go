@@ -7,7 +7,7 @@ type Item struct {
 	Params    Params           `json:"params"`
 	Stats     map[int]Stat     `json:"stats"`
 	Droprates map[int]Droprate `json:"droprates"`
-	Recipes   []Recipe         `json:"recipes"`
+	Recipes   map[int]Recipe   `json:"recipes"`
 }
 
 type Params struct {
@@ -36,16 +36,18 @@ type Droprate struct {
 }
 
 type Recipe struct {
-	JobID       int          `json:"job_id"`
-	JobLevel    int          `json:"job_level"`
-	Ingredients []Ingredient `json:"ingredients"`
+	JobID       int                `json:"job_id"`
+	JobLevel    int                `json:"job_level"`
+	JobName     Display            `json:"job_name"`
+	RecipeId    int                `json:"recipe_id"`
+	Ingredients map[int]Ingredient `json:"ingredients"`
 }
 
 type Ingredient struct {
-	ID       int `json:"id"`
-	TypeID   int `json:"type_id"`
-	Quantity int `json:"quantity"`
-	GfxID    int `json:"gfx_id"`
+	ID       int     `json:"id"`
+	TypeID   int     `json:"type_id"`
+	Quantity int     `json:"quantity"`
+	IngName  Display `json:"ing_name"`
 }
 
 // endregion
@@ -67,3 +69,21 @@ type ParamsStatsProperties struct {
 	AllPositivesStats map[string]StatProperties
 	AllNegativesStats map[string]StatProperties
 }
+
+// region itemTypes
+type TypesDefinition struct {
+	ID       int `json:"id"`
+	ParentID int `json:"parentId"`
+}
+
+type TypesTitle struct {
+	Fr string `json:"fr"`
+	En string `json:"en"`
+}
+
+type TypesItem struct {
+	Definition TypesDefinition `json:"definition"`
+	Title      TypesTitle      `json:"title"`
+}
+
+// endregion itemTypes

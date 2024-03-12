@@ -39,6 +39,33 @@ func GetIdFromKey(key string) (int, error) {
 	return id, nil
 }
 
+func GetTitle(htmlElement *colly.HTMLElement, Item *structs.Item, lang string) {
+	titleElement := htmlElement.DOM.Find("h1").First()
+	title := StandardizeSpaces(titleElement.Text())
+	if lang == "Fr" {
+		Item.Title.Fr = title
+	} else {
+		Item.Title.En = title
+	}
+}
+
+func GetTypeID(htmlElement *colly.HTMLElement, Item *structs.Item, lang string) {
+	// Extracting typId from img src of type icon
+	typeElement := htmlElement.DOM.Find(".ak-encyclo-detail-type.col-xs-6 span img").First()
+	src, exist := typeElement.Attr("src")
+	if !exist {
+		fmt.Println("typeElement does not exist")
+	}
+	typeParts := strings.Split(src, "/")
+	category := typeParts[len(typeParts)-1]
+	typeId, err := strconv.Atoi(strings.Split(category, ".")[0])
+	if err != nil {
+		fmt.Printf("Error converting typeId")
+		os.Exit(0)
+	}
+	Item.Params.TypeId = typeId
+}
+
 func GetStatId(statString string, ParamsStatsProperties structs.ParamsStatsProperties, format string, lang string) (int, error) {
 	var id int
 	var err error
@@ -95,6 +122,7 @@ func GetStats(htmlElement *colly.HTMLElement, Item *structs.Item, lang string, P
 			suffixString := StandardizeSpaces(entireStatString[1])
 
 			// Used to check if stat is either flat/percent/negative
+			// TODO : need do make it do it can become "negative,flat" or "negative,percent"
 			format, value = utils.StatPrefixToStringAndSetFormat(prefixString)
 
 			// Check if has 2 values (Mastery of 3 random elements)
@@ -241,29 +269,148 @@ func GetDroprates(htmlElement *colly.HTMLElement, Item *structs.Item, lang strin
 	}
 }
 
-func GetTypeID(htmlElement *colly.HTMLElement, Item *structs.Item, lang string) {
-	typeElement := htmlElement.DOM.Find(".ak-encyclo-detail-type.col-xs-6 span img").First()
-	src, exist := typeElement.Attr("src")
-	if !exist {
-		fmt.Println("typeElement does not exist")
+func GetRecipes(htmlElement *colly.HTMLElement, Item *structs.Item, lang string) {
+	jobs := map[string]map[string]string{
+		"75": {"fr": "Pêcheur", "en": "Fisherman"},
+		"71": {"fr": "Forestier", "en": "Lumberjack"},
+		"72": {"fr": "Herboriste", "en": "Herbalist"},
+		"64": {"fr": "Paysan", "en": "Farmer"},
+		"73": {"fr": "Mineur", "en": "Miner"},
+		"74": {"fr": "Trappeur", "en": "Trapper"},
+		"77": {"fr": "Armurier", "en": "Armorer"},
+		"78": {"fr": "Bijoutier", "en": "Jeweler"},
+		"40": {"fr": "Boulanger", "en": "Baker"},
+		"76": {"fr": "Cuisinier", "en": "Chef"},
+		"81": {"fr": "Ébéniste", "en": "Handyman"},
+		"83": {"fr": "Maitre d'armes", "en": "Weapons Master"},
+		"80": {"fr": "Maroquinier", "en": "Leather Dealer"},
+		"79": {"fr": "Tailleur", "en": "Tailor"},
 	}
-	typeParts := strings.Split(src, "/")
-	category := typeParts[len(typeParts)-1]
-	typeId, err := strconv.Atoi(strings.Split(category, ".")[0])
-	if err != nil {
-		fmt.Printf("Error converting typeId")
-		os.Exit(0)
-	}
-	Item.Params.TypeId = typeId
-}
 
-func GetTitle(htmlElement *colly.HTMLElement, Item *structs.Item, lang string) {
-	titleElement := htmlElement.DOM.Find("h1").First()
-	title := StandardizeSpaces(titleElement.Text())
+	recipesContainer := htmlElement.DOM.Find(".ak-container.ak-panel.ak-crafts:has(.ak-panel-title:contains('Recette')), .ak-container.ak-panel.ak-crafts:has(.ak-panel-title:contains('Recipe'))")
+
+	// TODO : what happens if return empty?
+	if recipesContainer.Length() == 0 {
+		fmt.Println("No recipes found")
+		return
+	}
+	Recipes := make(map[int]structs.Recipe)
+
+	// statElement.Each(func(i int, s *goquery.Selection) {
+	recipesContainer.Each(func(i int, rc *goquery.Selection) {
+		// statsDiv := s.Find("div.ak-title")
+		recipesDivs := rc.Find("div.ak-panel-content")
+		// Each recipe
+		recipesDivs.Each(func(i int, rd *goquery.Selection) {
+			Recipe := structs.Recipe{}
+			var recipeId int
+			var jobId int
+			jobStringLevel := htmlElement.DOM.Find(".ak-panel-intro").Text()
+			jobString := StandardizeSpaces(strings.Split(jobStringLevel, "-")[0])
+			jobLevelString := StandardizeSpaces(strings.Split(jobStringLevel, "-")[1])
+			jobLevel, err := strconv.Atoi(strings.Split(jobLevelString, " ")[1])
+			if err != nil {
+				fmt.Println("Error converting joblevel")
+				fmt.Println(err)
+			}
+
+			JobName := structs.Display{}
+			if lang == "Fr" {
+				for key := range jobs {
+					if jobs[key]["fr"] == jobString {
+						jobId, err = strconv.Atoi(StandardizeSpaces(key))
+						if err != nil {
+							fmt.Println("Error getting jobId")
+							jobId = 0
+						}
+						JobName.Fr = jobs[key]["fr"]
+						JobName.En = jobs[key]["en"]
+					}
+				}
+			}
+
+			Ingredients := make(map[int]structs.Ingredient)
+			ingredientsRows := rd.Find(".ak-list-element")
+			// Each individual ingredients
+			ingredientsRows.Each(func(i int, ir *goquery.Selection) {
+				Ingredient := structs.Ingredient{}
+				// Quantity
+				quantityString := StandardizeSpaces(ir.Find(".ak-front").Text())
+				quantityValue, err := strconv.Atoi(StandardizeSpaces(strings.Split(quantityString, "x")[0]))
+				if err != nil {
+					fmt.Printf("Error getting quant value of %d\n", recipeId)
+					fmt.Println(err)
+				}
+
+				var ingredientArgName string
+				var ingId int
+				ingNameDiv := ir.Find(".ak-title")
+				ingTypeName := StandardizeSpaces(ingNameDiv.Find(".ak-text").Text())
+				ingredientHref, exists := ingNameDiv.Find("a").Attr("href")
+				if exists {
+					ingredientArgName, err = GetItemURLArg(ingredientHref)
+					if err != nil {
+						fmt.Printf("error getting ingredientArgName from %s\n", ingredientHref)
+					}
+					ingId, err = utils.GetItemIDFromString(ingredientArgName)
+					if err != nil {
+						fmt.Printf("error getting id from %s\n", ingredientHref)
+					}
+				} else {
+					fmt.Println("Ingredient href does not exists")
+				}
+
+				// ingName
+				ingName := StandardizeSpaces(ingNameDiv.Find(".ak-linker").Text())
+
+				// Manually handle TypeId
+				// Compare ingTypeName with title.fr inside itemTypes.json
+				if lang == "Fr" {
+					ItemTypesProperties := utils.GetItemTypesPropertiesJSON()
+					for _, t := range ItemTypesProperties {
+						if t.Title.Fr == ingTypeName {
+							Ingredient.TypeID = t.Definition.ID
+						}
+					}
+					Ingredient.Quantity = quantityValue
+					Ingredient.IngName.Fr = ingName
+					Ingredient.ID = ingId
+					Ingredients[ingId] = Ingredient
+				}
+				recipeId = jobId + i + Item.Params.TypeId + Item.ID
+
+				if lang == "En" && len(Item.Recipes) > 0 {
+					for _, recipe := range Item.Recipes {
+						for ingKey, ing := range recipe.Ingredients {
+							if ing.ID == ingId {
+								// Update English name
+								ing.IngName.En = ingName
+
+								// Update ingredient in the recipe
+								recipe.Ingredients[ingKey] = ing
+
+								// Verify if the ingredient was updated correctly
+								fmt.Printf("Updated English name for ingredient with ID %d to %s\n", ingId, ing.IngName.En)
+
+								break // Exit loop after updating
+							}
+						}
+					}
+				}
+			})
+
+			Recipe.JobID = jobId
+			Recipe.JobLevel = jobLevel
+			Recipe.JobName = JobName
+			Recipe.RecipeId = recipeId
+			Recipe.Ingredients = Ingredients
+
+			Recipes[recipeId] = Recipe
+		})
+	})
+
 	if lang == "Fr" {
-		Item.Title.Fr = title
-	} else {
-		Item.Title.En = title
+		Item.Recipes = Recipes
 	}
 }
 
@@ -271,13 +418,15 @@ func ScrapItemDetails(url string, Item *structs.Item, ParamsStatsProperties stru
 	c := GetNewCollector()
 	c.OnHTML(".ak-container.ak-panel-stack.ak-glue", func(h *colly.HTMLElement) {
 		Lang := utils.GetLangFromURL(h.Request.URL.String())
+		// TODO : Get each item ID and write to separate ID file for cat
+		// Useful when checking new items after updates
 		GetTitle(h, Item, Lang)
 		GetTypeID(h, Item, Lang)
 		GetRarity(h, Item, Lang)
 		GetLevel(h, Item, Lang)
 		GetStats(h, Item, Lang, ParamsStatsProperties)
 		GetDroprates(h, Item, Lang)
-		// GetRecipes ( need to check if multiple recipes exists)
+		GetRecipes(h, Item, Lang)
 	})
 
 	c.OnError(func(r *colly.Response, err error) {

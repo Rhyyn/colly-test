@@ -71,6 +71,20 @@ func parseJSON(content []byte) map[string]ItemInfo {
 	return allItemsInfo
 }
 
+func GetItemTypesPropertiesJSON() []structs.TypesItem {
+	openedFile := OpenFile("itemTypes.json")
+	defer openedFile.Close()
+	fileContent := ReadFile(openedFile)
+
+	var TypesItems []structs.TypesItem
+	err := json.Unmarshal(fileContent, &TypesItems)
+	if err != nil {
+		fmt.Println("Error decoding JSON:", err)
+		return nil
+	}
+	return TypesItems
+}
+
 func GetJSON(file_name string) map[string]ItemInfo {
 	opened_file := OpenFile(file_name)
 	defer opened_file.Close()
