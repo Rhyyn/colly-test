@@ -1,7 +1,7 @@
-
-- Scrapers :
-    - IDs for individual Category then items
-    - Ids for whole Category then items
+TODO :
+        Maybe separate recipes via recipeId to its own file
+        add negative/flat multiple string support
+        Add support for skipping already scraped items
 
 
 Categories :

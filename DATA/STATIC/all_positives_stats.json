@@ -99,6 +99,10 @@
     "fr": "Armure donnée",
     "en": "Armor given"
   },
+  "40": {
+    "fr": "Armure reçue",
+    "en": "Armor received"
+  },
   "988": {
     "fr": "Résistance Critique",
     "en": "Critical Resistance"

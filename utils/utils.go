@@ -271,8 +271,19 @@ func FormatCritString(statString string, format string) string {
 	return statString
 }
 
+func ContainsElement(statString string) bool {
+	if strings.Contains(statString, "Fire") ||
+		strings.Contains(statString, "Water") ||
+		strings.Contains(statString, "Earth") ||
+		strings.Contains(statString, "Air") {
+		return true
+	}
+	return false
+}
+
 func FormatSingleResStrng(statString string, format string) string {
-	if strings.Contains(statString, "Resistance") {
+	if strings.Contains(statString, "Resistance") &&
+		ContainsElement(statString) {
 		prefix, suffix := strings.Split(statString, " ")[0], strings.Split(statString, " ")[1]
 		newString := suffix + " " + prefix
 		return newString

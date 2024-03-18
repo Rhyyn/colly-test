@@ -123,16 +123,20 @@ func GetStats(htmlElement *colly.HTMLElement, Item *structs.Item, lang string, P
 
 			// Used to check if stat is either flat/percent/negative
 			// TODO : need do make it do it can become "negative,flat" or "negative,percent"
+			// fmt.Printf("prefixString : %s\n", prefixString)
 			format, value = utils.StatPrefixToStringAndSetFormat(prefixString)
 
 			// Check if has 2 values (Mastery of 3 random elements)
 			// If it has set numElements and format it to (Mastery in X elements)
 			if hasNumber, number := utils.HasNumberInString(suffixString); hasNumber {
 				numElements = number
+				// fmt.Println("numElements", numElements)
 				suffixString = utils.ReplaceAnyNumberInString(suffixString, "X")
+				// fmt.Println("suffixString", suffixString)
 			}
 			// Format the strings because Ankama's english is dogshit
 			suffixString = utils.FormatStatString(suffixString, format)
+			// fmt.Println("formatted suffixString", suffixString)
 
 			// Gets the ID
 			id, idError = GetStatId(suffixString, ParamsStatsProperties, format, lang)
@@ -289,128 +293,132 @@ func GetRecipes(htmlElement *colly.HTMLElement, Item *structs.Item, lang string)
 
 	recipesContainer := htmlElement.DOM.Find(".ak-container.ak-panel.ak-crafts:has(.ak-panel-title:contains('Recette')), .ak-container.ak-panel.ak-crafts:has(.ak-panel-title:contains('Recipe'))")
 
+	recipesContainer.Each(func(i int, rc *goquery.Selection) {
+		// fmt.Println(recipesContainer.Text())
+		// Check if container is a proper reciper or a "used in X recipes"
+		if rc.Find(".ak-panel-content .ak-container.ak-panel").Length() > 0 {
+			Recipes := make(map[int]structs.Recipe)
+
+			// statElement.Each(func(i int, s *goquery.Selection) {
+			recipesContainer.Each(func(i int, rc *goquery.Selection) {
+				// statsDiv := s.Find("div.ak-title")
+				recipesDivs := rc.Find("div.ak-panel-content")
+
+				// Each recipe
+				recipesDivs.Each(func(i int, rd *goquery.Selection) {
+					Recipe := structs.Recipe{}
+					var recipeId int
+					var jobId int
+					jobStringLevel := htmlElement.DOM.Find(".ak-panel-intro").Text()
+					jobString := StandardizeSpaces(strings.Split(jobStringLevel, "-")[0])
+					jobLevelString := StandardizeSpaces(strings.Split(jobStringLevel, "-")[1])
+					jobLevel, err := strconv.Atoi(strings.Split(jobLevelString, " ")[1])
+					if err != nil {
+						fmt.Println("Error converting joblevel")
+						fmt.Println(err)
+					}
+
+					JobName := structs.Display{}
+					if lang == "Fr" {
+						for key := range jobs {
+							if jobs[key]["fr"] == jobString {
+								jobId, err = strconv.Atoi(StandardizeSpaces(key))
+								if err != nil {
+									fmt.Println("Error getting jobId")
+									jobId = 0
+								}
+								JobName.Fr = jobs[key]["fr"]
+								JobName.En = jobs[key]["en"]
+							}
+						}
+					}
+
+					Ingredients := make(map[int]structs.Ingredient)
+					ingredientsRows := rd.Find(".ak-list-element")
+					// Each individual ingredients
+					ingredientsRows.Each(func(i int, ir *goquery.Selection) {
+						Ingredient := structs.Ingredient{}
+						// Quantity
+						quantityString := StandardizeSpaces(ir.Find(".ak-front").Text())
+						quantityValue, err := strconv.Atoi(StandardizeSpaces(strings.Split(quantityString, "x")[0]))
+						if err != nil {
+							fmt.Printf("Error getting quant value of %d\n", recipeId)
+							fmt.Println(err)
+						}
+
+						var ingredientArgName string
+						var ingId int
+						ingNameDiv := ir.Find(".ak-title")
+						ingTypeName := StandardizeSpaces(ingNameDiv.Find(".ak-text").Text())
+						ingredientHref, exists := ingNameDiv.Find("a").Attr("href")
+						if exists {
+							ingredientArgName, err = GetItemURLArg(ingredientHref)
+							if err != nil {
+								fmt.Printf("error getting ingredientArgName from %s\n", ingredientHref)
+							}
+							ingId, err = utils.GetItemIDFromString(ingredientArgName)
+							if err != nil {
+								fmt.Printf("error getting id from %s\n", ingredientHref)
+							}
+						} else {
+							fmt.Println("Ingredient href does not exists")
+						}
+
+						// ingName
+						ingName := StandardizeSpaces(ingNameDiv.Find(".ak-linker").Text())
+
+						// Compare ingTypeName with title.fr inside itemTypes.json
+						if lang == "Fr" {
+							ItemTypesProperties := utils.GetItemTypesPropertiesJSON()
+							for _, t := range ItemTypesProperties {
+								if t.Title.Fr == ingTypeName {
+									Ingredient.TypeID = t.Definition.ID
+								}
+							}
+							Ingredient.Quantity = quantityValue
+							Ingredient.IngName.Fr = ingName
+							Ingredient.ID = ingId
+							Ingredients[ingId] = Ingredient
+						}
+						recipeId = jobId + i + Item.Params.TypeId + Item.ID
+
+						if lang == "En" && len(Item.Recipes) > 0 {
+							for _, recipe := range Item.Recipes {
+								for ingKey, ing := range recipe.Ingredients {
+									if ing.ID == ingId {
+										ing.IngName.En = ingName
+
+										recipe.Ingredients[ingKey] = ing
+
+										// fmt.Printf("Updated English name for ingredient with ID %d to %s\n", ingId, ing.IngName.En)
+
+										break
+									}
+								}
+							}
+						}
+					})
+
+					Recipe.JobID = jobId
+					Recipe.JobLevel = jobLevel
+					Recipe.JobName = JobName
+					Recipe.RecipeId = recipeId
+					Recipe.Ingredients = Ingredients
+
+					Recipes[recipeId] = Recipe
+				})
+			})
+
+			if lang == "Fr" {
+				Item.Recipes = Recipes
+			}
+		}
+	})
+
 	// TODO : what happens if return empty?
 	if recipesContainer.Length() == 0 {
 		fmt.Println("No recipes found")
 		return
-	}
-	Recipes := make(map[int]structs.Recipe)
-
-	// statElement.Each(func(i int, s *goquery.Selection) {
-	recipesContainer.Each(func(i int, rc *goquery.Selection) {
-		// statsDiv := s.Find("div.ak-title")
-		recipesDivs := rc.Find("div.ak-panel-content")
-		// Each recipe
-		recipesDivs.Each(func(i int, rd *goquery.Selection) {
-			Recipe := structs.Recipe{}
-			var recipeId int
-			var jobId int
-			jobStringLevel := htmlElement.DOM.Find(".ak-panel-intro").Text()
-			jobString := StandardizeSpaces(strings.Split(jobStringLevel, "-")[0])
-			jobLevelString := StandardizeSpaces(strings.Split(jobStringLevel, "-")[1])
-			jobLevel, err := strconv.Atoi(strings.Split(jobLevelString, " ")[1])
-			if err != nil {
-				fmt.Println("Error converting joblevel")
-				fmt.Println(err)
-			}
-
-			JobName := structs.Display{}
-			if lang == "Fr" {
-				for key := range jobs {
-					if jobs[key]["fr"] == jobString {
-						jobId, err = strconv.Atoi(StandardizeSpaces(key))
-						if err != nil {
-							fmt.Println("Error getting jobId")
-							jobId = 0
-						}
-						JobName.Fr = jobs[key]["fr"]
-						JobName.En = jobs[key]["en"]
-					}
-				}
-			}
-
-			Ingredients := make(map[int]structs.Ingredient)
-			ingredientsRows := rd.Find(".ak-list-element")
-			// Each individual ingredients
-			ingredientsRows.Each(func(i int, ir *goquery.Selection) {
-				Ingredient := structs.Ingredient{}
-				// Quantity
-				quantityString := StandardizeSpaces(ir.Find(".ak-front").Text())
-				quantityValue, err := strconv.Atoi(StandardizeSpaces(strings.Split(quantityString, "x")[0]))
-				if err != nil {
-					fmt.Printf("Error getting quant value of %d\n", recipeId)
-					fmt.Println(err)
-				}
-
-				var ingredientArgName string
-				var ingId int
-				ingNameDiv := ir.Find(".ak-title")
-				ingTypeName := StandardizeSpaces(ingNameDiv.Find(".ak-text").Text())
-				ingredientHref, exists := ingNameDiv.Find("a").Attr("href")
-				if exists {
-					ingredientArgName, err = GetItemURLArg(ingredientHref)
-					if err != nil {
-						fmt.Printf("error getting ingredientArgName from %s\n", ingredientHref)
-					}
-					ingId, err = utils.GetItemIDFromString(ingredientArgName)
-					if err != nil {
-						fmt.Printf("error getting id from %s\n", ingredientHref)
-					}
-				} else {
-					fmt.Println("Ingredient href does not exists")
-				}
-
-				// ingName
-				ingName := StandardizeSpaces(ingNameDiv.Find(".ak-linker").Text())
-
-				// Manually handle TypeId
-				// Compare ingTypeName with title.fr inside itemTypes.json
-				if lang == "Fr" {
-					ItemTypesProperties := utils.GetItemTypesPropertiesJSON()
-					for _, t := range ItemTypesProperties {
-						if t.Title.Fr == ingTypeName {
-							Ingredient.TypeID = t.Definition.ID
-						}
-					}
-					Ingredient.Quantity = quantityValue
-					Ingredient.IngName.Fr = ingName
-					Ingredient.ID = ingId
-					Ingredients[ingId] = Ingredient
-				}
-				recipeId = jobId + i + Item.Params.TypeId + Item.ID
-
-				if lang == "En" && len(Item.Recipes) > 0 {
-					for _, recipe := range Item.Recipes {
-						for ingKey, ing := range recipe.Ingredients {
-							if ing.ID == ingId {
-								// Update English name
-								ing.IngName.En = ingName
-
-								// Update ingredient in the recipe
-								recipe.Ingredients[ingKey] = ing
-
-								// Verify if the ingredient was updated correctly
-								fmt.Printf("Updated English name for ingredient with ID %d to %s\n", ingId, ing.IngName.En)
-
-								break // Exit loop after updating
-							}
-						}
-					}
-				}
-			})
-
-			Recipe.JobID = jobId
-			Recipe.JobLevel = jobLevel
-			Recipe.JobName = JobName
-			Recipe.RecipeId = recipeId
-			Recipe.Ingredients = Ingredients
-
-			Recipes[recipeId] = Recipe
-		})
-	})
-
-	if lang == "Fr" {
-		Item.Recipes = Recipes
 	}
 }
 
@@ -421,12 +429,20 @@ func ScrapItemDetails(url string, Item *structs.Item, ParamsStatsProperties stru
 		// TODO : Get each item ID and write to separate ID file for cat
 		// Useful when checking new items after updates
 		GetTitle(h, Item, Lang)
+		// fmt.Println("Got Title")
 		GetTypeID(h, Item, Lang)
+		// fmt.Println("Got TypeId")
 		GetRarity(h, Item, Lang)
+		// fmt.Println("Got Rarity")
 		GetLevel(h, Item, Lang)
+		// fmt.Println("Got Level")
+		// TODO : Armure Received / Armor given sometimes ( 2 times ) have the same actionId :)
 		GetStats(h, Item, Lang, ParamsStatsProperties)
+		// fmt.Println("Got Stats")
 		GetDroprates(h, Item, Lang)
+		// fmt.Println("Got Droprates")
 		GetRecipes(h, Item, Lang)
+		// fmt.Println("Got Recipes")
 	})
 
 	c.OnError(func(r *colly.Response, err error) {
@@ -449,12 +465,15 @@ func GetItemURLArg(url string) (string, error) {
 	}
 }
 
-func ScrapItems(indexURL map[string]string, itemURL map[string]string, maxPage int, selectedId int) {
-	urlSuffix := "&" + "type_1%5B%5D=" + strconv.Itoa(selectedId)
+func ScrapItems(ScrapingParameters structs.ScrapingParameters) {
+	urlSuffix := "&" + "type_1%5B%5D=" + strconv.Itoa(ScrapingParameters.SelectedId)
 	AllPositivesStats := utils.HandleStatsProperties(utils.ReadFile(utils.OpenFile("all_positives_stats.json")))
 	AllNegativesStats := utils.HandleStatsProperties(utils.ReadFile(utils.OpenFile("all_negatives_stats.json")))
 
-	fmt.Printf("ScrapItems called for id %d with maxPage %d\n", selectedId, maxPage)
+	var IDsList []int
+	Items := make(map[int]structs.Item)
+
+	fmt.Printf("ScrapItems called for id %d with maxPage %d\n", ScrapingParameters.SelectedId, ScrapingParameters.MaxPage)
 	c := GetNewCollector()
 
 	// ON EVERY TR IN THE TABLE
@@ -471,26 +490,31 @@ func ScrapItems(indexURL map[string]string, itemURL map[string]string, maxPage i
 			os.Exit(0)
 		}
 
-		frenchURL := itemURL["fr"] + "/" + itemArgName
-		englishURL := itemURL["en"] + "/" + itemArgName
+		frenchURL := ScrapingParameters.ItemUrl["fr"] + "/" + itemArgName
+		englishURL := ScrapingParameters.ItemUrl["en"] + "/" + itemArgName
 
 		var Item structs.Item
 		ParamsStatsProperties := structs.ParamsStatsProperties{AllPositivesStats: AllPositivesStats, AllNegativesStats: AllNegativesStats}
 
-		Item.ID, _ = utils.GetItemIDFromString(itemArgName)
+		Item.ID, err = utils.GetItemIDFromString(itemArgName)
+		if err != nil {
+			fmt.Println("error while getting the item ID", err)
+			os.Exit(0)
+		}
+		IDsList = append(IDsList, Item.ID)
 		// Scrap both FR/EN version of the item
 		ScrapItemDetails(frenchURL, &Item, ParamsStatsProperties)
 		ScrapItemDetails(englishURL, &Item, ParamsStatsProperties)
 
 		// TODO: Add to separate map of item and write to file
-
+		Items[Item.ID] = Item
 		// Useless pretty print for debug
-		PrettyItem, err := json.MarshalIndent(Item, "", "    ")
-		if err != nil {
-			fmt.Println("Error marshaling item:", err)
-			return
-		}
-		fmt.Println("Item after scraping:\n", string(PrettyItem))
+		// PrettyItem, err := json.MarshalIndent(Item, "", "    ")
+		// if err != nil {
+		// 	fmt.Println("Error marshaling item:", err)
+		// 	return
+		// }
+		// fmt.Println("Item after scraping:\n", string(PrettyItem))
 	})
 
 	c.OnError(func(r *colly.Response, err error) {
@@ -501,9 +525,30 @@ func ScrapItems(indexURL map[string]string, itemURL map[string]string, maxPage i
 		fmt.Println("ScrapItems visiting:\n", r.URL)
 	})
 
-	// visit each page until = maxPage
-	for i := 1; i < maxPage; i++ {
-		c.Visit(indexURL["fr"] + strconv.Itoa(i) + urlSuffix)
-		fmt.Printf("setting page to %d\n", i)
+	if !ScrapingParameters.SingleItemMode {
+		for i := 1; i < ScrapingParameters.MaxPage; i++ {
+			if i != 1 && len(IDsList) > 0 {
+				AppendIDsToFile(IDsList, ScrapingParameters.SelectedType)
+				AppendItemsToFile(Items, ScrapingParameters.SelectedType)
+
+			}
+			IDsList = []int{}
+			Items = make(map[int]structs.Item)
+			c.Visit(ScrapingParameters.IndexUrl["fr"] + strconv.Itoa(i) + urlSuffix)
+			fmt.Printf("setting page to %d\n", i)
+		}
+	} else {
+		var Item structs.Item
+
+		ParamsStatsProperties := structs.ParamsStatsProperties{AllPositivesStats: AllPositivesStats, AllNegativesStats: AllNegativesStats}
+		ScrapItemDetails(ScrapingParameters.SingleItemURL["Fr"], &Item, ParamsStatsProperties)
+		ScrapItemDetails(ScrapingParameters.SingleItemURL["En"], &Item, ParamsStatsProperties)
+
+		PrettyItem, err := json.MarshalIndent(Item, "", "    ")
+		if err != nil {
+			fmt.Println("Error marshaling item:", err)
+			return
+		}
+		fmt.Println("Item after scraping:\n", string(PrettyItem))
 	}
 }

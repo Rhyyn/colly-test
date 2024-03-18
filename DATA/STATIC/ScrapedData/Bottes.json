@@ -1,0 +1,3789 @@
+{
+  "29050": {
+    "id": 29050,
+    "title": {
+      "fr": "Viles Bottines",
+      "en": "Vile Boots"
+    },
+    "params": {
+      "type_id": 119,
+      "level": 230,
+      "rarity": 4
+    },
+    "stats": {
+      "1068": {
+        "display": {
+          "fr": "Maîtrise dans X éléments",
+          "en": "Mastery in X elements"
+        },
+        "id": 1068,
+        "format": "flat",
+        "value": 134,
+        "num_elements": 2
+      },
+      "175": {
+        "display": {
+          "fr": "Esquive",
+          "en": "Dodge"
+        },
+        "id": 175,
+        "format": "flat",
+        "value": 165
+      },
+      "20": {
+        "display": {
+          "fr": "PV",
+          "en": "HP"
+        },
+        "id": 20,
+        "format": "flat",
+        "value": 567
+      },
+      "26": {
+        "display": {
+          "fr": "Maîtrise Soin",
+          "en": "Healing Mastery"
+        },
+        "id": 26,
+        "format": "flat",
+        "value": 276
+      },
+      "41": {
+        "display": {
+          "fr": "PM",
+          "en": "MP"
+        },
+        "id": 41,
+        "format": "flat",
+        "value": 1
+      },
+      "82": {
+        "display": {
+          "fr": "Résistance Feu",
+          "en": "Fire Resistance"
+        },
+        "id": 82,
+        "format": "flat",
+        "value": 44
+      },
+      "83": {
+        "display": {
+          "fr": "Résistance Eau",
+          "en": "Water Resistance"
+        },
+        "id": 83,
+        "format": "flat",
+        "value": 44
+      },
+      "84": {
+        "display": {
+          "fr": "Résistance Terre",
+          "en": "Earth Resistance"
+        },
+        "id": 84,
+        "format": "flat",
+        "value": 44
+      }
+    },
+    "droprates": null,
+    "recipes": {
+      "29256": {
+        "job_id": 80,
+        "job_level": 150,
+        "job_name": {
+          "fr": "Maroquinier",
+          "en": "Leather Dealer"
+        },
+        "recipe_id": 29256,
+        "ingredients": {
+          "27093": {
+            "id": 27093,
+            "type_id": 751,
+            "quantity": 574,
+            "ing_name": {
+              "fr": "Poudre",
+              "en": "Powder"
+            }
+          },
+          "28746": {
+            "id": 28746,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Fruit élastique",
+              "en": "Flexifruit"
+            }
+          },
+          "29035": {
+            "id": 29035,
+            "type_id": 751,
+            "quantity": 45,
+            "ing_name": {
+              "fr": "Cuir Infernal",
+              "en": "Infernal Leather"
+            }
+          },
+          "29041": {
+            "id": 29041,
+            "type_id": 751,
+            "quantity": 95,
+            "ing_name": {
+              "fr": "Sioupère-Glou Infernale",
+              "en": "Infernal Souper-Glou"
+            }
+          },
+          "29049": {
+            "id": 29049,
+            "type_id": 751,
+            "quantity": 1,
+            "ing_name": {
+              "fr": "Viles Bottines",
+              "en": "Vile Boots"
+            }
+          },
+          "29361": {
+            "id": 29361,
+            "type_id": 751,
+            "quantity": 104,
+            "ing_name": {
+              "fr": "Pseudopode",
+              "en": "Pseudopod"
+            }
+          },
+          "29362": {
+            "id": 29362,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Phytomate",
+              "en": "Phytomato"
+            }
+          },
+          "29363": {
+            "id": 29363,
+            "type_id": 751,
+            "quantity": 9,
+            "ing_name": {
+              "fr": "Nar'Vaal'Haut",
+              "en": "Vaal'Endew"
+            }
+          }
+        }
+      }
+    }
+  },
+  "29080": {
+    "id": 29080,
+    "title": {
+      "fr": "Bottes Moisies",
+      "en": "Oldie Moldy Boots"
+    },
+    "params": {
+      "type_id": 119,
+      "level": 230,
+      "rarity": 4
+    },
+    "stats": {
+      "1053": {
+        "display": {
+          "fr": "Maîtrise Distance",
+          "en": "Distance Mastery"
+        },
+        "id": 1053,
+        "format": "flat",
+        "value": 235
+      },
+      "1069": {
+        "display": {
+          "fr": "Résistance dans X éléments",
+          "en": "Resistance in X elements"
+        },
+        "id": 1069,
+        "format": "flat",
+        "value": 61,
+        "num_elements": 3
+      },
+      "120": {
+        "display": {
+          "fr": "Maîtrise Élémentaire",
+          "en": "Elemental Mastery"
+        },
+        "id": 120,
+        "format": "flat",
+        "value": 175
+      },
+      "160": {
+        "display": {
+          "fr": "Portée",
+          "en": "Range"
+        },
+        "id": 160,
+        "format": "flat",
+        "value": 1
+      },
+      "175": {
+        "display": {
+          "fr": "Esquive",
+          "en": "Dodge"
+        },
+        "id": 175,
+        "format": "flat",
+        "value": 180
+      },
+      "20": {
+        "display": {
+          "fr": "PV",
+          "en": "HP"
+        },
+        "id": 20,
+        "format": "flat",
+        "value": 627
+      }
+    },
+    "droprates": {
+      "5274": {
+        "monster_id": 5274,
+        "monster_name": {
+          "fr": "Méristhaine",
+          "en": "Meristenmity"
+        },
+        "drop_chance": 0.03
+      },
+      "5275": {
+        "monster_id": 5275,
+        "monster_name": {
+          "fr": "Champidiable",
+          "en": "Devilshroom"
+        },
+        "drop_chance": 0.03
+      },
+      "5276": {
+        "monster_id": 5276,
+        "monster_name": {
+          "fr": "Virescent",
+          "en": "Virescent"
+        },
+        "drop_chance": 0.03
+      }
+    },
+    "recipes": {
+      "29286": {
+        "job_id": 80,
+        "job_level": 150,
+        "job_name": {
+          "fr": "Maroquinier",
+          "en": "Leather Dealer"
+        },
+        "recipe_id": 29286,
+        "ingredients": {
+          "27093": {
+            "id": 27093,
+            "type_id": 751,
+            "quantity": 574,
+            "ing_name": {
+              "fr": "Poudre",
+              "en": "Powder"
+            }
+          },
+          "28749": {
+            "id": 28749,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Haricot sympa",
+              "en": "Nice Bean"
+            }
+          },
+          "29035": {
+            "id": 29035,
+            "type_id": 751,
+            "quantity": 45,
+            "ing_name": {
+              "fr": "Cuir Infernal",
+              "en": "Infernal Leather"
+            }
+          },
+          "29041": {
+            "id": 29041,
+            "type_id": 751,
+            "quantity": 95,
+            "ing_name": {
+              "fr": "Sioupère-Glou Infernale",
+              "en": "Infernal Souper-Glou"
+            }
+          },
+          "29079": {
+            "id": 29079,
+            "type_id": 751,
+            "quantity": 1,
+            "ing_name": {
+              "fr": "Bottes Moisies",
+              "en": "Oldie Moldy Boots"
+            }
+          },
+          "29361": {
+            "id": 29361,
+            "type_id": 751,
+            "quantity": 104,
+            "ing_name": {
+              "fr": "Pseudopode",
+              "en": "Pseudopod"
+            }
+          },
+          "29362": {
+            "id": 29362,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Phytomate",
+              "en": "Phytomato"
+            }
+          },
+          "29363": {
+            "id": 29363,
+            "type_id": 751,
+            "quantity": 9,
+            "ing_name": {
+              "fr": "Nar'Vaal'Haut",
+              "en": "Vaal'Endew"
+            }
+          }
+        }
+      }
+    }
+  },
+  "29086": {
+    "id": 29086,
+    "title": {
+      "fr": "Bottes de Vaal'Enthia",
+      "en": "Vaal'Enthia Boots"
+    },
+    "params": {
+      "type_id": 119,
+      "level": 230,
+      "rarity": 4
+    },
+    "stats": {
+      "1053": {
+        "display": {
+          "fr": "Maîtrise Distance",
+          "en": "Distance Mastery"
+        },
+        "id": 1053,
+        "format": "flat",
+        "value": 222
+      },
+      "1068": {
+        "display": {
+          "fr": "Maîtrise dans X éléments",
+          "en": "Mastery in X elements"
+        },
+        "id": 1068,
+        "format": "flat",
+        "value": 131,
+        "num_elements": 3
+      },
+      "175": {
+        "display": {
+          "fr": "Esquive",
+          "en": "Dodge"
+        },
+        "id": 175,
+        "format": "flat",
+        "value": 160
+      },
+      "20": {
+        "display": {
+          "fr": "PV",
+          "en": "HP"
+        },
+        "id": 20,
+        "format": "flat",
+        "value": 601
+      },
+      "41": {
+        "display": {
+          "fr": "PM",
+          "en": "MP"
+        },
+        "id": 41,
+        "format": "flat",
+        "value": 1
+      },
+      "83": {
+        "display": {
+          "fr": "Résistance Eau",
+          "en": "Water Resistance"
+        },
+        "id": 83,
+        "format": "flat",
+        "value": 83
+      },
+      "84": {
+        "display": {
+          "fr": "Résistance Terre",
+          "en": "Earth Resistance"
+        },
+        "id": 84,
+        "format": "flat",
+        "value": 83
+      }
+    },
+    "droprates": {
+      "5277": {
+        "monster_id": 5277,
+        "monster_name": {
+          "fr": "Vaal'Enthia, Reine-démone",
+          "en": "Vaal'Enthia, Demon Queen"
+        },
+        "drop_chance": 0.25
+      }
+    },
+    "recipes": {
+      "29292": {
+        "job_id": 80,
+        "job_level": 150,
+        "job_name": {
+          "fr": "Maroquinier",
+          "en": "Leather Dealer"
+        },
+        "recipe_id": 29292,
+        "ingredients": {
+          "27093": {
+            "id": 27093,
+            "type_id": 751,
+            "quantity": 574,
+            "ing_name": {
+              "fr": "Poudre",
+              "en": "Powder"
+            }
+          },
+          "28749": {
+            "id": 28749,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Haricot sympa",
+              "en": "Nice Bean"
+            }
+          },
+          "29031": {
+            "id": 29031,
+            "type_id": 751,
+            "quantity": 45,
+            "ing_name": {
+              "fr": "Essence Infernale",
+              "en": "Infernal Essence"
+            }
+          },
+          "29041": {
+            "id": 29041,
+            "type_id": 751,
+            "quantity": 95,
+            "ing_name": {
+              "fr": "Sioupère-Glou Infernale",
+              "en": "Infernal Souper-Glou"
+            }
+          },
+          "29085": {
+            "id": 29085,
+            "type_id": 751,
+            "quantity": 1,
+            "ing_name": {
+              "fr": "Bottes de Vaal'Enthia",
+              "en": "Vaal'Enthia Boots"
+            }
+          },
+          "29361": {
+            "id": 29361,
+            "type_id": 751,
+            "quantity": 104,
+            "ing_name": {
+              "fr": "Pseudopode",
+              "en": "Pseudopod"
+            }
+          },
+          "29362": {
+            "id": 29362,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Phytomate",
+              "en": "Phytomato"
+            }
+          },
+          "29363": {
+            "id": 29363,
+            "type_id": 751,
+            "quantity": 9,
+            "ing_name": {
+              "fr": "Nar'Vaal'Haut",
+              "en": "Vaal'Endew"
+            }
+          }
+        }
+      }
+    }
+  },
+  "29119": {
+    "id": 29119,
+    "title": {
+      "fr": "Bottiron",
+      "en": "Marvelous Iron Boots"
+    },
+    "params": {
+      "type_id": 119,
+      "level": 230,
+      "rarity": 7
+    },
+    "stats": {
+      "1068": {
+        "display": {
+          "fr": "Maîtrise dans X éléments",
+          "en": "Mastery in X elements"
+        },
+        "id": 1068,
+        "format": "flat",
+        "value": 294,
+        "num_elements": 3
+      },
+      "173": {
+        "display": {
+          "fr": "Tacle",
+          "en": "Lock"
+        },
+        "id": 173,
+        "format": "flat",
+        "value": 80
+      },
+      "175": {
+        "display": {
+          "fr": "Esquive",
+          "en": "Dodge"
+        },
+        "id": 175,
+        "format": "flat",
+        "value": 80
+      },
+      "191": {
+        "display": {
+          "fr": "PW",
+          "en": "WP"
+        },
+        "id": 191,
+        "format": "flat",
+        "value": 1
+      },
+      "20": {
+        "display": {
+          "fr": "PV",
+          "en": "HP"
+        },
+        "id": 20,
+        "format": "flat",
+        "value": 450
+      },
+      "31": {
+        "display": {
+          "fr": "PA",
+          "en": "AP"
+        },
+        "id": 31,
+        "format": "flat",
+        "value": 1
+      },
+      "41": {
+        "display": {
+          "fr": "PM",
+          "en": "MP"
+        },
+        "id": 41,
+        "format": "flat",
+        "value": 1
+      },
+      "80": {
+        "display": {
+          "fr": "Résistance Élémentaire",
+          "en": "Elemental Resistance"
+        },
+        "id": 80,
+        "format": "flat",
+        "value": 40
+      },
+      "875": {
+        "display": {
+          "fr": "Parade",
+          "en": "Block"
+        },
+        "id": 875,
+        "format": "percent",
+        "value": 2
+      }
+    },
+    "droprates": {
+      "5283": {
+        "monster_id": 5283,
+        "monster_name": {
+          "fr": "Ar'Nan, Augure du néant",
+          "en": "Ar'Nan, Omen of the Void"
+        },
+        "drop_chance": 0.3996
+      },
+      "5285": {
+        "monster_id": 5285,
+        "monster_name": {
+          "fr": "Ar'Manthe la Religieuse",
+          "en": "Ar'Manthe the Religious"
+        },
+        "drop_chance": 0.3996
+      }
+    },
+    "recipes": null
+  },
+  "29126": {
+    "id": 29126,
+    "title": {
+      "fr": "Bottes Vides",
+      "en": "Empty Boots"
+    },
+    "params": {
+      "type_id": 119,
+      "level": 230,
+      "rarity": 4
+    },
+    "stats": {
+      "1052": {
+        "display": {
+          "fr": "Maîtrise Mêlée",
+          "en": "Melee Mastery"
+        },
+        "id": 1052,
+        "format": "flat",
+        "value": 216
+      },
+      "1068": {
+        "display": {
+          "fr": "Maîtrise dans X éléments",
+          "en": "Mastery in X elements"
+        },
+        "id": 1068,
+        "format": "flat",
+        "value": 146,
+        "num_elements": 2
+      },
+      "173": {
+        "display": {
+          "fr": "Tacle",
+          "en": "Lock"
+        },
+        "id": 173,
+        "format": "flat",
+        "value": 100
+      },
+      "175": {
+        "display": {
+          "fr": "Esquive",
+          "en": "Dodge"
+        },
+        "id": 175,
+        "format": "flat",
+        "value": 100
+      },
+      "20": {
+        "display": {
+          "fr": "PV",
+          "en": "HP"
+        },
+        "id": 20,
+        "format": "flat",
+        "value": 540
+      },
+      "41": {
+        "display": {
+          "fr": "PM",
+          "en": "MP"
+        },
+        "id": 41,
+        "format": "flat",
+        "value": 1
+      },
+      "80": {
+        "display": {
+          "fr": "Résistance Élémentaire",
+          "en": "Elemental Resistance"
+        },
+        "id": 80,
+        "format": "flat",
+        "value": 40
+      },
+      "875": {
+        "display": {
+          "fr": "Parade",
+          "en": "Block"
+        },
+        "id": 875,
+        "format": "percent",
+        "value": 6
+      }
+    },
+    "droprates": {
+      "5280": {
+        "monster_id": 5280,
+        "monster_name": {
+          "fr": "Echinoidéant",
+          "en": "Echivoidea"
+        },
+        "drop_chance": 0.03
+      },
+      "5281": {
+        "monster_id": 5281,
+        "monster_name": {
+          "fr": "Inanite",
+          "en": "Inanite"
+        },
+        "drop_chance": 0.03
+      },
+      "5282": {
+        "monster_id": 5282,
+        "monster_name": {
+          "fr": "Chrysavide",
+          "en": "Chrysavoid"
+        },
+        "drop_chance": 0.03
+      }
+    },
+    "recipes": {
+      "29332": {
+        "job_id": 80,
+        "job_level": 150,
+        "job_name": {
+          "fr": "Maroquinier",
+          "en": "Leather Dealer"
+        },
+        "recipe_id": 29332,
+        "ingredients": {
+          "27093": {
+            "id": 27093,
+            "type_id": 751,
+            "quantity": 574,
+            "ing_name": {
+              "fr": "Poudre",
+              "en": "Powder"
+            }
+          },
+          "28746": {
+            "id": 28746,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Fruit élastique",
+              "en": "Flexifruit"
+            }
+          },
+          "29031": {
+            "id": 29031,
+            "type_id": 751,
+            "quantity": 45,
+            "ing_name": {
+              "fr": "Essence Infernale",
+              "en": "Infernal Essence"
+            }
+          },
+          "29041": {
+            "id": 29041,
+            "type_id": 751,
+            "quantity": 95,
+            "ing_name": {
+              "fr": "Sioupère-Glou Infernale",
+              "en": "Infernal Souper-Glou"
+            }
+          },
+          "29125": {
+            "id": 29125,
+            "type_id": 751,
+            "quantity": 1,
+            "ing_name": {
+              "fr": "Bottes Vides",
+              "en": "Empty Boots"
+            }
+          },
+          "29367": {
+            "id": 29367,
+            "type_id": 751,
+            "quantity": 104,
+            "ing_name": {
+              "fr": "Peau de Vidéant",
+              "en": "Voidivion Skin"
+            }
+          },
+          "29368": {
+            "id": 29368,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Griffe de Vidéant",
+              "en": "Voidivion Claw"
+            }
+          },
+          "29369": {
+            "id": 29369,
+            "type_id": 751,
+            "quantity": 9,
+            "ing_name": {
+              "fr": "Scalp d'Ar'Nan",
+              "en": "Ar'Nan Scalp"
+            }
+          }
+        }
+      }
+    }
+  },
+  "29148": {
+    "id": 29148,
+    "title": {
+      "fr": "Bottes de mauvais Augure",
+      "en": "Bad Omen Boots"
+    },
+    "params": {
+      "type_id": 119,
+      "level": 230,
+      "rarity": 4
+    },
+    "stats": {
+      "1052": {
+        "display": {
+          "fr": "Maîtrise Mêlée",
+          "en": "Melee Mastery"
+        },
+        "id": 1052,
+        "format": "flat",
+        "value": 264
+      },
+      "1068": {
+        "display": {
+          "fr": "Maîtrise dans X éléments",
+          "en": "Mastery in X elements"
+        },
+        "id": 1068,
+        "format": "flat",
+        "value": 219,
+        "num_elements": 2
+      },
+      "173": {
+        "display": {
+          "fr": "Tacle",
+          "en": "Lock"
+        },
+        "id": 173,
+        "format": "flat",
+        "value": 135
+      },
+      "175": {
+        "display": {
+          "fr": "Esquive",
+          "en": "Dodge"
+        },
+        "id": 175,
+        "format": "flat",
+        "value": 135
+      },
+      "20": {
+        "display": {
+          "fr": "PV",
+          "en": "HP"
+        },
+        "id": 20,
+        "format": "flat",
+        "value": 637
+      },
+      "31": {
+        "display": {
+          "fr": "PA",
+          "en": "AP"
+        },
+        "id": 31,
+        "format": "flat",
+        "value": 1
+      },
+      "57": {
+        "display": {
+          "fr": "- PM max",
+          "en": "- max MP"
+        },
+        "id": 57,
+        "format": "negative",
+        "value": 1
+      },
+      "82": {
+        "display": {
+          "fr": "Résistance Feu",
+          "en": "Fire Resistance"
+        },
+        "id": 82,
+        "format": "flat",
+        "value": 56
+      },
+      "84": {
+        "display": {
+          "fr": "Résistance Terre",
+          "en": "Earth Resistance"
+        },
+        "id": 84,
+        "format": "flat",
+        "value": 56
+      },
+      "85": {
+        "display": {
+          "fr": "Résistance Air",
+          "en": "Air Resistance"
+        },
+        "id": 85,
+        "format": "flat",
+        "value": 56
+      },
+      "875": {
+        "display": {
+          "fr": "Parade",
+          "en": "Block"
+        },
+        "id": 875,
+        "format": "percent",
+        "value": 8
+      }
+    },
+    "droprates": {
+      "5283": {
+        "monster_id": 5283,
+        "monster_name": {
+          "fr": "Ar'Nan, Augure du néant",
+          "en": "Ar'Nan, Omen of the Void"
+        },
+        "drop_chance": 0.25
+      }
+    },
+    "recipes": {
+      "29354": {
+        "job_id": 80,
+        "job_level": 150,
+        "job_name": {
+          "fr": "Maroquinier",
+          "en": "Leather Dealer"
+        },
+        "recipe_id": 29354,
+        "ingredients": {
+          "27093": {
+            "id": 27093,
+            "type_id": 751,
+            "quantity": 574,
+            "ing_name": {
+              "fr": "Poudre",
+              "en": "Powder"
+            }
+          },
+          "28746": {
+            "id": 28746,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Fruit élastique",
+              "en": "Flexifruit"
+            }
+          },
+          "29035": {
+            "id": 29035,
+            "type_id": 751,
+            "quantity": 45,
+            "ing_name": {
+              "fr": "Cuir Infernal",
+              "en": "Infernal Leather"
+            }
+          },
+          "29041": {
+            "id": 29041,
+            "type_id": 751,
+            "quantity": 95,
+            "ing_name": {
+              "fr": "Sioupère-Glou Infernale",
+              "en": "Infernal Souper-Glou"
+            }
+          },
+          "29147": {
+            "id": 29147,
+            "type_id": 751,
+            "quantity": 1,
+            "ing_name": {
+              "fr": "Bottes de mauvais Augure",
+              "en": "Bad Omen Boots"
+            }
+          },
+          "29367": {
+            "id": 29367,
+            "type_id": 751,
+            "quantity": 104,
+            "ing_name": {
+              "fr": "Peau de Vidéant",
+              "en": "Voidivion Skin"
+            }
+          },
+          "29368": {
+            "id": 29368,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Griffe de Vidéant",
+              "en": "Voidivion Claw"
+            }
+          },
+          "29369": {
+            "id": 29369,
+            "type_id": 751,
+            "quantity": 9,
+            "ing_name": {
+              "fr": "Scalp d'Ar'Nan",
+              "en": "Ar'Nan Scalp"
+            }
+          }
+        }
+      }
+    }
+  },
+  "29194": {
+    "id": 29194,
+    "title": {
+      "fr": "Pattes de Démhorrible",
+      "en": "Horridemon Leg"
+    },
+    "params": {
+      "type_id": 119,
+      "level": 230,
+      "rarity": 4
+    },
+    "stats": {
+      "1068": {
+        "display": {
+          "fr": "Maîtrise dans X éléments",
+          "en": "Mastery in X elements"
+        },
+        "id": 1068,
+        "format": "flat",
+        "value": 342,
+        "num_elements": 3
+      },
+      "173": {
+        "display": {
+          "fr": "Tacle",
+          "en": "Lock"
+        },
+        "id": 173,
+        "format": "flat",
+        "value": 160
+      },
+      "20": {
+        "display": {
+          "fr": "PV",
+          "en": "HP"
+        },
+        "id": 20,
+        "format": "flat",
+        "value": 655
+      },
+      "41": {
+        "display": {
+          "fr": "PM",
+          "en": "MP"
+        },
+        "id": 41,
+        "format": "flat",
+        "value": 1
+      },
+      "83": {
+        "display": {
+          "fr": "Résistance Eau",
+          "en": "Water Resistance"
+        },
+        "id": 83,
+        "format": "flat",
+        "value": 69
+      },
+      "84": {
+        "display": {
+          "fr": "Résistance Terre",
+          "en": "Earth Resistance"
+        },
+        "id": 84,
+        "format": "flat",
+        "value": 69
+      }
+    },
+    "droprates": {
+      "5286": {
+        "monster_id": 5286,
+        "monster_name": {
+          "fr": "Sangsure",
+          "en": "Bloodcensor"
+        },
+        "drop_chance": 0.03
+      },
+      "5287": {
+        "monster_id": 5287,
+        "monster_name": {
+          "fr": "Rapace dépeceur",
+          "en": "Dismembering Raptor"
+        },
+        "drop_chance": 0.03
+      },
+      "5288": {
+        "monster_id": 5288,
+        "monster_name": {
+          "fr": "Condamnateur",
+          "en": "Condemner"
+        },
+        "drop_chance": 0.03
+      }
+    },
+    "recipes": {
+      "29400": {
+        "job_id": 80,
+        "job_level": 150,
+        "job_name": {
+          "fr": "Maroquinier",
+          "en": "Leather Dealer"
+        },
+        "recipe_id": 29400,
+        "ingredients": {
+          "27093": {
+            "id": 27093,
+            "type_id": 751,
+            "quantity": 574,
+            "ing_name": {
+              "fr": "Poudre",
+              "en": "Powder"
+            }
+          },
+          "28746": {
+            "id": 28746,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Fruit élastique",
+              "en": "Flexifruit"
+            }
+          },
+          "29031": {
+            "id": 29031,
+            "type_id": 751,
+            "quantity": 45,
+            "ing_name": {
+              "fr": "Essence Infernale",
+              "en": "Infernal Essence"
+            }
+          },
+          "29041": {
+            "id": 29041,
+            "type_id": 751,
+            "quantity": 95,
+            "ing_name": {
+              "fr": "Sioupère-Glou Infernale",
+              "en": "Infernal Souper-Glou"
+            }
+          },
+          "29193": {
+            "id": 29193,
+            "type_id": 751,
+            "quantity": 1,
+            "ing_name": {
+              "fr": "Pattes de Démhorrible",
+              "en": "Horridemon Leg"
+            }
+          },
+          "29373": {
+            "id": 29373,
+            "type_id": 751,
+            "quantity": 104,
+            "ing_name": {
+              "fr": "Aile de Démhorrible",
+              "en": "Horridemon Wing"
+            }
+          },
+          "29374": {
+            "id": 29374,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Tentacule de Sangsure",
+              "en": "Bloodcensor Tentacle"
+            }
+          },
+          "29375": {
+            "id": 29375,
+            "type_id": 751,
+            "quantity": 9,
+            "ing_name": {
+              "fr": "Crochet de Cratéros",
+              "en": "Crateros Hook"
+            }
+          }
+        }
+      }
+    }
+  },
+  "29221": {
+    "id": 29221,
+    "title": {
+      "fr": "Les Cratérobottes",
+      "en": "Crateroboots"
+    },
+    "params": {
+      "type_id": 119,
+      "level": 230,
+      "rarity": 3
+    },
+    "stats": {
+      "1068": {
+        "display": {
+          "fr": "Maîtrise dans X éléments",
+          "en": "Mastery in X elements"
+        },
+        "id": 1068,
+        "format": "flat",
+        "value": 218,
+        "num_elements": 3
+      },
+      "173": {
+        "display": {
+          "fr": "Tacle",
+          "en": "Lock"
+        },
+        "id": 173,
+        "format": "flat",
+        "value": 105
+      },
+      "175": {
+        "display": {
+          "fr": "Esquive",
+          "en": "Dodge"
+        },
+        "id": 175,
+        "format": "flat",
+        "value": 105
+      },
+      "20": {
+        "display": {
+          "fr": "PV",
+          "en": "HP"
+        },
+        "id": 20,
+        "format": "flat",
+        "value": 483
+      },
+      "41": {
+        "display": {
+          "fr": "PM",
+          "en": "MP"
+        },
+        "id": 41,
+        "format": "flat",
+        "value": 1
+      },
+      "82": {
+        "display": {
+          "fr": "Résistance Feu",
+          "en": "Fire Resistance"
+        },
+        "id": 82,
+        "format": "flat",
+        "value": 61
+      },
+      "83": {
+        "display": {
+          "fr": "Résistance Eau",
+          "en": "Water Resistance"
+        },
+        "id": 83,
+        "format": "flat",
+        "value": 61
+      },
+      "84": {
+        "display": {
+          "fr": "Résistance Terre",
+          "en": "Earth Resistance"
+        },
+        "id": 84,
+        "format": "flat",
+        "value": 61
+      },
+      "875": {
+        "display": {
+          "fr": "Parade",
+          "en": "Block"
+        },
+        "id": 875,
+        "format": "percent",
+        "value": 6
+      }
+    },
+    "droprates": {
+      "5289": {
+        "monster_id": 5289,
+        "monster_name": {
+          "fr": "Cratéros, Bourreau de la fin",
+          "en": "Crateros, Ending Executioner"
+        },
+        "drop_chance": 1
+      }
+    },
+    "recipes": null
+  },
+  "29266": {
+    "id": 29266,
+    "title": {
+      "fr": "Les Affamées",
+      "en": "Famished Boots"
+    },
+    "params": {
+      "type_id": 119,
+      "level": 230,
+      "rarity": 4
+    },
+    "stats": {
+      "1068": {
+        "display": {
+          "fr": "Maîtrise dans X éléments",
+          "en": "Mastery in X elements"
+        },
+        "id": 1068,
+        "format": "flat",
+        "value": 371,
+        "num_elements": 3
+      },
+      "173": {
+        "display": {
+          "fr": "Tacle",
+          "en": "Lock"
+        },
+        "id": 173,
+        "format": "flat",
+        "value": 120
+      },
+      "175": {
+        "display": {
+          "fr": "Esquive",
+          "en": "Dodge"
+        },
+        "id": 175,
+        "format": "flat",
+        "value": 120
+      },
+      "20": {
+        "display": {
+          "fr": "PV",
+          "en": "HP"
+        },
+        "id": 20,
+        "format": "flat",
+        "value": 655
+      },
+      "41": {
+        "display": {
+          "fr": "PM",
+          "en": "MP"
+        },
+        "id": 41,
+        "format": "flat",
+        "value": 2
+      },
+      "56": {
+        "display": {
+          "fr": "- PA max",
+          "en": "- max AP"
+        },
+        "id": 56,
+        "format": "negative",
+        "value": 1
+      },
+      "82": {
+        "display": {
+          "fr": "Résistance Feu",
+          "en": "Fire Resistance"
+        },
+        "id": 82,
+        "format": "flat",
+        "value": 61
+      },
+      "83": {
+        "display": {
+          "fr": "Résistance Eau",
+          "en": "Water Resistance"
+        },
+        "id": 83,
+        "format": "flat",
+        "value": 61
+      },
+      "85": {
+        "display": {
+          "fr": "Résistance Air",
+          "en": "Air Resistance"
+        },
+        "id": 85,
+        "format": "flat",
+        "value": 61
+      }
+    },
+    "droprates": {
+      "5292": {
+        "monster_id": 5292,
+        "monster_name": {
+          "fr": "Réman'hante",
+          "en": "Reman'haunt"
+        },
+        "drop_chance": 0.03
+      },
+      "5293": {
+        "monster_id": 5293,
+        "monster_name": {
+          "fr": "Ésrevni",
+          "en": "Detrevni"
+        },
+        "drop_chance": 0.03
+      },
+      "5294": {
+        "monster_id": 5294,
+        "monster_name": {
+          "fr": "CeEvroaint",
+          "en": "CeEvroaint"
+        },
+        "drop_chance": 0.03
+      }
+    },
+    "recipes": {
+      "29472": {
+        "job_id": 80,
+        "job_level": 150,
+        "job_name": {
+          "fr": "Maroquinier",
+          "en": "Leather Dealer"
+        },
+        "recipe_id": 29472,
+        "ingredients": {
+          "27093": {
+            "id": 27093,
+            "type_id": 751,
+            "quantity": 574,
+            "ing_name": {
+              "fr": "Poudre",
+              "en": "Powder"
+            }
+          },
+          "28749": {
+            "id": 28749,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Haricot sympa",
+              "en": "Nice Bean"
+            }
+          },
+          "29033": {
+            "id": 29033,
+            "type_id": 751,
+            "quantity": 45,
+            "ing_name": {
+              "fr": "Fibre Infernale",
+              "en": "Infernal Fiber"
+            }
+          },
+          "29041": {
+            "id": 29041,
+            "type_id": 751,
+            "quantity": 95,
+            "ing_name": {
+              "fr": "Sioupère-Glou Infernale",
+              "en": "Infernal Souper-Glou"
+            }
+          },
+          "29265": {
+            "id": 29265,
+            "type_id": 751,
+            "quantity": 1,
+            "ing_name": {
+              "fr": "Les Affamées",
+              "en": "Famished Boots"
+            }
+          },
+          "29379": {
+            "id": 29379,
+            "type_id": 751,
+            "quantity": 104,
+            "ing_name": {
+              "fr": "Scalp de Réman'hante",
+              "en": "Reman'haunt Scalp"
+            }
+          },
+          "29380": {
+            "id": 29380,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Mouchards de Démentia",
+              "en": "Dementya's Snitches"
+            }
+          },
+          "29381": {
+            "id": 29381,
+            "type_id": 751,
+            "quantity": 9,
+            "ing_name": {
+              "fr": "Trophée de !@#dh`~",
+              "en": "!@#dh`~ Trophy"
+            }
+          }
+        }
+      }
+    }
+  },
+  "29295": {
+    "id": 29295,
+    "title": {
+      "fr": "Sandales Ourdies",
+      "en": "Despairdrilles"
+    },
+    "params": {
+      "type_id": 119,
+      "level": 230,
+      "rarity": 6
+    },
+    "stats": {
+      "1053": {
+        "display": {
+          "fr": "Maîtrise Distance",
+          "en": "Distance Mastery"
+        },
+        "id": 1053,
+        "format": "flat",
+        "value": 270
+      },
+      "1068": {
+        "display": {
+          "fr": "Maîtrise dans X éléments",
+          "en": "Mastery in X elements"
+        },
+        "id": 1068,
+        "format": "flat",
+        "value": 141,
+        "num_elements": 3
+      },
+      "176": {
+        "display": {
+          "fr": "- Esquive",
+          "en": "- Dodge"
+        },
+        "id": 176,
+        "format": "negative",
+        "value": 200
+      },
+      "20": {
+        "display": {
+          "fr": "PV",
+          "en": "HP"
+        },
+        "id": 20,
+        "format": "flat",
+        "value": 626
+      },
+      "39": {
+        "display": {
+          "fr": "Armure donnée",
+          "en": "Armor given"
+        },
+        "id": 39,
+        "format": "percent",
+        "value": 7
+      },
+      "41": {
+        "display": {
+          "fr": "PM",
+          "en": "MP"
+        },
+        "id": 41,
+        "format": "flat",
+        "value": 1
+      },
+      "83": {
+        "display": {
+          "fr": "Résistance Eau",
+          "en": "Water Resistance"
+        },
+        "id": 83,
+        "format": "flat",
+        "value": 56
+      },
+      "84": {
+        "display": {
+          "fr": "Résistance Terre",
+          "en": "Earth Resistance"
+        },
+        "id": 84,
+        "format": "flat",
+        "value": 56
+      },
+      "85": {
+        "display": {
+          "fr": "Résistance Air",
+          "en": "Air Resistance"
+        },
+        "id": 85,
+        "format": "flat",
+        "value": 56
+      },
+      "875": {
+        "display": {
+          "fr": "Parade",
+          "en": "Block"
+        },
+        "id": 875,
+        "format": "percent",
+        "value": 5
+      }
+    },
+    "droprates": null,
+    "recipes": {
+      "29501": {
+        "job_id": 80,
+        "job_level": 150,
+        "job_name": {
+          "fr": "Maroquinier",
+          "en": "Leather Dealer"
+        },
+        "recipe_id": 29501,
+        "ingredients": {
+          "19708": {
+            "id": 19708,
+            "type_id": 751,
+            "quantity": 1,
+            "ing_name": {
+              "fr": "Sandales Ourdies",
+              "en": "Despairdrilles"
+            }
+          },
+          "24029": {
+            "id": 24029,
+            "type_id": 751,
+            "quantity": 400,
+            "ing_name": {
+              "fr": "Larme d'Ogrest",
+              "en": "Ogrest's Tear"
+            }
+          },
+          "27093": {
+            "id": 27093,
+            "type_id": 751,
+            "quantity": 820,
+            "ing_name": {
+              "fr": "Poudre",
+              "en": "Powder"
+            }
+          },
+          "27767": {
+            "id": 27767,
+            "type_id": 751,
+            "quantity": 1,
+            "ing_name": {
+              "fr": "Bottes à trompe",
+              "en": "Trunked Boots"
+            }
+          },
+          "28746": {
+            "id": 28746,
+            "type_id": 751,
+            "quantity": 16,
+            "ing_name": {
+              "fr": "Fruit élastique",
+              "en": "Flexifruit"
+            }
+          },
+          "29035": {
+            "id": 29035,
+            "type_id": 751,
+            "quantity": 75,
+            "ing_name": {
+              "fr": "Cuir Infernal",
+              "en": "Infernal Leather"
+            }
+          },
+          "29380": {
+            "id": 29380,
+            "type_id": 751,
+            "quantity": 16,
+            "ing_name": {
+              "fr": "Mouchards de Démentia",
+              "en": "Dementya's Snitches"
+            }
+          },
+          "29410": {
+            "id": 29410,
+            "type_id": 751,
+            "quantity": 13,
+            "ing_name": {
+              "fr": "Fragment d'armure d'Anathar",
+              "en": "Anathar Armor Fragment"
+            }
+          }
+        }
+      }
+    }
+  },
+  "29463": {
+    "id": 29463,
+    "title": {
+      "fr": "Bottes de Rushu",
+      "en": "Rushu Boots"
+    },
+    "params": {
+      "type_id": 119,
+      "level": 230,
+      "rarity": 3
+    },
+    "stats": {
+      "1068": {
+        "display": {
+          "fr": "Maîtrise dans X éléments",
+          "en": "Mastery in X elements"
+        },
+        "id": 1068,
+        "format": "flat",
+        "value": 261,
+        "num_elements": 3
+      },
+      "173": {
+        "display": {
+          "fr": "Tacle",
+          "en": "Lock"
+        },
+        "id": 173,
+        "format": "flat",
+        "value": 90
+      },
+      "175": {
+        "display": {
+          "fr": "Esquive",
+          "en": "Dodge"
+        },
+        "id": 175,
+        "format": "flat",
+        "value": 90
+      },
+      "20": {
+        "display": {
+          "fr": "PV",
+          "en": "HP"
+        },
+        "id": 20,
+        "format": "flat",
+        "value": 469
+      },
+      "40": {
+        "display": {
+          "fr": "Armure reçue",
+          "en": "Armor received"
+        },
+        "id": 40,
+        "format": "percent",
+        "value": 8
+      },
+      "41": {
+        "display": {
+          "fr": "PM",
+          "en": "MP"
+        },
+        "id": 41,
+        "format": "flat",
+        "value": 1
+      },
+      "82": {
+        "display": {
+          "fr": "Résistance Feu",
+          "en": "Fire Resistance"
+        },
+        "id": 82,
+        "format": "flat",
+        "value": 50
+      },
+      "83": {
+        "display": {
+          "fr": "Résistance Eau",
+          "en": "Water Resistance"
+        },
+        "id": 83,
+        "format": "flat",
+        "value": 50
+      },
+      "85": {
+        "display": {
+          "fr": "Résistance Air",
+          "en": "Air Resistance"
+        },
+        "id": 85,
+        "format": "flat",
+        "value": 50
+      }
+    },
+    "droprates": {
+      "5306": {
+        "monster_id": 5306,
+        "monster_name": {
+          "fr": "Rushu",
+          "en": "Rushu"
+        },
+        "drop_chance": 2
+      }
+    },
+    "recipes": null
+  },
+  "29464": {
+    "id": 29464,
+    "title": {
+      "fr": "Bottes de Rushu",
+      "en": "Rushu Boots"
+    },
+    "params": {
+      "type_id": 119,
+      "level": 230,
+      "rarity": 4
+    },
+    "stats": {
+      "1068": {
+        "display": {
+          "fr": "Maîtrise dans X éléments",
+          "en": "Mastery in X elements"
+        },
+        "id": 1068,
+        "format": "flat",
+        "value": 315,
+        "num_elements": 3
+      },
+      "173": {
+        "display": {
+          "fr": "Tacle",
+          "en": "Lock"
+        },
+        "id": 173,
+        "format": "flat",
+        "value": 111
+      },
+      "175": {
+        "display": {
+          "fr": "Esquive",
+          "en": "Dodge"
+        },
+        "id": 175,
+        "format": "flat",
+        "value": 111
+      },
+      "20": {
+        "display": {
+          "fr": "PV",
+          "en": "HP"
+        },
+        "id": 20,
+        "format": "flat",
+        "value": 480
+      },
+      "40": {
+        "display": {
+          "fr": "Armure reçue",
+          "en": "Armor received"
+        },
+        "id": 40,
+        "format": "percent",
+        "value": 8
+      },
+      "41": {
+        "display": {
+          "fr": "PM",
+          "en": "MP"
+        },
+        "id": 41,
+        "format": "flat",
+        "value": 1
+      },
+      "82": {
+        "display": {
+          "fr": "Résistance Feu",
+          "en": "Fire Resistance"
+        },
+        "id": 82,
+        "format": "flat",
+        "value": 50
+      },
+      "83": {
+        "display": {
+          "fr": "Résistance Eau",
+          "en": "Water Resistance"
+        },
+        "id": 83,
+        "format": "flat",
+        "value": 50
+      },
+      "85": {
+        "display": {
+          "fr": "Résistance Air",
+          "en": "Air Resistance"
+        },
+        "id": 85,
+        "format": "flat",
+        "value": 50
+      }
+    },
+    "droprates": {
+      "5306": {
+        "monster_id": 5306,
+        "monster_name": {
+          "fr": "Rushu",
+          "en": "Rushu"
+        },
+        "drop_chance": 0.5
+      }
+    },
+    "recipes": {
+      "29669": {
+        "job_id": 80,
+        "job_level": 150,
+        "job_name": {
+          "fr": "Maroquinier",
+          "en": "Leather Dealer"
+        },
+        "recipe_id": 29669,
+        "ingredients": {
+          "27093": {
+            "id": 27093,
+            "type_id": 751,
+            "quantity": 574,
+            "ing_name": {
+              "fr": "Poudre",
+              "en": "Powder"
+            }
+          },
+          "28746": {
+            "id": 28746,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Fruit élastique",
+              "en": "Flexifruit"
+            }
+          },
+          "29035": {
+            "id": 29035,
+            "type_id": 751,
+            "quantity": 45,
+            "ing_name": {
+              "fr": "Cuir Infernal",
+              "en": "Infernal Leather"
+            }
+          },
+          "29040": {
+            "id": 29040,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Orbe Infernal",
+              "en": "Infernal Orb"
+            }
+          },
+          "29041": {
+            "id": 29041,
+            "type_id": 751,
+            "quantity": 95,
+            "ing_name": {
+              "fr": "Sioupère-Glou Infernale",
+              "en": "Infernal Souper-Glou"
+            }
+          },
+          "29463": {
+            "id": 29463,
+            "type_id": 751,
+            "quantity": 1,
+            "ing_name": {
+              "fr": "Bottes de Rushu",
+              "en": "Rushu Boots"
+            }
+          },
+          "29548": {
+            "id": 29548,
+            "type_id": 751,
+            "quantity": 6,
+            "ing_name": {
+              "fr": "Barbe de Rushu",
+              "en": "Rushu Beard"
+            }
+          }
+        }
+      }
+    }
+  },
+  "29517": {
+    "id": 29517,
+    "title": {
+      "fr": "Les Viddhartatanes corrompues",
+      "en": "Corrupted Viddhartas"
+    },
+    "params": {
+      "type_id": 119,
+      "level": 230,
+      "rarity": 4
+    },
+    "stats": {
+      "175": {
+        "display": {
+          "fr": "Esquive",
+          "en": "Dodge"
+        },
+        "id": 175,
+        "format": "flat",
+        "value": 170
+      },
+      "180": {
+        "display": {
+          "fr": "Maîtrise Dos",
+          "en": "Rear Mastery"
+        },
+        "id": 180,
+        "format": "flat",
+        "value": 489
+      },
+      "20": {
+        "display": {
+          "fr": "PV",
+          "en": "HP"
+        },
+        "id": 20,
+        "format": "flat",
+        "value": 556
+      },
+      "41": {
+        "display": {
+          "fr": "PM",
+          "en": "MP"
+        },
+        "id": 41,
+        "format": "flat",
+        "value": 1
+      },
+      "82": {
+        "display": {
+          "fr": "Résistance Feu",
+          "en": "Fire Resistance"
+        },
+        "id": 82,
+        "format": "flat",
+        "value": 33
+      },
+      "83": {
+        "display": {
+          "fr": "Résistance Eau",
+          "en": "Water Resistance"
+        },
+        "id": 83,
+        "format": "flat",
+        "value": 33
+      },
+      "85": {
+        "display": {
+          "fr": "Résistance Air",
+          "en": "Air Resistance"
+        },
+        "id": 85,
+        "format": "flat",
+        "value": 33
+      }
+    },
+    "droprates": {
+      "5306": {
+        "monster_id": 5306,
+        "monster_name": {
+          "fr": "Rushu",
+          "en": "Rushu"
+        },
+        "drop_chance": 0.5
+      }
+    },
+    "recipes": {
+      "29722": {
+        "job_id": 80,
+        "job_level": 150,
+        "job_name": {
+          "fr": "Maroquinier",
+          "en": "Leather Dealer"
+        },
+        "recipe_id": 29722,
+        "ingredients": {
+          "27093": {
+            "id": 27093,
+            "type_id": 751,
+            "quantity": 574,
+            "ing_name": {
+              "fr": "Poudre",
+              "en": "Powder"
+            }
+          },
+          "28749": {
+            "id": 28749,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Haricot sympa",
+              "en": "Nice Bean"
+            }
+          },
+          "29035": {
+            "id": 29035,
+            "type_id": 751,
+            "quantity": 45,
+            "ing_name": {
+              "fr": "Cuir Infernal",
+              "en": "Infernal Leather"
+            }
+          },
+          "29040": {
+            "id": 29040,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Orbe Infernal",
+              "en": "Infernal Orb"
+            }
+          },
+          "29041": {
+            "id": 29041,
+            "type_id": 751,
+            "quantity": 95,
+            "ing_name": {
+              "fr": "Sioupère-Glou Infernale",
+              "en": "Infernal Souper-Glou"
+            }
+          },
+          "29516": {
+            "id": 29516,
+            "type_id": 751,
+            "quantity": 1,
+            "ing_name": {
+              "fr": "Les Viddhartatanes corrompues",
+              "en": "Corrupted Viddhartas"
+            }
+          },
+          "29548": {
+            "id": 29548,
+            "type_id": 751,
+            "quantity": 6,
+            "ing_name": {
+              "fr": "Barbe de Rushu",
+              "en": "Rushu Beard"
+            }
+          }
+        }
+      }
+    }
+  },
+  "29544": {
+    "id": 29544,
+    "title": {
+      "fr": "Grèves des Eclaireurs d'Otomaï maudites",
+      "en": "Cursed Otomai's Scouts Greaves"
+    },
+    "params": {
+      "type_id": 119,
+      "level": 230,
+      "rarity": 3
+    },
+    "stats": {
+      "1068": {
+        "display": {
+          "fr": "Maîtrise dans X éléments",
+          "en": "Mastery in X elements"
+        },
+        "id": 1068,
+        "format": "flat",
+        "value": 318,
+        "num_elements": 3
+      },
+      "175": {
+        "display": {
+          "fr": "Esquive",
+          "en": "Dodge"
+        },
+        "id": 175,
+        "format": "flat",
+        "value": 155
+      },
+      "20": {
+        "display": {
+          "fr": "PV",
+          "en": "HP"
+        },
+        "id": 20,
+        "format": "flat",
+        "value": 560
+      },
+      "41": {
+        "display": {
+          "fr": "PM",
+          "en": "MP"
+        },
+        "id": 41,
+        "format": "flat",
+        "value": 1
+      },
+      "80": {
+        "display": {
+          "fr": "Résistance Élémentaire",
+          "en": "Elemental Resistance"
+        },
+        "id": 80,
+        "format": "flat",
+        "value": 30
+      }
+    },
+    "droprates": {
+      "5306": {
+        "monster_id": 5306,
+        "monster_name": {
+          "fr": "Rushu",
+          "en": "Rushu"
+        },
+        "drop_chance": 2
+      }
+    },
+    "recipes": null
+  },
+  "29545": {
+    "id": 29545,
+    "title": {
+      "fr": "Grèves des Eclaireurs d'Otomaï maudites",
+      "en": "Cursed Otomai's Scouts Greaves"
+    },
+    "params": {
+      "type_id": 119,
+      "level": 230,
+      "rarity": 4
+    },
+    "stats": {
+      "1068": {
+        "display": {
+          "fr": "Maîtrise dans X éléments",
+          "en": "Mastery in X elements"
+        },
+        "id": 1068,
+        "format": "flat",
+        "value": 380,
+        "num_elements": 3
+      },
+      "175": {
+        "display": {
+          "fr": "Esquive",
+          "en": "Dodge"
+        },
+        "id": 175,
+        "format": "flat",
+        "value": 175
+      },
+      "20": {
+        "display": {
+          "fr": "PV",
+          "en": "HP"
+        },
+        "id": 20,
+        "format": "flat",
+        "value": 605
+      },
+      "41": {
+        "display": {
+          "fr": "PM",
+          "en": "MP"
+        },
+        "id": 41,
+        "format": "flat",
+        "value": 1
+      },
+      "80": {
+        "display": {
+          "fr": "Résistance Élémentaire",
+          "en": "Elemental Resistance"
+        },
+        "id": 80,
+        "format": "flat",
+        "value": 30
+      }
+    },
+    "droprates": {
+      "5306": {
+        "monster_id": 5306,
+        "monster_name": {
+          "fr": "Rushu",
+          "en": "Rushu"
+        },
+        "drop_chance": 0.5
+      }
+    },
+    "recipes": {
+      "29750": {
+        "job_id": 80,
+        "job_level": 150,
+        "job_name": {
+          "fr": "Maroquinier",
+          "en": "Leather Dealer"
+        },
+        "recipe_id": 29750,
+        "ingredients": {
+          "27093": {
+            "id": 27093,
+            "type_id": 751,
+            "quantity": 574,
+            "ing_name": {
+              "fr": "Poudre",
+              "en": "Powder"
+            }
+          },
+          "28749": {
+            "id": 28749,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Haricot sympa",
+              "en": "Nice Bean"
+            }
+          },
+          "29035": {
+            "id": 29035,
+            "type_id": 751,
+            "quantity": 45,
+            "ing_name": {
+              "fr": "Cuir Infernal",
+              "en": "Infernal Leather"
+            }
+          },
+          "29040": {
+            "id": 29040,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Orbe Infernal",
+              "en": "Infernal Orb"
+            }
+          },
+          "29041": {
+            "id": 29041,
+            "type_id": 751,
+            "quantity": 95,
+            "ing_name": {
+              "fr": "Sioupère-Glou Infernale",
+              "en": "Infernal Souper-Glou"
+            }
+          },
+          "29544": {
+            "id": 29544,
+            "type_id": 751,
+            "quantity": 1,
+            "ing_name": {
+              "fr": "Grèves des Eclaireurs d'Otomaï maudites",
+              "en": "Cursed Otomai's Scouts Greaves"
+            }
+          },
+          "29548": {
+            "id": 29548,
+            "type_id": 751,
+            "quantity": 6,
+            "ing_name": {
+              "fr": "Barbe de Rushu",
+              "en": "Rushu Beard"
+            }
+          }
+        }
+      }
+    }
+  },
+  "30147": {
+    "id": 30147,
+    "title": {
+      "fr": "Bottes de Jr.",
+      "en": "Jr.'s Boots"
+    },
+    "params": {
+      "type_id": 119,
+      "level": 230,
+      "rarity": 5
+    },
+    "stats": {
+      "1053": {
+        "display": {
+          "fr": "Maîtrise Distance",
+          "en": "Distance Mastery"
+        },
+        "id": 1053,
+        "format": "flat",
+        "value": 699
+      },
+      "173": {
+        "display": {
+          "fr": "Tacle",
+          "en": "Lock"
+        },
+        "id": 173,
+        "format": "flat",
+        "value": 130
+      },
+      "181": {
+        "display": {
+          "fr": "- Maîtrise Dos",
+          "en": "- Rear Mastery"
+        },
+        "id": 181,
+        "format": "negative",
+        "value": 596
+      },
+      "20": {
+        "display": {
+          "fr": "PV",
+          "en": "HP"
+        },
+        "id": 20,
+        "format": "flat",
+        "value": 657
+      },
+      "31": {
+        "display": {
+          "fr": "PA",
+          "en": "AP"
+        },
+        "id": 31,
+        "format": "flat",
+        "value": 1
+      },
+      "41": {
+        "display": {
+          "fr": "PM",
+          "en": "MP"
+        },
+        "id": 41,
+        "format": "flat",
+        "value": 1
+      },
+      "80": {
+        "display": {
+          "fr": "Résistance Élémentaire",
+          "en": "Elemental Resistance"
+        },
+        "id": 80,
+        "format": "flat",
+        "value": 50
+      }
+    },
+    "droprates": {
+      "5394": {
+        "monster_id": 5394,
+        "monster_name": {
+          "fr": "Raeliss",
+          "en": "Raeliss"
+        },
+        "drop_chance": 0.1
+      }
+    },
+    "recipes": null
+  },
+  "30201": {
+    "id": 30201,
+    "title": {
+      "fr": "Pieds d’Arlang",
+      "en": "Arlang's Feet"
+    },
+    "params": {
+      "type_id": 119,
+      "level": 230,
+      "rarity": 4
+    },
+    "stats": {
+      "1052": {
+        "display": {
+          "fr": "Maîtrise Mêlée",
+          "en": "Melee Mastery"
+        },
+        "id": 1052,
+        "format": "flat",
+        "value": 200
+      },
+      "1068": {
+        "display": {
+          "fr": "Maîtrise dans X éléments",
+          "en": "Mastery in X elements"
+        },
+        "id": 1068,
+        "format": "flat",
+        "value": 175,
+        "num_elements": 3
+      },
+      "173": {
+        "display": {
+          "fr": "Tacle",
+          "en": "Lock"
+        },
+        "id": 173,
+        "format": "flat",
+        "value": 50
+      },
+      "175": {
+        "display": {
+          "fr": "Esquive",
+          "en": "Dodge"
+        },
+        "id": 175,
+        "format": "flat",
+        "value": 50
+      },
+      "20": {
+        "display": {
+          "fr": "PV",
+          "en": "HP"
+        },
+        "id": 20,
+        "format": "flat",
+        "value": 548
+      },
+      "41": {
+        "display": {
+          "fr": "PM",
+          "en": "MP"
+        },
+        "id": 41,
+        "format": "flat",
+        "value": 1
+      },
+      "82": {
+        "display": {
+          "fr": "Résistance Feu",
+          "en": "Fire Resistance"
+        },
+        "id": 82,
+        "format": "flat",
+        "value": 50
+      },
+      "83": {
+        "display": {
+          "fr": "Résistance Eau",
+          "en": "Water Resistance"
+        },
+        "id": 83,
+        "format": "flat",
+        "value": 50
+      },
+      "85": {
+        "display": {
+          "fr": "Résistance Air",
+          "en": "Air Resistance"
+        },
+        "id": 85,
+        "format": "flat",
+        "value": 50
+      },
+      "875": {
+        "display": {
+          "fr": "Parade",
+          "en": "Block"
+        },
+        "id": 875,
+        "format": "percent",
+        "value": 8
+      }
+    },
+    "droprates": {
+      "5391": {
+        "monster_id": 5391,
+        "monster_name": {
+          "fr": "Petit-poisseux",
+          "en": "Jeeper Creeper"
+        },
+        "drop_chance": 0.03
+      },
+      "5392": {
+        "monster_id": 5392,
+        "monster_name": {
+          "fr": "Cogneur abyssal",
+          "en": "Abyssal Slugger"
+        },
+        "drop_chance": 0.03
+      },
+      "5393": {
+        "monster_id": 5393,
+        "monster_name": {
+          "fr": "Assassirène",
+          "en": "Assassiren"
+        },
+        "drop_chance": 0.03
+      }
+    },
+    "recipes": {
+      "30407": {
+        "job_id": 80,
+        "job_level": 150,
+        "job_name": {
+          "fr": "Maroquinier",
+          "en": "Leather Dealer"
+        },
+        "recipe_id": 30407,
+        "ingredients": {
+          "27093": {
+            "id": 27093,
+            "type_id": 751,
+            "quantity": 574,
+            "ing_name": {
+              "fr": "Poudre",
+              "en": "Powder"
+            }
+          },
+          "28746": {
+            "id": 28746,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Fruit élastique",
+              "en": "Flexifruit"
+            }
+          },
+          "29035": {
+            "id": 29035,
+            "type_id": 751,
+            "quantity": 45,
+            "ing_name": {
+              "fr": "Cuir Infernal",
+              "en": "Infernal Leather"
+            }
+          },
+          "29041": {
+            "id": 29041,
+            "type_id": 751,
+            "quantity": 95,
+            "ing_name": {
+              "fr": "Sioupère-Glou Infernale",
+              "en": "Infernal Souper-Glou"
+            }
+          },
+          "30140": {
+            "id": 30140,
+            "type_id": 751,
+            "quantity": 104,
+            "ing_name": {
+              "fr": "Nageoire de Poisseux abyssal",
+              "en": "Abyssal Creeper Fin"
+            }
+          },
+          "30141": {
+            "id": 30141,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Dent de Poisseux abyssal",
+              "en": "Abyssal Creeper Tooth"
+            }
+          },
+          "30142": {
+            "id": 30142,
+            "type_id": 751,
+            "quantity": 9,
+            "ing_name": {
+              "fr": "Tête de requin",
+              "en": "Shark Head"
+            }
+          },
+          "30200": {
+            "id": 30200,
+            "type_id": 751,
+            "quantity": 1,
+            "ing_name": {
+              "fr": "Pieds d’Arlang",
+              "en": "Arlang's Feet"
+            }
+          }
+        }
+      }
+    }
+  },
+  "30262": {
+    "id": 30262,
+    "title": {
+      "fr": "Bottes Tigrées",
+      "en": "Tiggerific Boots"
+    },
+    "params": {
+      "type_id": 119,
+      "level": 230,
+      "rarity": 4
+    },
+    "stats": {
+      "1055": {
+        "display": {
+          "fr": "Maîtrise Berserk",
+          "en": "Berserk Mastery"
+        },
+        "id": 1055,
+        "format": "flat",
+        "value": 209
+      },
+      "1068": {
+        "display": {
+          "fr": "Maîtrise dans X éléments",
+          "en": "Mastery in X elements"
+        },
+        "id": 1068,
+        "format": "flat",
+        "value": 153,
+        "num_elements": 3
+      },
+      "173": {
+        "display": {
+          "fr": "Tacle",
+          "en": "Lock"
+        },
+        "id": 173,
+        "format": "flat",
+        "value": 60
+      },
+      "175": {
+        "display": {
+          "fr": "Esquive",
+          "en": "Dodge"
+        },
+        "id": 175,
+        "format": "flat",
+        "value": 60
+      },
+      "20": {
+        "display": {
+          "fr": "PV",
+          "en": "HP"
+        },
+        "id": 20,
+        "format": "flat",
+        "value": 570
+      },
+      "41": {
+        "display": {
+          "fr": "PM",
+          "en": "MP"
+        },
+        "id": 41,
+        "format": "flat",
+        "value": 1
+      },
+      "71": {
+        "display": {
+          "fr": "Résistance Dos",
+          "en": "Rear Resistance"
+        },
+        "id": 71,
+        "format": "flat",
+        "value": 40
+      },
+      "82": {
+        "display": {
+          "fr": "Résistance Feu",
+          "en": "Fire Resistance"
+        },
+        "id": 82,
+        "format": "flat",
+        "value": 63
+      },
+      "84": {
+        "display": {
+          "fr": "Résistance Terre",
+          "en": "Earth Resistance"
+        },
+        "id": 84,
+        "format": "flat",
+        "value": 63
+      }
+    },
+    "droprates": null,
+    "recipes": {
+      "30468": {
+        "job_id": 80,
+        "job_level": 150,
+        "job_name": {
+          "fr": "Maroquinier",
+          "en": "Leather Dealer"
+        },
+        "recipe_id": 30468,
+        "ingredients": {
+          "27093": {
+            "id": 27093,
+            "type_id": 751,
+            "quantity": 574,
+            "ing_name": {
+              "fr": "Poudre",
+              "en": "Powder"
+            }
+          },
+          "28746": {
+            "id": 28746,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Fruit élastique",
+              "en": "Flexifruit"
+            }
+          },
+          "29035": {
+            "id": 29035,
+            "type_id": 751,
+            "quantity": 45,
+            "ing_name": {
+              "fr": "Cuir Infernal",
+              "en": "Infernal Leather"
+            }
+          },
+          "29041": {
+            "id": 29041,
+            "type_id": 751,
+            "quantity": 95,
+            "ing_name": {
+              "fr": "Sioupère-Glou Infernale",
+              "en": "Infernal Souper-Glou"
+            }
+          },
+          "30140": {
+            "id": 30140,
+            "type_id": 751,
+            "quantity": 104,
+            "ing_name": {
+              "fr": "Nageoire de Poisseux abyssal",
+              "en": "Abyssal Creeper Fin"
+            }
+          },
+          "30141": {
+            "id": 30141,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Dent de Poisseux abyssal",
+              "en": "Abyssal Creeper Tooth"
+            }
+          },
+          "30142": {
+            "id": 30142,
+            "type_id": 751,
+            "quantity": 9,
+            "ing_name": {
+              "fr": "Tête de requin",
+              "en": "Shark Head"
+            }
+          },
+          "30261": {
+            "id": 30261,
+            "type_id": 751,
+            "quantity": 1,
+            "ing_name": {
+              "fr": "Bottes Tigrées",
+              "en": "Tiggerific Boots"
+            }
+          }
+        }
+      }
+    }
+  },
+  "30278": {
+    "id": 30278,
+    "title": {
+      "fr": "Chaussures du mécano",
+      "en": "Mechanic Shoes"
+    },
+    "params": {
+      "type_id": 119,
+      "level": 230,
+      "rarity": 4
+    },
+    "stats": {
+      "1068": {
+        "display": {
+          "fr": "Maîtrise dans X éléments",
+          "en": "Mastery in X elements"
+        },
+        "id": 1068,
+        "format": "flat",
+        "value": 241,
+        "num_elements": 3
+      },
+      "173": {
+        "display": {
+          "fr": "Tacle",
+          "en": "Lock"
+        },
+        "id": 173,
+        "format": "flat",
+        "value": 65
+      },
+      "175": {
+        "display": {
+          "fr": "Esquive",
+          "en": "Dodge"
+        },
+        "id": 175,
+        "format": "flat",
+        "value": 65
+      },
+      "20": {
+        "display": {
+          "fr": "PV",
+          "en": "HP"
+        },
+        "id": 20,
+        "format": "flat",
+        "value": 380
+      },
+      "31": {
+        "display": {
+          "fr": "PA",
+          "en": "AP"
+        },
+        "id": 31,
+        "format": "flat",
+        "value": 1
+      },
+      "40": {
+        "display": {
+          "fr": "Armure reçue",
+          "en": "Armor received"
+        },
+        "id": 40,
+        "format": "percent",
+        "value": 10
+      },
+      "80": {
+        "display": {
+          "fr": "Résistance Élémentaire",
+          "en": "Elemental Resistance"
+        },
+        "id": 80,
+        "format": "flat",
+        "value": 45
+      }
+    },
+    "droprates": null,
+    "recipes": {
+      "30484": {
+        "job_id": 80,
+        "job_level": 150,
+        "job_name": {
+          "fr": "Maroquinier",
+          "en": "Leather Dealer"
+        },
+        "recipe_id": 30484,
+        "ingredients": {
+          "27093": {
+            "id": 27093,
+            "type_id": 751,
+            "quantity": 574,
+            "ing_name": {
+              "fr": "Poudre",
+              "en": "Powder"
+            }
+          },
+          "28749": {
+            "id": 28749,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Haricot sympa",
+              "en": "Nice Bean"
+            }
+          },
+          "29035": {
+            "id": 29035,
+            "type_id": 751,
+            "quantity": 45,
+            "ing_name": {
+              "fr": "Cuir Infernal",
+              "en": "Infernal Leather"
+            }
+          },
+          "29041": {
+            "id": 29041,
+            "type_id": 751,
+            "quantity": 95,
+            "ing_name": {
+              "fr": "Sioupère-Glou Infernale",
+              "en": "Infernal Souper-Glou"
+            }
+          },
+          "30269": {
+            "id": 30269,
+            "type_id": 751,
+            "quantity": 104,
+            "ing_name": {
+              "fr": "Ferraille stasifiée",
+              "en": "Stasified Scrap Metal"
+            }
+          },
+          "30270": {
+            "id": 30270,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Gantelet stasifié",
+              "en": "Stasified Gauntlet"
+            }
+          },
+          "30271": {
+            "id": 30271,
+            "type_id": 751,
+            "quantity": 9,
+            "ing_name": {
+              "fr": "Corne de Sir Comte Flex",
+              "en": "Sire Flexington's Horn"
+            }
+          },
+          "30277": {
+            "id": 30277,
+            "type_id": 751,
+            "quantity": 1,
+            "ing_name": {
+              "fr": "Chaussures du mécano",
+              "en": "Mechanic Shoes"
+            }
+          }
+        }
+      }
+    }
+  },
+  "30281": {
+    "id": 30281,
+    "title": {
+      "fr": "Bottes de l'usine",
+      "en": "Factory Boots"
+    },
+    "params": {
+      "type_id": 119,
+      "level": 230,
+      "rarity": 4
+    },
+    "stats": {
+      "1053": {
+        "display": {
+          "fr": "Maîtrise Distance",
+          "en": "Distance Mastery"
+        },
+        "id": 1053,
+        "format": "flat",
+        "value": 180
+      },
+      "173": {
+        "display": {
+          "fr": "Tacle",
+          "en": "Lock"
+        },
+        "id": 173,
+        "format": "flat",
+        "value": 130
+      },
+      "175": {
+        "display": {
+          "fr": "Esquive",
+          "en": "Dodge"
+        },
+        "id": 175,
+        "format": "flat",
+        "value": 130
+      },
+      "180": {
+        "display": {
+          "fr": "Maîtrise Dos",
+          "en": "Rear Mastery"
+        },
+        "id": 180,
+        "format": "flat",
+        "value": 210
+      },
+      "20": {
+        "display": {
+          "fr": "PV",
+          "en": "HP"
+        },
+        "id": 20,
+        "format": "flat",
+        "value": 618
+      },
+      "41": {
+        "display": {
+          "fr": "PM",
+          "en": "MP"
+        },
+        "id": 41,
+        "format": "flat",
+        "value": 1
+      },
+      "83": {
+        "display": {
+          "fr": "Résistance Eau",
+          "en": "Water Resistance"
+        },
+        "id": 83,
+        "format": "flat",
+        "value": 90
+      },
+      "84": {
+        "display": {
+          "fr": "Résistance Terre",
+          "en": "Earth Resistance"
+        },
+        "id": 84,
+        "format": "flat",
+        "value": 90
+      }
+    },
+    "droprates": {
+      "5400": {
+        "monster_id": 5400,
+        "monster_name": {
+          "fr": "Sir Comte Flex",
+          "en": "Sire Flexington"
+        },
+        "drop_chance": 0.25
+      }
+    },
+    "recipes": {
+      "30487": {
+        "job_id": 80,
+        "job_level": 150,
+        "job_name": {
+          "fr": "Maroquinier",
+          "en": "Leather Dealer"
+        },
+        "recipe_id": 30487,
+        "ingredients": {
+          "27093": {
+            "id": 27093,
+            "type_id": 751,
+            "quantity": 574,
+            "ing_name": {
+              "fr": "Poudre",
+              "en": "Powder"
+            }
+          },
+          "28749": {
+            "id": 28749,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Haricot sympa",
+              "en": "Nice Bean"
+            }
+          },
+          "29035": {
+            "id": 29035,
+            "type_id": 751,
+            "quantity": 45,
+            "ing_name": {
+              "fr": "Cuir Infernal",
+              "en": "Infernal Leather"
+            }
+          },
+          "29041": {
+            "id": 29041,
+            "type_id": 751,
+            "quantity": 95,
+            "ing_name": {
+              "fr": "Sioupère-Glou Infernale",
+              "en": "Infernal Souper-Glou"
+            }
+          },
+          "30269": {
+            "id": 30269,
+            "type_id": 751,
+            "quantity": 104,
+            "ing_name": {
+              "fr": "Ferraille stasifiée",
+              "en": "Stasified Scrap Metal"
+            }
+          },
+          "30270": {
+            "id": 30270,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Gantelet stasifié",
+              "en": "Stasified Gauntlet"
+            }
+          },
+          "30271": {
+            "id": 30271,
+            "type_id": 751,
+            "quantity": 9,
+            "ing_name": {
+              "fr": "Corne de Sir Comte Flex",
+              "en": "Sire Flexington's Horn"
+            }
+          },
+          "30280": {
+            "id": 30280,
+            "type_id": 751,
+            "quantity": 1,
+            "ing_name": {
+              "fr": "Bottes de l'usine",
+              "en": "Factory Boots"
+            }
+          }
+        }
+      }
+    }
+  },
+  "30322": {
+    "id": 30322,
+    "title": {
+      "fr": "Brodequins caillerie",
+      "en": "Hard-Wearing Boots"
+    },
+    "params": {
+      "type_id": 119,
+      "level": 230,
+      "rarity": 4
+    },
+    "stats": {
+      "1068": {
+        "display": {
+          "fr": "Maîtrise dans X éléments",
+          "en": "Mastery in X elements"
+        },
+        "id": 1068,
+        "format": "flat",
+        "value": 110,
+        "num_elements": 2
+      },
+      "173": {
+        "display": {
+          "fr": "Tacle",
+          "en": "Lock"
+        },
+        "id": 173,
+        "format": "flat",
+        "value": 70
+      },
+      "175": {
+        "display": {
+          "fr": "Esquive",
+          "en": "Dodge"
+        },
+        "id": 175,
+        "format": "flat",
+        "value": 70
+      },
+      "20": {
+        "display": {
+          "fr": "PV",
+          "en": "HP"
+        },
+        "id": 20,
+        "format": "flat",
+        "value": 655
+      },
+      "26": {
+        "display": {
+          "fr": "Maîtrise Soin",
+          "en": "Healing Mastery"
+        },
+        "id": 26,
+        "format": "flat",
+        "value": 233
+      },
+      "41": {
+        "display": {
+          "fr": "PM",
+          "en": "MP"
+        },
+        "id": 41,
+        "format": "flat",
+        "value": 1
+      },
+      "82": {
+        "display": {
+          "fr": "Résistance Feu",
+          "en": "Fire Resistance"
+        },
+        "id": 82,
+        "format": "flat",
+        "value": 90
+      },
+      "85": {
+        "display": {
+          "fr": "Résistance Air",
+          "en": "Air Resistance"
+        },
+        "id": 85,
+        "format": "flat",
+        "value": 90
+      }
+    },
+    "droprates": {
+      "5397": {
+        "monster_id": 5397,
+        "monster_name": {
+          "fr": "Mékano",
+          "en": "Mechano"
+        },
+        "drop_chance": 0.03
+      },
+      "5398": {
+        "monster_id": 5398,
+        "monster_name": {
+          "fr": "Artilleur d'élite",
+          "en": "Elite Gunner"
+        },
+        "drop_chance": 0.03
+      },
+      "5399": {
+        "monster_id": 5399,
+        "monster_name": {
+          "fr": "Unité stasificatrice",
+          "en": "Stasification Unit"
+        },
+        "drop_chance": 0.03
+      }
+    },
+    "recipes": {
+      "30528": {
+        "job_id": 80,
+        "job_level": 150,
+        "job_name": {
+          "fr": "Maroquinier",
+          "en": "Leather Dealer"
+        },
+        "recipe_id": 30528,
+        "ingredients": {
+          "27093": {
+            "id": 27093,
+            "type_id": 751,
+            "quantity": 574,
+            "ing_name": {
+              "fr": "Poudre",
+              "en": "Powder"
+            }
+          },
+          "28749": {
+            "id": 28749,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Haricot sympa",
+              "en": "Nice Bean"
+            }
+          },
+          "29035": {
+            "id": 29035,
+            "type_id": 751,
+            "quantity": 45,
+            "ing_name": {
+              "fr": "Cuir Infernal",
+              "en": "Infernal Leather"
+            }
+          },
+          "29041": {
+            "id": 29041,
+            "type_id": 751,
+            "quantity": 95,
+            "ing_name": {
+              "fr": "Sioupère-Glou Infernale",
+              "en": "Infernal Souper-Glou"
+            }
+          },
+          "30269": {
+            "id": 30269,
+            "type_id": 751,
+            "quantity": 104,
+            "ing_name": {
+              "fr": "Ferraille stasifiée",
+              "en": "Stasified Scrap Metal"
+            }
+          },
+          "30270": {
+            "id": 30270,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Gantelet stasifié",
+              "en": "Stasified Gauntlet"
+            }
+          },
+          "30271": {
+            "id": 30271,
+            "type_id": 751,
+            "quantity": 9,
+            "ing_name": {
+              "fr": "Corne de Sir Comte Flex",
+              "en": "Sire Flexington's Horn"
+            }
+          },
+          "30321": {
+            "id": 30321,
+            "type_id": 751,
+            "quantity": 1,
+            "ing_name": {
+              "fr": "Brodequins caillerie",
+              "en": "Hard-Wearing Boots"
+            }
+          }
+        }
+      }
+    }
+  },
+  "30695": {
+    "id": 30695,
+    "title": {
+      "fr": "Grèves de Cire Momore",
+      "en": "Cire Momore's Greaves"
+    },
+    "params": {
+      "type_id": 119,
+      "level": 230,
+      "rarity": 3
+    },
+    "stats": {
+      "1068": {
+        "display": {
+          "fr": "Maîtrise dans X éléments",
+          "en": "Mastery in X elements"
+        },
+        "id": 1068,
+        "format": "flat",
+        "value": 244,
+        "num_elements": 2
+      },
+      "173": {
+        "display": {
+          "fr": "Tacle",
+          "en": "Lock"
+        },
+        "id": 173,
+        "format": "flat",
+        "value": 80
+      },
+      "175": {
+        "display": {
+          "fr": "Esquive",
+          "en": "Dodge"
+        },
+        "id": 175,
+        "format": "flat",
+        "value": 80
+      },
+      "191": {
+        "display": {
+          "fr": "PW",
+          "en": "WP"
+        },
+        "id": 191,
+        "format": "flat",
+        "value": 1
+      },
+      "20": {
+        "display": {
+          "fr": "PV",
+          "en": "HP"
+        },
+        "id": 20,
+        "format": "flat",
+        "value": 486
+      },
+      "39": {
+        "display": {
+          "fr": "Armure donnée",
+          "en": "Armor given"
+        },
+        "id": 39,
+        "format": "percent",
+        "value": 5
+      },
+      "41": {
+        "display": {
+          "fr": "PM",
+          "en": "MP"
+        },
+        "id": 41,
+        "format": "flat",
+        "value": 1
+      },
+      "80": {
+        "display": {
+          "fr": "Résistance Élémentaire",
+          "en": "Elemental Resistance"
+        },
+        "id": 80,
+        "format": "flat",
+        "value": 35
+      }
+    },
+    "droprates": {
+      "5418": {
+        "monster_id": 5418,
+        "monster_name": {
+          "fr": "Cire Momore",
+          "en": "Cire Momore"
+        },
+        "drop_chance": 4
+      }
+    },
+    "recipes": null
+  },
+  "30801": {
+    "id": 30801,
+    "title": {
+      "fr": "Bottes de Genki",
+      "en": "Genki's Boots"
+    },
+    "params": {
+      "type_id": 119,
+      "level": 230,
+      "rarity": 3
+    },
+    "stats": {
+      "1052": {
+        "display": {
+          "fr": "Maîtrise Mêlée",
+          "en": "Melee Mastery"
+        },
+        "id": 1052,
+        "format": "flat",
+        "value": 420
+      },
+      "173": {
+        "display": {
+          "fr": "Tacle",
+          "en": "Lock"
+        },
+        "id": 173,
+        "format": "flat",
+        "value": 100
+      },
+      "175": {
+        "display": {
+          "fr": "Esquive",
+          "en": "Dodge"
+        },
+        "id": 175,
+        "format": "flat",
+        "value": 100
+      },
+      "20": {
+        "display": {
+          "fr": "PV",
+          "en": "HP"
+        },
+        "id": 20,
+        "format": "flat",
+        "value": 705
+      },
+      "80": {
+        "display": {
+          "fr": "Résistance Élémentaire",
+          "en": "Elemental Resistance"
+        },
+        "id": 80,
+        "format": "flat",
+        "value": 50
+      },
+      "875": {
+        "display": {
+          "fr": "Parade",
+          "en": "Block"
+        },
+        "id": 875,
+        "format": "percent",
+        "value": 8
+      }
+    },
+    "droprates": {
+      "5390": {
+        "monster_id": 5390,
+        "monster_name": {
+          "fr": "Protogolem",
+          "en": "Protogolem"
+        },
+        "drop_chance": 2
+      },
+      "5400": {
+        "monster_id": 5400,
+        "monster_name": {
+          "fr": "Sir Comte Flex",
+          "en": "Sire Flexington"
+        },
+        "drop_chance": 2
+      }
+    },
+    "recipes": null
+  },
+  "30802": {
+    "id": 30802,
+    "title": {
+      "fr": "Bottes de Genki",
+      "en": "Genki's Boots"
+    },
+    "params": {
+      "type_id": 119,
+      "level": 230,
+      "rarity": 4
+    },
+    "stats": {
+      "1052": {
+        "display": {
+          "fr": "Maîtrise Mêlée",
+          "en": "Melee Mastery"
+        },
+        "id": 1052,
+        "format": "flat",
+        "value": 492
+      },
+      "173": {
+        "display": {
+          "fr": "Tacle",
+          "en": "Lock"
+        },
+        "id": 173,
+        "format": "flat",
+        "value": 120
+      },
+      "175": {
+        "display": {
+          "fr": "Esquive",
+          "en": "Dodge"
+        },
+        "id": 175,
+        "format": "flat",
+        "value": 120
+      },
+      "20": {
+        "display": {
+          "fr": "PV",
+          "en": "HP"
+        },
+        "id": 20,
+        "format": "flat",
+        "value": 754
+      },
+      "80": {
+        "display": {
+          "fr": "Résistance Élémentaire",
+          "en": "Elemental Resistance"
+        },
+        "id": 80,
+        "format": "flat",
+        "value": 50
+      },
+      "875": {
+        "display": {
+          "fr": "Parade",
+          "en": "Block"
+        },
+        "id": 875,
+        "format": "percent",
+        "value": 8
+      }
+    },
+    "droprates": {
+      "5390": {
+        "monster_id": 5390,
+        "monster_name": {
+          "fr": "Protogolem",
+          "en": "Protogolem"
+        },
+        "drop_chance": 0.25
+      },
+      "5400": {
+        "monster_id": 5400,
+        "monster_name": {
+          "fr": "Sir Comte Flex",
+          "en": "Sire Flexington"
+        },
+        "drop_chance": 0.25
+      }
+    },
+    "recipes": {
+      "31008": {
+        "job_id": 80,
+        "job_level": 150,
+        "job_name": {
+          "fr": "Maroquinier",
+          "en": "Leather Dealer"
+        },
+        "recipe_id": 31008,
+        "ingredients": {
+          "27093": {
+            "id": 27093,
+            "type_id": 751,
+            "quantity": 574,
+            "ing_name": {
+              "fr": "Poudre",
+              "en": "Powder"
+            }
+          },
+          "28746": {
+            "id": 28746,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Fruit élastique",
+              "en": "Flexifruit"
+            }
+          },
+          "29035": {
+            "id": 29035,
+            "type_id": 751,
+            "quantity": 45,
+            "ing_name": {
+              "fr": "Cuir Infernal",
+              "en": "Infernal Leather"
+            }
+          },
+          "29041": {
+            "id": 29041,
+            "type_id": 751,
+            "quantity": 95,
+            "ing_name": {
+              "fr": "Sioupère-Glou Infernale",
+              "en": "Infernal Souper-Glou"
+            }
+          },
+          "30269": {
+            "id": 30269,
+            "type_id": 751,
+            "quantity": 104,
+            "ing_name": {
+              "fr": "Ferraille stasifiée",
+              "en": "Stasified Scrap Metal"
+            }
+          },
+          "30270": {
+            "id": 30270,
+            "type_id": 751,
+            "quantity": 11,
+            "ing_name": {
+              "fr": "Gantelet stasifié",
+              "en": "Stasified Gauntlet"
+            }
+          },
+          "30271": {
+            "id": 30271,
+            "type_id": 751,
+            "quantity": 9,
+            "ing_name": {
+              "fr": "Corne de Sir Comte Flex",
+              "en": "Sire Flexington's Horn"
+            }
+          },
+          "30801": {
+            "id": 30801,
+            "type_id": 751,
+            "quantity": 1,
+            "ing_name": {
+              "fr": "Bottes de Genki",
+              "en": "Genki's Boots"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -87,3 +87,13 @@ type TypesItem struct {
 }
 
 // endregion itemTypes
+
+type ScrapingParameters struct {
+	SingleItemURL  map[string]string
+	IndexUrl       map[string]string
+	ItemUrl        map[string]string
+	MaxPage        int
+	SelectedId     int
+	SingleItemMode bool
+	SelectedType   string
+}

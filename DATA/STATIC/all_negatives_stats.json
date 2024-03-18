@@ -36,20 +36,20 @@
     "en": "- Critical Chance (%)"
   },
   "56": {
-    "fr": "- PA",
-    "en": "- AP"
+    "fr": "- PA max",
+    "en": "- max AP"
   },
   "161": {
     "fr": "- Portée",
     "en": "- Range"
   },
   "57": {
-    "fr": "- PM",
-    "en": "- MP"
+    "fr": "- PM max",
+    "en": "- max MP"
   },
   "192": {
-    "fr": "- PW",
-    "en": "- WP"
+    "fr": "- PW max",
+    "en": "- max WP"
   },
   "174": {
     "fr": "- Tacle",

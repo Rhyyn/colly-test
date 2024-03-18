@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/Rhyyn/wakfukiscraper/scrapers"
+	"github.com/Rhyyn/wakfukiscraper/structs"
 	"github.com/Rhyyn/wakfukiscraper/utils"
 )
 
@@ -13,6 +14,7 @@ func Execute() {
 	fmt.Println("1. Print item categories")
 	fmt.Println("2. Scrap TYPE of item")
 	fmt.Println("3. Scrap CATEGORY of item")
+	fmt.Println("4. Scrap url of item")
 
 	var choice int
 	fmt.Print("Enter your choice: ")
@@ -51,7 +53,15 @@ func Execute() {
 				ID:        selectedType.ID,
 			})
 			maxPage := utils.GetMaxPage(selectedId)
-			scrapers.ScrapItems(selectedCategory.Index_url, selectedCategory.Item_url, maxPage, selectedId)
+			ScrapingParameters := structs.ScrapingParameters{
+				IndexUrl:       selectedCategory.Index_url,
+				ItemUrl:        selectedCategory.Item_url,
+				MaxPage:        maxPage,
+				SelectedId:     selectedId,
+				SingleItemMode: false,
+				SelectedType:   selectedType.Title["fr"],
+			}
+			scrapers.ScrapItems(ScrapingParameters)
 			// scrapers.ScrapRedirect(selectedCategory.Index_url["fr"], maxPage, selectedId)
 		}
 		// defer scrapers.CrawlIndexURL(selected_category.Index_url["fr"])
@@ -59,6 +69,24 @@ func Execute() {
 
 	case 3:
 		fmt.Println("You selected: Scrap category")
+	case 4:
+		fmt.Println("You selected: Scrap url of item")
+		fmt.Println("Please Input the FRENCH url of the item: ")
+		var frURL, enURL string
+		urls := make(map[string]string)
+
+		fmt.Scanln(&frURL)
+		fmt.Println("Please Input the ENGLISH url of the item: ")
+		fmt.Scanln(&enURL)
+
+		urls["Fr"] = frURL
+		urls["En"] = enURL
+
+		ScrapingParameters := structs.ScrapingParameters{
+			SingleItemURL:  urls,
+			SingleItemMode: true,
+		}
+		scrapers.ScrapItems(ScrapingParameters)
 	default:
 		fmt.Println("Invalid choice")
 	}
@@ -98,11 +126,27 @@ func checkForNewItems(selectedType utils.SubCategory, selectedCategory utils.Ite
 			ID:        selectedType.ID,
 		})
 		maxPage := utils.GetMaxPage(selectedId)
-		scrapers.ScrapItems(selectedCategory.Index_url, selectedCategory.Item_url, maxPage, selectedId)
+		ScrapingParameters := structs.ScrapingParameters{
+			IndexUrl:       selectedCategory.Index_url,
+			ItemUrl:        selectedCategory.Item_url,
+			MaxPage:        maxPage,
+			SelectedId:     selectedId,
+			SingleItemMode: false,
+			SelectedType:   selectedType.Title["fr"],
+		}
+		scrapers.ScrapItems(ScrapingParameters)
 		// scrapers.ScrapRedirect(selectedCategory.Index_url["fr"], maxPage, selectedId)
 	} else {
 		maxPage := utils.GetMaxPage(selectedId)
-		scrapers.ScrapItems(selectedCategory.Index_url, selectedCategory.Item_url, maxPage, selectedId)
+		ScrapingParameters := structs.ScrapingParameters{
+			IndexUrl:       selectedCategory.Index_url,
+			ItemUrl:        selectedCategory.Item_url,
+			MaxPage:        maxPage,
+			SelectedId:     selectedId,
+			SingleItemMode: false,
+			SelectedType:   selectedType.Title["fr"],
+		}
+		scrapers.ScrapItems(ScrapingParameters)
 		// scrapers.ScrapRedirect(selectedCategory.Index_url["fr"], maxPage, selectedId)
 	}
 }
