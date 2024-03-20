@@ -207,19 +207,40 @@ func HasNumberInString(str string) (bool, int) {
 	// return found
 }
 
-func StatPrefixToStringAndSetFormat(str string) (string, int) {
+// This is Used to convert our string values to int and assert what format of value we're storing
+// Flat means 5 HP
+// Percent means 5% Armor Given
+// Negative means it starts with " - ", could be - 5 HP or - 5% Armor Given
+func StatPrefixToStringAndSetFormat(str string) (string, int, bool) {
+	var err error
+	var value int
+	isNegative := false
+	var trimmedString string
 	if strings.HasPrefix(str, "-") {
-		format := "negative"
-		value, _ := strconv.Atoi(strings.TrimPrefix(str, "-"))
-		return format, value
-	} else if strings.HasSuffix(str, "%") {
+		// if starts with " - ", set isNegative, and trim
+		trimmedString = strings.TrimPrefix(str, "-")
+		isNegative = true
+	}
+
+	if strings.HasSuffix(str, "%") {
 		format := "percent"
-		value, _ := strconv.Atoi(strings.TrimSuffix(str, "%"))
-		return format, value
+		// if percent trim % sign from string and convert to int type
+		value, err = strconv.Atoi(strings.TrimSuffix(trimmedString, "%"))
+		if err != nil {
+			fmt.Println("Error converting string to int of trimmedString inside StatPrefixTostringAndSetFormat")
+			fmt.Println(err)
+		}
+
+		return format, value, isNegative
 	} else {
 		format := "flat"
-		value, _ := strconv.Atoi(str)
-		return format, value
+		value, err = strconv.Atoi(str)
+		if err != nil {
+			fmt.Println("Error converting string to int of supposed flat str inside StatPrefixTostringAndSetFormat")
+			fmt.Println(err)
+		}
+
+		return format, value, isNegative
 	}
 }
 
