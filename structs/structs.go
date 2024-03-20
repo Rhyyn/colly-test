@@ -25,6 +25,7 @@ type Stat struct {
 	Display     Display `json:"display"`
 	ID          int     `json:"id"`
 	Format      string  `json:"format"`
+	IsNegative  bool    `json:"is_negative"`
 	Value       int     `json:"value"`
 	NumElements int     `json:"num_elements,omitempty"`
 }

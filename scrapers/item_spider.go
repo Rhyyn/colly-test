@@ -66,10 +66,17 @@ func GetTypeID(htmlElement *colly.HTMLElement, Item *structs.Item, lang string) 
 	Item.Params.TypeId = typeId
 }
 
-func GetStatId(statString string, ParamsStatsProperties structs.ParamsStatsProperties, format string, lang string) (int, error) {
+// Gets the ID from separate file
+func GetStatId(statString string, ParamsStatsProperties structs.ParamsStatsProperties, isNegative bool, lang string) (int, error) {
 	var id int
 	var err error
-	if format == "negative" {
+	// TODO :
+	// Need to handle subilmations somehow
+	// ScrapItemDetails visiting:
+	// https://www.wakfu.com/fr/mmorpg/encyclopedie/armures/27302-bottes-assechees
+	// id of stat X% (+X Niv.) is 0
+	// https://github.com/noredlace/wakfu-sublimations/blob/main/wakfu-sublimations-site/src/app/data/sublimations.json
+	if isNegative {
 		for key, property := range ParamsStatsProperties.AllNegativesStats {
 			if lang == "Fr" {
 				if strings.Contains(statString, property.Fr) {
@@ -123,8 +130,10 @@ func GetStats(htmlElement *colly.HTMLElement, Item *structs.Item, lang string, P
 
 			// Used to check if stat is either flat/percent/negative
 			// TODO : need do make it do it can become "negative,flat" or "negative,percent"
+			// or return a isNegative flag ?
 			// fmt.Printf("prefixString : %s\n", prefixString)
-			format, value = utils.StatPrefixToStringAndSetFormat(prefixString)
+			var isNegative bool
+			format, value, isNegative = utils.StatPrefixToStringAndSetFormat(prefixString)
 
 			// Check if has 2 values (Mastery of 3 random elements)
 			// If it has set numElements and format it to (Mastery in X elements)
@@ -139,7 +148,7 @@ func GetStats(htmlElement *colly.HTMLElement, Item *structs.Item, lang string, P
 			// fmt.Println("formatted suffixString", suffixString)
 
 			// Gets the ID
-			id, idError = GetStatId(suffixString, ParamsStatsProperties, format, lang)
+			id, idError = GetStatId(suffixString, ParamsStatsProperties, isNegative, lang)
 			if idError != nil {
 				fmt.Printf("Error GetStatId %v", idError)
 			}
@@ -169,6 +178,7 @@ func GetStats(htmlElement *colly.HTMLElement, Item *structs.Item, lang string, P
 					},
 					ID:          id,
 					Format:      format,
+					IsNegative:  isNegative,
 					Value:       value,
 					NumElements: numElements,
 				}
@@ -426,8 +436,6 @@ func ScrapItemDetails(url string, Item *structs.Item, ParamsStatsProperties stru
 	c := GetNewCollector()
 	c.OnHTML(".ak-container.ak-panel-stack.ak-glue", func(h *colly.HTMLElement) {
 		Lang := utils.GetLangFromURL(h.Request.URL.String())
-		// TODO : Get each item ID and write to separate ID file for cat
-		// Useful when checking new items after updates
 		GetTitle(h, Item, Lang)
 		// fmt.Println("Got Title")
 		GetTypeID(h, Item, Lang)
@@ -436,7 +444,6 @@ func ScrapItemDetails(url string, Item *structs.Item, ParamsStatsProperties stru
 		// fmt.Println("Got Rarity")
 		GetLevel(h, Item, Lang)
 		// fmt.Println("Got Level")
-		// TODO : Armure Received / Armor given sometimes ( 2 times ) have the same actionId :)
 		GetStats(h, Item, Lang, ParamsStatsProperties)
 		// fmt.Println("Got Stats")
 		GetDroprates(h, Item, Lang)
@@ -501,12 +508,14 @@ func ScrapItems(ScrapingParameters structs.ScrapingParameters) {
 			fmt.Println("error while getting the item ID", err)
 			os.Exit(0)
 		}
+		// TODO : Refactor check for update
+		// so we dont need to scrap what we already scraped
+
 		IDsList = append(IDsList, Item.ID)
 		// Scrap both FR/EN version of the item
 		ScrapItemDetails(frenchURL, &Item, ParamsStatsProperties)
 		ScrapItemDetails(englishURL, &Item, ParamsStatsProperties)
 
-		// TODO: Add to separate map of item and write to file
 		Items[Item.ID] = Item
 		// Useless pretty print for debug
 		// PrettyItem, err := json.MarshalIndent(Item, "", "    ")
