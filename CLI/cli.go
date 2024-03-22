@@ -39,33 +39,60 @@ func Execute() {
 		selectedType := selectedCategory.Sub_categories[typeChoice]
 		fmt.Printf("You selected %s\n", selectedType.Title["fr"])
 
-		// if no maxItems stored proceed without prompts else
-		// Ask if we want to check for new items (max_items, max_page)
-		selectedId := selectedCategory.Sub_categories[typeChoice].ID[0]
-		maxItems := utils.GetMaxItems(selectedId)
-		// fmt.Printf("maxItems : %d\n", maxItems)
-		if maxItems != 0 {
-			checkForNewItems(selectedType, selectedCategory, selectedId)
-		} else {
-			scrapers.UpdateMaxItemsAndPages(scrapers.IndexOptions{
-				Title:     selectedType.Title["fr"],
+		// If SubCategory == ressources , ask for sub of sub category
+		// This if Else is temporary, this needs better logic
+		if selectedType.Title["fr"] == "Améliorations" {
+			selectedSubType := selectTypeInsideSubCategory(selectedType)
+
+			EditFileOptions := scrapers.UpdateMaxItemsAndPages(scrapers.IndexOptions{
+				Title:     selectedSubType.Title["fr"],
 				Index_url: selectedCategory.Index_url["fr"],
-				ID:        selectedType.ID,
+				ID:        selectedSubType.ID,
 			})
-			maxPage := utils.GetMaxPage(selectedId)
-			ScrapingParameters := structs.ScrapingParameters{
-				IndexUrl:       selectedCategory.Index_url,
-				ItemUrl:        selectedCategory.Item_url,
-				MaxPage:        maxPage,
-				SelectedId:     selectedId,
-				SingleItemMode: false,
-				SelectedType:   selectedType.Title["fr"],
+
+			// call scraper here with params from EditFileOptions
+			scrapers.ScrapSingleResourceType(EditFileOptions)
+			fmt.Println(EditFileOptions.SubCat)
+		} else {
+
+			// if no maxItems stored proceed without prompts else
+			// Ask if we want to check for new items (max_items, max_page)
+			selectedId := selectedCategory.Sub_categories[typeChoice].ID[0]
+			maxItems := utils.GetMaxItems(selectedId)
+			// fmt.Printf("maxItems : %d\n", maxItems)
+			if maxItems != 0 {
+				checkForNewItems(selectedType, selectedCategory, selectedId)
+			} else {
+				// TODO : DRY, need to extract
+				// Call a new separate Collector to get info on the max number of items in that category
+				EditFileOptions := scrapers.UpdateMaxItemsAndPages(scrapers.IndexOptions{
+					Title:     selectedType.Title["fr"],
+					Index_url: selectedCategory.Index_url["fr"],
+					ID:        selectedType.ID,
+				})
+				// Update the json file with it
+				defer utils.EditItemsCats(EditFileOptions)
+				// scrapers.UpdateMaxItemsAndPages(scrapers.IndexOptions{
+				// 	Title:     selectedType.Title["fr"],
+				// 	Index_url: selectedCategory.Index_url["fr"],
+				// 	ID:        selectedType.ID,
+				// })
+				maxPage := utils.GetMaxPage(selectedId)
+				ScrapingParameters := structs.ScrapingParameters{
+					IndexUrl:       selectedCategory.Index_url,
+					ItemUrl:        selectedCategory.Item_url,
+					MaxPage:        maxPage,
+					SelectedId:     selectedId,
+					SingleItemMode: false,
+					SelectedType:   selectedType.Title["fr"],
+				}
+				scrapers.ScrapItems(ScrapingParameters)
+				// scrapers.ScrapRedirect(selectedCategory.Index_url["fr"], maxPage, selectedId)
 			}
-			scrapers.ScrapItems(ScrapingParameters)
-			// scrapers.ScrapRedirect(selectedCategory.Index_url["fr"], maxPage, selectedId)
+			// defer scrapers.CrawlIndexURL(selected_category.Index_url["fr"])
+			// scrapers.CrawlSingleAccesoryType(selectedType.ID[0])
+
 		}
-		// defer scrapers.CrawlIndexURL(selected_category.Index_url["fr"])
-		// scrapers.CrawlSingleAccesoryType(selectedType.ID[0])
 
 	case 3:
 		fmt.Println("You selected: Scrap category")
@@ -92,6 +119,7 @@ func Execute() {
 	}
 }
 
+// ask and select a sub category
 func selectSubCategory(selectedCategory utils.ItemInfo) int {
 	for index, subCategory := range selectedCategory.Sub_categories {
 		fmt.Printf("%d. Type : %#v\n", index, subCategory.Title["fr"])
@@ -100,6 +128,18 @@ func selectSubCategory(selectedCategory utils.ItemInfo) int {
 	var choice int
 	fmt.Scanln(&choice)
 	return choice
+}
+
+// ask and select a type of object inside a sub category
+func selectTypeInsideSubCategory(selectedType utils.SubCategory) utils.ItemTypes {
+	for index, t := range selectedType.ItemTypes {
+		fmt.Printf("%d. Type : %#v\n", index, t.Title["fr"])
+	}
+	fmt.Print("Chose a type: (use numbers..)\n")
+	var choice int
+	fmt.Scanln(&choice)
+	Type := selectedType.ItemTypes[choice]
+	return Type
 }
 
 func selectCategory(allCategoriesInfo []utils.ItemInfo) int {
@@ -120,11 +160,19 @@ func checkForNewItems(selectedType utils.SubCategory, selectedCategory utils.Ite
 		fmt.Printf("wrong input please use (y/n), exiting..\n")
 		os.Exit(0)
 	} else if userUpdate == "y" {
-		defer scrapers.UpdateMaxItemsAndPages(scrapers.IndexOptions{
+		// Call a new separate Collector to get info on the max number of items in that category
+		EditFileOptions := scrapers.UpdateMaxItemsAndPages(scrapers.IndexOptions{
 			Title:     selectedType.Title["fr"],
 			Index_url: selectedCategory.Index_url["fr"],
 			ID:        selectedType.ID,
 		})
+		// Update the json file with it
+		defer utils.EditItemsCats(EditFileOptions)
+		// defer scrapers.UpdateMaxItemsAndPages(scrapers.IndexOptions{
+		// 	Title:     selectedType.Title["fr"],
+		// 	Index_url: selectedCategory.Index_url["fr"],
+		// 	ID:        selectedType.ID,
+		// })
 		maxPage := utils.GetMaxPage(selectedId)
 		ScrapingParameters := structs.ScrapingParameters{
 			IndexUrl:       selectedCategory.Index_url,

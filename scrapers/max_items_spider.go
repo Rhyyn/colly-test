@@ -36,7 +36,7 @@ func CountItemsInPage(url string) int {
 	return nOfItems
 }
 
-func UpdateMaxItemsAndPages(IndexOptions IndexOptions) {
+func UpdateMaxItemsAndPages(IndexOptions IndexOptions) utils.EditFileOptions {
 	fmt.Printf("Starting to update max_items and max_page for %s\n", IndexOptions.Title)
 	startingUrl := IndexOptions.Index_url
 	var ID int
@@ -48,6 +48,7 @@ func UpdateMaxItemsAndPages(IndexOptions IndexOptions) {
 
 	c := GetNewCollector()
 
+	FileOptions := utils.EditFileOptions{}
 	var maxItems int
 	// This finds the menu for pages at the bottom of the page
 	// and follows the last href and counts the number of items present in the last page
@@ -79,11 +80,15 @@ func UpdateMaxItemsAndPages(IndexOptions IndexOptions) {
 			}
 		}
 
-		utils.EditItemsCats(utils.EditFileOptions{
-			IsSubCat: true,
-			ID:       ID,
-			SubCat:   utils.SubCategory{MaxPage: maxPages, MaxItems: maxItems},
-		})
+		// Update json File ( allCategoriesInfo )
+		// utils.EditItemsCats(utils.EditFileOptions{
+		// 	IsSubCat: true,
+		// 	ID:       ID,
+		// 	SubCat:   utils.SubCategory{MaxPage: maxPages, MaxItems: maxItems},
+		// })
+		FileOptions.ID = ID
+		FileOptions.IsSubCat = true
+		FileOptions.SubCat = utils.SubCategory{MaxPage: maxPages, MaxItems: maxItems}
 		// fmt.Printf("max_items for %s is %d\n", IndexOptions.Title, maxItems)
 	})
 
@@ -96,4 +101,6 @@ func UpdateMaxItemsAndPages(IndexOptions IndexOptions) {
 	})
 
 	c.Visit(startingUrl)
+
+	return FileOptions
 }
