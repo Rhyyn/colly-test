@@ -18,6 +18,22 @@ type ScrapedItem struct {
 	ID int `json:"_id"`
 }
 
+type Type struct {
+	Fr string `json:"fr"`
+	En string `json:"en"`
+}
+
+type UrlArgs struct {
+	Fr string `json:"fr"`
+	En string `json:"en"`
+}
+
+type ItemTypes struct {
+	ID      []int             `json:"id"`
+	Title   map[string]string `json:"title"`
+	Type    Type              `json:"type"`
+	UrlArgs UrlArgs           `json:"url_args"`
+}
 type SubCategory struct {
 	Title     map[string]string `json:"title"`
 	ID        []int             `json:"id"`
@@ -25,8 +41,10 @@ type SubCategory struct {
 	Item_url  map[string]string `json:"item_url"`
 	MaxPage   int               `json:"max_page"`
 	MaxItems  int               `json:"max_items"`
+	ItemTypes []ItemTypes       `json:"items_types"`
 }
 
+// Move this to structs
 type ItemInfo struct {
 	Title          map[string]string `json:"title"`
 	ID             []int             `json:"id"`
@@ -312,6 +330,8 @@ func FormatSingleResStrng(statString string, format string) string {
 	return statString
 }
 
+// Used to inverse some word in english
+// Resistance air -> Air Resistance
 func FormatStatString(statString string, format string) string {
 	newStatString := statString
 	newStatString = FormatSingleResStrng(statString, format)

@@ -2,12 +2,13 @@ package structs
 
 // region ScrapedItem
 type Item struct {
-	ID        int              `json:"id"`
-	Title     Title            `json:"title"`
-	Params    Params           `json:"params"`
-	Stats     map[int]Stat     `json:"stats"`
-	Droprates map[int]Droprate `json:"droprates"`
-	Recipes   map[int]Recipe   `json:"recipes"`
+	ID                 int                `json:"id"`
+	Title              Title              `json:"title"`
+	Params             Params             `json:"params"`
+	Stats              map[int]Stat       `json:"stats"`
+	Droprates          map[int]Droprate   `json:"droprates"`
+	Recipes            map[int]Recipe     `json:"recipes"`
+	SublimationDetails SublimationDetails `json:"sublimations_details,omitempty"`
 }
 
 type Params struct {
@@ -24,9 +25,9 @@ type Title struct {
 type Stat struct {
 	Display     Display `json:"display"`
 	ID          int     `json:"id"`
-	Format      string  `json:"format"`
-	IsNegative  bool    `json:"is_negative"`
-	Value       int     `json:"value"`
+	Format      string  `json:"format,omitempty"`
+	IsNegative  bool    `json:"is_negative,omitempty"`
+	Value       int     `json:"value,omitempty"`
 	NumElements int     `json:"num_elements,omitempty"`
 }
 
@@ -98,3 +99,14 @@ type ScrapingParameters struct {
 	SingleItemMode bool
 	SelectedType   string
 }
+
+// region Ressources
+
+type SublimationDetails struct {
+	LevelInc      int              `json:"level_inc"`
+	SocketsColors string           `json:"sockets_colors"`
+	MaxLevel      int              `json:"max_level"`
+	Title         map[string]Title `json:"title"`
+}
+
+// endregion Ressources
