@@ -1,0 +1,824 @@
+{
+  "24136": {
+    "id": 24136,
+    "title": {
+      "fr": "Alternance",
+      "en": "Alternation"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": true,
+      "level_inc": 1,
+      "sockets_colors": "",
+      "max_level": 0,
+      "title": {
+        "fr": "Alternance",
+        "en": "Alternation"
+      },
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 5079
+    }
+  },
+  "25797": {
+    "id": 25797,
+    "title": {
+      "fr": "Force Herculéenne",
+      "en": "Herculean Strength"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": true,
+      "level_inc": 1,
+      "sockets_colors": "",
+      "max_level": 0,
+      "title": {
+        "fr": "Force herculéenne",
+        "en": "Herculean Strength"
+      },
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 5448
+    }
+  },
+  "27113": {
+    "id": 27113,
+    "title": {
+      "fr": "Ravage II",
+      "en": "Devastate II"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": {
+      "4327": {
+        "monster_id": 4327,
+        "monster_name": {
+          "fr": "Sor'Hon, Seigneur de la Flamme",
+          "en": "Sor'Hon, Lord of the Flame"
+        },
+        "drop_chance": 1
+      }
+    },
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 2,
+      "sockets_colors": "",
+      "max_level": 0,
+      "title": {
+        "fr": "Ravage",
+        "en": "Devastate"
+      },
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 5982
+    }
+  },
+  "27116": {
+    "id": 27116,
+    "title": {
+      "fr": "Embuscade II",
+      "en": "Ambush II"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": {
+      "3398": {
+        "monster_id": 3398,
+        "monster_name": {
+          "fr": "Vertox l'Intemporel",
+          "en": "Vertox the Timeless"
+        },
+        "drop_chance": 1
+      }
+    },
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 2,
+      "sockets_colors": "",
+      "max_level": 0,
+      "title": {
+        "fr": "Embuscade",
+        "en": "Ambush"
+      },
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 5985
+    }
+  },
+  "27125": {
+    "id": 27125,
+    "title": {
+      "fr": "Stupéfaction II",
+      "en": "Stupefaction II"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": {
+      "4318": {
+        "monster_id": 4318,
+        "monster_name": {
+          "fr": "Blérwitch le Furax",
+          "en": "Badgwitch the Furiox"
+        },
+        "drop_chance": 1
+      }
+    },
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 2,
+      "sockets_colors": "",
+      "max_level": 0,
+      "title": {
+        "fr": "Stupéfaction",
+        "en": "Stupefaction"
+      },
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6042
+    }
+  },
+  "27131": {
+    "id": 27131,
+    "title": {
+      "fr": "Ecailles de lune II",
+      "en": "Moon Scales II"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": {
+      "4400": {
+        "monster_id": 4400,
+        "monster_name": {
+          "fr": "Oeuf Antique",
+          "en": "Ancient Egg"
+        },
+        "drop_chance": 1
+      }
+    },
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 2,
+      "sockets_colors": "",
+      "max_level": 0,
+      "title": {
+        "fr": "Ecailles de Lune",
+        "en": "Moon Scales"
+      },
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6004
+    }
+  },
+  "27132": {
+    "id": 27132,
+    "title": {
+      "fr": "Vélocité II",
+      "en": "Swiftness II"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": {
+      "3865": {
+        "monster_id": 3865,
+        "monster_name": {
+          "fr": "Koko le Nutt",
+          "en": "Koko the Nutt"
+        },
+        "drop_chance": 1
+      }
+    },
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 2,
+      "sockets_colors": "",
+      "max_level": 0,
+      "title": {
+        "fr": "Vélocité",
+        "en": "Swiftness"
+      },
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6005
+    }
+  },
+  "27137": {
+    "id": 27137,
+    "title": {
+      "fr": "Visibilité II",
+      "en": "Visibility II"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": {
+      "3864": {
+        "monster_id": 3864,
+        "monster_name": {
+          "fr": "Kannistère",
+          "en": "Kannilooni"
+        },
+        "drop_chance": 1
+      }
+    },
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 2,
+      "sockets_colors": "",
+      "max_level": 0,
+      "title": {
+        "fr": "Visibilité",
+        "en": "Visibility"
+      },
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6010
+    }
+  },
+  "27144": {
+    "id": 27144,
+    "title": {
+      "fr": "Esquive Berserk II",
+      "en": "Berserk Dodge II"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": {
+      "3866": {
+        "monster_id": 3866,
+        "monster_name": {
+          "fr": "Grozépine",
+          "en": "Grozepin"
+        },
+        "drop_chance": 1
+      }
+    },
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 2,
+      "sockets_colors": "",
+      "max_level": 0,
+      "title": {
+        "fr": "Esquive Berserk",
+        "en": "Berserk Dodge"
+      },
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6018
+    }
+  },
+  "27147": {
+    "id": 27147,
+    "title": {
+      "fr": "Persistance II",
+      "en": "Persistence II"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": {
+      "5052": {
+        "monster_id": 5052,
+        "monster_name": {
+          "fr": "Fléogre",
+          "en": "Blightogre"
+        },
+        "drop_chance": 1
+      }
+    },
+    "sublimations_details": {
+      "is_epic": true,
+      "level_inc": 2,
+      "sockets_colors": "",
+      "max_level": 0,
+      "title": {
+        "fr": "Persistance",
+        "en": "Persistence"
+      },
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6021
+    }
+  },
+  "27149": {
+    "id": 27149,
+    "title": {
+      "fr": "Aisance II",
+      "en": "Poise II"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": {
+      "5040": {
+        "monster_id": 5040,
+        "monster_name": {
+          "fr": "Bulbrute",
+          "en": "Bulbrute"
+        },
+        "drop_chance": 1
+      }
+    },
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 2,
+      "sockets_colors": "",
+      "max_level": 0,
+      "title": {
+        "fr": "Aisance",
+        "en": "Poise"
+      },
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6023
+    }
+  },
+  "27152": {
+    "id": 27152,
+    "title": {
+      "fr": "Influence II",
+      "en": "Influence II"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": {
+      "4189": {
+        "monster_id": 4189,
+        "monster_name": {
+          "fr": "Mimic Runique",
+          "en": "Runic Mimic"
+        },
+        "drop_chance": 0.1
+      }
+    },
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 2,
+      "sockets_colors": "",
+      "max_level": 0,
+      "title": {
+        "fr": "Influence",
+        "en": "Influence"
+      },
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6026
+    }
+  },
+  "27154": {
+    "id": 27154,
+    "title": {
+      "fr": "Muraille II",
+      "en": "Wall II"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": {
+      "3865": {
+        "monster_id": 3865,
+        "monster_name": {
+          "fr": "Koko le Nutt",
+          "en": "Koko the Nutt"
+        },
+        "drop_chance": 1
+      }
+    },
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 2,
+      "sockets_colors": "",
+      "max_level": 0,
+      "title": {
+        "fr": "Muraille",
+        "en": "Wall"
+      },
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6029
+    }
+  },
+  "27161": {
+    "id": 27161,
+    "title": {
+      "fr": "Expert des Parades II",
+      "en": "Blocking Expert II"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": {
+      "3864": {
+        "monster_id": 3864,
+        "monster_name": {
+          "fr": "Kannistère",
+          "en": "Kannilooni"
+        },
+        "drop_chance": 1
+      }
+    },
+    "sublimations_details": {
+      "is_epic": true,
+      "level_inc": 2,
+      "sockets_colors": "",
+      "max_level": 0,
+      "title": {
+        "fr": "Expert des Parades",
+        "en": "Blocking Expert"
+      },
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6037
+    }
+  },
+  "27162": {
+    "id": 27162,
+    "title": {
+      "fr": "Enveloppe rocheuse II",
+      "en": "Rocky Envelope II"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 2,
+      "sockets_colors": "",
+      "max_level": 0,
+      "title": {
+        "fr": "Enveloppe rocheuse",
+        "en": "Rocky Envelope"
+      },
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6038
+    }
+  },
+  "27163": {
+    "id": 27163,
+    "title": {
+      "fr": "Influence lente II",
+      "en": "Slow Influence II"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": {
+      "3399": {
+        "monster_id": 3399,
+        "monster_name": {
+          "fr": "Raipiode l'Infréquençable",
+          "en": "Robowl the Outcast"
+        },
+        "drop_chance": 1
+      }
+    },
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 2,
+      "sockets_colors": "",
+      "max_level": 0,
+      "title": {
+        "fr": "Influence lente",
+        "en": "Slow Influence"
+      },
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6039
+    }
+  },
+  "27188": {
+    "id": 27188,
+    "title": {
+      "fr": "Maniement : Bouclier",
+      "en": "Wield type: Shield"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": true,
+      "level_inc": 1,
+      "sockets_colors": "",
+      "max_level": 0,
+      "title": {
+        "fr": "Maniement : Bouclier",
+        "en": "Wield type: Shield"
+      },
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 5248
+    }
+  },
+  "27189": {
+    "id": 27189,
+    "title": {
+      "fr": "Pacte Wakfu",
+      "en": "Wakfu Pact"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": true,
+      "level_inc": 1,
+      "sockets_colors": "",
+      "max_level": 0,
+      "title": {
+        "fr": "Pacte Wakfu",
+        "en": "Wakfu Pact"
+      },
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 5370
+    }
+  },
+  "27191": {
+    "id": 27191,
+    "title": {
+      "fr": "Brise",
+      "en": "Breeze"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": true,
+      "level_inc": 1,
+      "sockets_colors": "",
+      "max_level": 0,
+      "title": {
+        "fr": "Brise",
+        "en": "Breeze"
+      },
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 5175
+    }
+  },
+  "27960": {
+    "id": 27960,
+    "title": {
+      "fr": "Tolérance II",
+      "en": "Tolerance II"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": {
+      "5165": {
+        "monster_id": 5165,
+        "monster_name": {
+          "fr": "Aguabrial",
+          "en": "Aguabrial"
+        },
+        "drop_chance": 2
+      }
+    },
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 2,
+      "sockets_colors": "",
+      "max_level": 0,
+      "title": {
+        "fr": "Tolérance",
+        "en": "Tolerance"
+      },
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6331
+    }
+  },
+  "28384": {
+    "id": 28384,
+    "title": {
+      "fr": "Furie II",
+      "en": "Outrage II"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": true,
+      "level_inc": 1,
+      "sockets_colors": "",
+      "max_level": 0,
+      "title": {
+        "fr": "Furie II",
+        "en": "Outrage II"
+      },
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6706
+    }
+  },
+  "28803": {
+    "id": 28803,
+    "title": {
+      "fr": "Arme empoisonnée II",
+      "en": "Poisoned Weapon II"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 2,
+      "sockets_colors": "",
+      "max_level": 0,
+      "title": {
+        "fr": "Arme incurable",
+        "en": "Incurable Weapon"
+      },
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6816
+    }
+  },
+  "28815": {
+    "id": 28815,
+    "title": {
+      "fr": "Manie II",
+      "en": "Mania II"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 2,
+      "sockets_colors": "",
+      "max_level": 0,
+      "title": {
+        "fr": "Manie",
+        "en": "Mania"
+      },
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6829
+    }
+  },
+  "28816": {
+    "id": 28816,
+    "title": {
+      "fr": "Nature II",
+      "en": "Nature II"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 2,
+      "sockets_colors": "",
+      "max_level": 0,
+      "title": {
+        "fr": "Nature",
+        "en": "Natural"
+      },
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6830
+    }
+  }
+}

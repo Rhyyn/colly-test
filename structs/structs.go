@@ -1,5 +1,7 @@
 package structs
 
+import "os"
+
 // region ScrapedItem
 type Item struct {
 	ID                 int                `json:"id"`
@@ -7,7 +9,6 @@ type Item struct {
 	Params             Params             `json:"params"`
 	Stats              map[int]Stat       `json:"stats"`
 	Droprates          map[int]Droprate   `json:"droprates"`
-	Recipes            map[int]Recipe     `json:"recipes"`
 	SublimationDetails SublimationDetails `json:"sublimations_details,omitempty"`
 }
 
@@ -95,6 +96,7 @@ type ScrapingParameters struct {
 	IndexUrl       map[string]string
 	ItemUrl        map[string]string
 	MaxPage        int
+	MaxItems       int
 	SelectedId     int
 	SingleItemMode bool
 	SelectedType   string
@@ -103,10 +105,63 @@ type ScrapingParameters struct {
 // region Ressources
 
 type SublimationDetails struct {
-	LevelInc      int              `json:"level_inc"`
-	SocketsColors string           `json:"sockets_colors"`
-	MaxLevel      int              `json:"max_level"`
-	Title         map[string]Title `json:"title"`
+	IsEpic        bool   `json:"is_epic"`
+	LevelInc      int    `json:"level_inc"`
+	SocketsColors string `json:"sockets_colors"`
+	MaxLevel      int    `json:"max_level"`
+	Title         Title  `json:"title"`
+	Desc          Title  `json:"desc"`
+	ID            int    `json:"id"`
 }
 
 // endregion Ressources
+
+type ScrapedItem struct {
+	ID int `json:"_id"`
+}
+
+type Type struct {
+	Fr string `json:"fr"`
+	En string `json:"en"`
+}
+
+type UrlArgs struct {
+	Fr string `json:"fr"`
+	En string `json:"en"`
+}
+
+type ItemTypes struct {
+	ID      []int             `json:"id"`
+	Title   map[string]string `json:"title"`
+	Type    Type              `json:"type"`
+	UrlArgs UrlArgs           `json:"url_args"`
+}
+type SubCategory struct {
+	Title     map[string]string `json:"title"`
+	ID        []int             `json:"id"`
+	Index_url map[string]string `json:"index_url"`
+	Item_url  map[string]string `json:"item_url"`
+	MaxPage   int               `json:"max_page"`
+	MaxItems  int               `json:"max_items"`
+	ItemTypes []ItemTypes       `json:"items_types"`
+}
+
+// Move this to structs
+type ItemInfo struct {
+	Title         map[string]string `json:"title"`
+	ID            []int             `json:"id"`
+	Index_url     map[string]string `json:"index_url"`
+	Item_url      map[string]string `json:"item_url"`
+	MaxPage       int               `json:"max_page"`
+	SubCategories []SubCategory     `json:"sub_categories"`
+}
+
+type EditFileOptions struct {
+	IsSubCat bool
+	ID       int
+	SubCat   SubCategory
+}
+
+type FileResult struct {
+	File *os.File
+}

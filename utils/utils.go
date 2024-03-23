@@ -14,56 +14,6 @@ import (
 	"github.com/Rhyyn/wakfukiscraper/structs"
 )
 
-type ScrapedItem struct {
-	ID int `json:"_id"`
-}
-
-type Type struct {
-	Fr string `json:"fr"`
-	En string `json:"en"`
-}
-
-type UrlArgs struct {
-	Fr string `json:"fr"`
-	En string `json:"en"`
-}
-
-type ItemTypes struct {
-	ID      []int             `json:"id"`
-	Title   map[string]string `json:"title"`
-	Type    Type              `json:"type"`
-	UrlArgs UrlArgs           `json:"url_args"`
-}
-type SubCategory struct {
-	Title     map[string]string `json:"title"`
-	ID        []int             `json:"id"`
-	Index_url map[string]string `json:"index_url"`
-	Item_url  map[string]string `json:"item_url"`
-	MaxPage   int               `json:"max_page"`
-	MaxItems  int               `json:"max_items"`
-	ItemTypes []ItemTypes       `json:"items_types"`
-}
-
-// Move this to structs
-type ItemInfo struct {
-	Title          map[string]string `json:"title"`
-	ID             []int             `json:"id"`
-	Index_url      map[string]string `json:"index_url"`
-	Item_url       map[string]string `json:"item_url"`
-	MaxPage        int               `json:"max_page"`
-	Sub_categories []SubCategory     `json:"sub_categories"`
-}
-
-type EditFileOptions struct {
-	IsSubCat bool
-	ID       int
-	SubCat   SubCategory
-}
-
-type FileResult struct {
-	File *os.File
-}
-
 func OpenFile(file_name string) *os.File {
 	file, err := os.Open("./DATA/STATIC/" + file_name)
 	if err != nil {
@@ -80,15 +30,16 @@ func ReadFile(opened_file *os.File) []byte {
 	return content
 }
 
-func parseJSON(content []byte) map[string]ItemInfo {
-	var allItemsInfo map[string]ItemInfo
+func parseJSON(content []byte) map[string]structs.ItemInfo {
+	var allItemsInfo map[string]structs.ItemInfo
 	err := json.Unmarshal(content, &allItemsInfo)
 	if err != nil {
-		log.Printf("Error parsing JSON: %v", err)
+		log.Printf("Error parsing JSON in parseJSON func: %v", err)
 	}
 	return allItemsInfo
 }
 
+// This Gets all Item subtypes from itemTypes.json
 func GetItemTypesPropertiesJSON() []structs.TypesItem {
 	openedFile := OpenFile("itemTypes.json")
 	defer openedFile.Close()
@@ -103,7 +54,7 @@ func GetItemTypesPropertiesJSON() []structs.TypesItem {
 	return TypesItems
 }
 
-func GetJSON(file_name string) map[string]ItemInfo {
+func GetJSON(file_name string) map[string]structs.ItemInfo {
 	opened_file := OpenFile(file_name)
 	defer opened_file.Close()
 	file_content := ReadFile(opened_file)
@@ -142,14 +93,14 @@ func ReadAndPrintFile(file_name string) error {
 	return nil
 }
 
-func GetFileContent(file_name string) []ItemInfo {
+func GetFileContent(file_name string) []structs.ItemInfo {
 	opened_file := OpenFile(file_name)
 	defer opened_file.Close()
 	file_content := ReadFile(opened_file)
 
 	allItemsInfo := parseJSON(file_content)
 
-	sortedItems := make([]ItemInfo, 0, len(allItemsInfo))
+	sortedItems := make([]structs.ItemInfo, 0, len(allItemsInfo))
 	for _, item := range allItemsInfo {
 		sortedItems = append(sortedItems, item)
 	}
@@ -164,7 +115,7 @@ func GetMaxItems(ID int) int {
 	allCategoriesInfo := GetJSON("updated_item_categories.json")
 	var maxItems int
 	for _, category := range allCategoriesInfo {
-		for _, subCategory := range category.Sub_categories {
+		for _, subCategory := range category.SubCategories {
 			if len(subCategory.ID) > 0 {
 				if ID == subCategory.ID[0] {
 					maxItems = subCategory.MaxItems
@@ -179,7 +130,7 @@ func GetMaxPage(ID int) int {
 	allCategoriesInfo := GetJSON("updated_item_categories.json")
 	var maxPage int
 	for _, category := range allCategoriesInfo {
-		for _, subCategory := range category.Sub_categories {
+		for _, subCategory := range category.SubCategories {
 			if len(subCategory.ID) > 0 {
 				if ID == subCategory.ID[0] {
 					maxPage = subCategory.MaxPage
@@ -190,16 +141,16 @@ func GetMaxPage(ID int) int {
 	return maxPage
 }
 
-// Updates MaxItems and MaxPage
-func EditItemsCats(editFileOptions EditFileOptions) {
+// Updates MaxItems and MaxPage in file
+func EditItemsCats(editFileOptions structs.EditFileOptions) {
 	ID := editFileOptions.ID
 	allCategoriesInfo := GetJSON("updated_item_categories.json")
 	for _, category := range allCategoriesInfo {
-		for i, subCategory := range category.Sub_categories {
+		for i, subCategory := range category.SubCategories {
 			if len(subCategory.ID) > 0 {
 				if ID == subCategory.ID[0] {
-					category.Sub_categories[i].MaxItems = editFileOptions.SubCat.MaxItems
-					category.Sub_categories[i].MaxPage = editFileOptions.SubCat.MaxPage
+					category.SubCategories[i].MaxItems = editFileOptions.SubCat.MaxItems
+					category.SubCategories[i].MaxPage = editFileOptions.SubCat.MaxPage
 					break
 				}
 			}

@@ -1,6 +1,7 @@
 package scrapers
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
 	"strconv"
@@ -10,11 +11,11 @@ import (
 	"github.com/gocolly/colly"
 )
 
-func ScrapRessourceDetails(url string, Item *structs.Item) {
+func ScrapRessourceDetails(url string, Item *structs.Item, Recipes map[int]structs.Recipe) {
 	c := GetNewCollector()
 	c.OnHTML(".ak-container.ak-panel-stack.ak-glue", func(h *colly.HTMLElement) {
 		Lang := utils.GetLangFromURL(h.Request.URL.String())
-
+		// Recipe := structs.Recipe{}
 		// Maybe use Item for everything ?
 		// Otherwise we are going to need 11 different functions
 		// Maybe add omitempty field? `json:"droprates,omitempty"`
@@ -30,7 +31,7 @@ func ScrapRessourceDetails(url string, Item *structs.Item) {
 		// fmt.Println("Got Stats")
 		GetDroprates(h, Item, Lang)
 		// fmt.Println("Got Droprates")
-		GetRecipes(h, Item, Lang)
+		GetRecipes(h, Item, Recipes, Lang)
 		// fmt.Println("Got Recipes")
 	})
 
@@ -44,11 +45,14 @@ func ScrapRessourceDetails(url string, Item *structs.Item) {
 	c.Visit(url)
 }
 
-func ScrapSingleResourceType(FileOptions utils.EditFileOptions) {
-	urlSuffix := "&" + "type_1%5B%5D=" + strconv.Itoa(FileOptions.ID)
+func ScrapSingleResourceType(ScrapingParameters structs.ScrapingParameters) {
+	urlSuffix := "&" + "type_1%5B%5D=" + strconv.Itoa(ScrapingParameters.SelectedId)
+
+	fmt.Println(urlSuffix)
 
 	var IDsList []int
 	Items := make(map[int]structs.Item)
+	Recipes := make(map[int]structs.Recipe)
 
 	c := GetNewCollector()
 
@@ -65,10 +69,11 @@ func ScrapSingleResourceType(FileOptions utils.EditFileOptions) {
 			os.Exit(0)
 		}
 
-		frenchURL := FileOptions.SubCat.Item_url["fr"] + "/" + itemArgName
-		englishURL := FileOptions.SubCat.Item_url["en"] + "/" + itemArgName
+		frenchURL := ScrapingParameters.ItemUrl["fr"] + itemArgName
+		englishURL := ScrapingParameters.ItemUrl["en"] + "/" + itemArgName
 
 		var Item structs.Item
+		// var Recipe structs.Recipe
 		// ParamsStatsProperties := structs.ParamsStatsProperties{AllPositivesStats: AllPositivesStats, AllNegativesStats: AllNegativesStats}
 
 		Item.ID, err = utils.GetItemIDFromString(itemArgName)
@@ -82,17 +87,18 @@ func ScrapSingleResourceType(FileOptions utils.EditFileOptions) {
 
 		IDsList = append(IDsList, Item.ID)
 		// Scrap both FR/EN version of the item
-		ScrapRessourceDetails(frenchURL, &Item)
-		ScrapRessourceDetails(englishURL, &Item)
+		ScrapRessourceDetails(frenchURL, &Item, Recipes)
+		ScrapRessourceDetails(englishURL, &Item, Recipes)
 
 		Items[Item.ID] = Item
+		// Recipes[Recipe.RecipeId] = Recipe
 		// Useless pretty print for debug
-		// PrettyItem, err := json.MarshalIndent(Item, "", "    ")
-		// if err != nil {
-		// 	fmt.Println("Error marshaling item:", err)
-		// 	return
-		// }
-		// fmt.Println("Item after scraping:\n", string(PrettyItem))
+		PrettyItem, err := json.MarshalIndent(Item, "", "    ")
+		if err != nil {
+			fmt.Println("Error marshaling item:", err)
+			return
+		}
+		fmt.Println("Item after scraping:\n", string(PrettyItem))
 	})
 
 	c.OnError(func(r *colly.Response, err error) {
@@ -103,14 +109,18 @@ func ScrapSingleResourceType(FileOptions utils.EditFileOptions) {
 		fmt.Println("ScrapItemDetails visiting:\n", r.URL)
 	})
 
-	for i := 1; i < FileOptions.SubCat.MaxPage; i++ {
+	for i := 1; i < ScrapingParameters.MaxPage; i++ {
 		if i != 1 && len(IDsList) > 0 {
-			AppendIDsToFile(IDsList, FileOptions.SubCat.Title["fr"])
-			AppendItemsToFile(Items, FileOptions.SubCat.Title["fr"])
-
+			AppendIDsToFile(IDsList, ScrapingParameters.SelectedType)
+			AppendItemsToFile(Items, ScrapingParameters.SelectedType)
+			AppendRecipesToFile(Recipes)
 		}
+		Items = map[int]structs.Item{}
+		Recipes = map[int]structs.Recipe{}
 		IDsList = []int{}
-		c.Visit(FileOptions.SubCat.Index_url["fr"] + strconv.Itoa(i) + urlSuffix)
+		fmt.Println(ScrapingParameters.IndexUrl)
+		fmt.Println(ScrapingParameters.IndexUrl["fr"] + strconv.Itoa(i) + urlSuffix)
+		c.Visit(ScrapingParameters.IndexUrl["fr"] + strconv.Itoa(i) + urlSuffix)
 		fmt.Printf("setting page to %d\n", i)
 	}
 }

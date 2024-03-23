@@ -89,6 +89,47 @@ func AppendIDsToFile(newIds []int, selectedType string) {
 	fmt.Println("Data appended successfully.")
 }
 
+func AppendRecipesToFile(newRecipes map[int]structs.Recipe) {
+	filePath := "./DATA/STATIC/ScrapedData/Recipes/recipes.json"
+
+	var Recipes map[int]structs.Recipe
+
+	if _, err := os.Stat(filePath); err == nil {
+		file, err := os.ReadFile(filePath)
+		if err != nil {
+			fmt.Println("Error reading file:", err)
+			return
+		}
+
+		if err := json.Unmarshal(file, &Recipes); err != nil {
+			fmt.Println("Error decoding JSON:", err)
+			return
+		}
+	} else if os.IsNotExist(err) {
+		Recipes = map[int]structs.Recipe{}
+	} else {
+		fmt.Println("Error checking file status:", err)
+		return
+	}
+
+	for recipeId, newRecipe := range newRecipes {
+		Recipes[recipeId] = newRecipe
+	}
+
+	jsonData, err := json.MarshalIndent(Recipes, "", "  ")
+	if err != nil {
+		fmt.Println("Error encoding JSON:", err)
+		return
+	}
+
+	if err := os.WriteFile(filePath, jsonData, 0o644); err != nil {
+		fmt.Println("Error writing to file:", err)
+		return
+	}
+
+	fmt.Println("Recipes appended successfully.")
+}
+
 func AppendItemsToFile(newItems map[int]structs.Item, selectedType string) {
 	filePath := "./DATA/STATIC/ScrapedData/" + selectedType + ".json"
 
@@ -309,47 +350,60 @@ func GetStats(htmlElement *colly.HTMLElement, Item *structs.Item, lang string, P
 }
 
 func GetSubliStats(htmlElement *colly.HTMLElement, Item *structs.Item, lang string) {
+	newSubliDetails := structs.SublimationDetails{}
 	statElement := htmlElement.DOM.Find(".ak-container.ak-content-list.ak-displaymode-col")
-	Stats := make(map[int]structs.Stat)
 	statElement.Each(func(i int, s *goquery.Selection) {
-		statsDiv := s.Find("div.ak-title")
+		statsDiv := s.Find("div.ak-title").First()
 
 		statsDiv.Each(func(i int, stat *goquery.Selection) {
-			var displayString string
-			// var LevelIncString string
-
-			// "Alternance" inside <a>
-			// " (Niv.1) " inside #text of the div
-			// can also be (+2 Niv.)
-
-			// Gets the ID
-			id := Item.ID
-
-			// If scraping english vesion modify the stats to add english string
-			if lang == "En" && len(Item.Stats) > 0 {
-				for key, stat := range Item.Stats {
-					if stat.ID == id {
-						stat.Display.En = displayString
-						Item.Stats[key] = stat
-					}
-				}
+			// Extract name of the Subli
+			displayString := StandardizeSpaces(statsDiv.Find("a").Text())
+			if lang == "En" && len(Item.SublimationDetails.Title.Fr) > 0 {
+				displayString = strings.Split(displayString, ">")[1]
+				Item.SublimationDetails.Title.En = displayString
 			}
 
 			if lang == "Fr" {
-				newStat := structs.Stat{
-					Display: structs.Display{
+				// Find and extract level increase from the string (1.Niv)
+				// If contains + isEpic true
+				var LevelIncValue int
+				isEpic := false
+				LevelIncString := strings.Split(StandardizeSpaces(statsDiv.Text()), "(")[1]
+				// TODO: this does not work
+				if !strings.Contains(LevelIncString, "+") {
+					isEpic = true
+				}
+				if hasNumber, number := utils.HasNumberInString(LevelIncString); hasNumber {
+					LevelIncValue = number
+				}
+
+				// Find and extract the supposed ID of the sublimation throught a leftover paramater called data-state
+
+				cleanedDataState := strings.ReplaceAll(statsDiv.Find("a").AttrOr("data-state", ""), "\u00a0", " ")
+				cleanedDataState = StandardizeSpaces(cleanedDataState)
+				cleanedDataState = strings.ReplaceAll(cleanedDataState, " ", "")
+				fmt.Println("Cleaned data state:", cleanedDataState)
+				dataStateId, err := strconv.Atoi(cleanedDataState)
+				if err != nil {
+					fmt.Println("Error getting the sublimation ID through data-state")
+					fmt.Println(err)
+					os.Exit(0)
+				}
+				// TODO : fix Title lose its number Ravage II > Ravage
+				newSubliDetails = structs.SublimationDetails{
+					LevelInc: LevelIncValue,
+					Title: structs.Title{
 						Fr: displayString,
 						En: displayString,
 					},
-					ID: id,
+					ID:     dataStateId,
+					IsEpic: isEpic,
 				}
-
-				Stats[newStat.ID] = newStat
 			}
 		})
 	})
 	if lang == "Fr" {
-		Item.Stats = Stats
+		Item.SublimationDetails = newSubliDetails
 	}
 }
 
@@ -444,7 +498,7 @@ func GetDroprates(htmlElement *colly.HTMLElement, Item *structs.Item, lang strin
 	}
 }
 
-func GetRecipes(htmlElement *colly.HTMLElement, Item *structs.Item, lang string) {
+func GetRecipes(htmlElement *colly.HTMLElement, Item *structs.Item, Recipes map[int]structs.Recipe, lang string) {
 	jobs := map[string]map[string]string{
 		"75": {"fr": "Pêcheur", "en": "Fisherman"},
 		"71": {"fr": "Forestier", "en": "Lumberjack"},
@@ -468,7 +522,7 @@ func GetRecipes(htmlElement *colly.HTMLElement, Item *structs.Item, lang string)
 		// fmt.Println(recipesContainer.Text())
 		// Check if container is a proper reciper or a "used in X recipes"
 		if rc.Find(".ak-panel-content .ak-container.ak-panel").Length() > 0 {
-			Recipes := make(map[int]structs.Recipe)
+			// Recipes := make(map[int]structs.Recipe)
 
 			// statElement.Each(func(i int, s *goquery.Selection) {
 			recipesContainer.Each(func(i int, rc *goquery.Selection) {
@@ -551,11 +605,21 @@ func GetRecipes(htmlElement *colly.HTMLElement, Item *structs.Item, lang string)
 							Ingredient.ID = ingId
 							Ingredients[ingId] = Ingredient
 						}
-						recipeId = jobId + i + Item.Params.TypeId + Item.ID
+						// fmt.Println("jobId: ", jobId)
+						// fmt.Println("i: ", i)
+						// fmt.Println("Item.Params.TypeId: ", Item.Params.TypeId)
+						// fmt.Println("Item.ID : ", Item.ID)
+						recipeId, err = strconv.Atoi(fmt.Sprintf("%d%d%d%d", jobId, i, Item.Params.TypeId, Item.ID))
+						if err != nil {
+							fmt.Println("error while concatenating recipeId")
+							fmt.Println(err)
+							os.Exit(0)
+						}
+						fmt.Println("recipeId:", recipeId)
 
-						if lang == "En" && len(Item.Recipes) > 0 {
-							for _, recipe := range Item.Recipes {
-								for ingKey, ing := range recipe.Ingredients {
+						if lang == "En" && len(Recipes) > 0 {
+							for _, recipe := range Recipes {
+								for ingKey, ing := range Recipes[recipeId].Ingredients {
 									if ing.ID == ingId {
 										ing.IngName.En = ingName
 
@@ -576,13 +640,17 @@ func GetRecipes(htmlElement *colly.HTMLElement, Item *structs.Item, lang string)
 					Recipe.RecipeId = recipeId
 					Recipe.Ingredients = Ingredients
 
+					fmt.Println("Recipe", Recipe)
+					fmt.Println("recipeId", recipeId)
+
 					Recipes[recipeId] = Recipe
+					fmt.Println("Recipes --- ", Recipes)
 				})
 			})
 
-			if lang == "Fr" {
-				Item.Recipes = Recipes
-			}
+			// if lang == "Fr" {
+			// 	Item.Recipes = Recipes
+			// }
 		}
 	})
 

@@ -23,11 +23,11 @@ func Execute() {
 	switch choice {
 	case 1:
 		fmt.Println("You selected: Print item categories")
-		utils.ReadAndPrintFile("item_categories.json")
+		utils.ReadAndPrintFile("updated_item_categories.json")
 	case 2:
 
 		fmt.Println("You selected: Scrap item type")
-		allCategoriesInfo := utils.GetFileContent("item_categories.json")
+		allCategoriesInfo := utils.GetFileContent("updated_item_categories.json")
 
 		// Ask for Category choice
 		categoryChoice := selectCategory(allCategoriesInfo)
@@ -36,28 +36,37 @@ func Execute() {
 
 		// Ask for SubCategory choice
 		typeChoice := selectSubCategory(selectedCategory)
-		selectedType := selectedCategory.Sub_categories[typeChoice]
+		selectedType := selectedCategory.SubCategories[typeChoice]
 		fmt.Printf("You selected %s\n", selectedType.Title["fr"])
 
-		// If SubCategory == ressources , ask for sub of sub category
 		// This if Else is temporary, this needs better logic
+		// If SubCategory == ressources , ask for sub of sub category
 		if selectedType.Title["fr"] == "Améliorations" {
 			selectedSubType := selectTypeInsideSubCategory(selectedType)
+			// ID / ParentID / TITLES
 
 			EditFileOptions := scrapers.UpdateMaxItemsAndPages(scrapers.IndexOptions{
-				Title:     selectedSubType.Title["fr"],
+				Title:     selectedSubType.Title.Fr,
 				Index_url: selectedCategory.Index_url["fr"],
-				ID:        selectedSubType.ID,
+				ID:        append([]int{}, selectedSubType.Definition.ID),
 			})
 
+			ScrapingParameters := structs.ScrapingParameters{
+				IndexUrl:       selectedCategory.Index_url,
+				ItemUrl:        selectedCategory.Item_url,
+				MaxPage:        EditFileOptions.SubCat.MaxPage,
+				SelectedId:     selectedSubType.Definition.ID,
+				SingleItemMode: false,
+				SelectedType:   selectedType.Title["fr"],
+			}
 			// call scraper here with params from EditFileOptions
-			scrapers.ScrapSingleResourceType(EditFileOptions)
+			scrapers.ScrapSingleResourceType(ScrapingParameters)
 			fmt.Println(EditFileOptions.SubCat)
 		} else {
 
 			// if no maxItems stored proceed without prompts else
 			// Ask if we want to check for new items (max_items, max_page)
-			selectedId := selectedCategory.Sub_categories[typeChoice].ID[0]
+			selectedId := selectedCategory.SubCategories[typeChoice].ID[0]
 			maxItems := utils.GetMaxItems(selectedId)
 			// fmt.Printf("maxItems : %d\n", maxItems)
 			if maxItems != 0 {
@@ -120,39 +129,66 @@ func Execute() {
 }
 
 // ask and select a sub category
-func selectSubCategory(selectedCategory utils.ItemInfo) int {
-	for index, subCategory := range selectedCategory.Sub_categories {
+func selectSubCategory(selectedCategory structs.ItemInfo) int {
+	for index, subCategory := range selectedCategory.SubCategories {
 		fmt.Printf("%d. Type : %#v\n", index, subCategory.Title["fr"])
 	}
+
 	fmt.Print("Chose a type: (use numbers..)\n")
 	var choice int
 	fmt.Scanln(&choice)
+
+	if choice < 0 || choice >= len(selectedCategory.SubCategories) {
+		fmt.Println("Invalid choice.")
+		os.Exit(0)
+	}
+
 	return choice
 }
 
 // ask and select a type of object inside a sub category
-func selectTypeInsideSubCategory(selectedType utils.SubCategory) utils.ItemTypes {
-	for index, t := range selectedType.ItemTypes {
-		fmt.Printf("%d. Type : %#v\n", index, t.Title["fr"])
+func selectTypeInsideSubCategory(selectedType structs.SubCategory) structs.TypesItem {
+	ItemTypesProperties := utils.GetItemTypesPropertiesJSON()
+
+	var selectedObjects []structs.TypesItem
+	for _, t := range ItemTypesProperties {
+		if t.Definition.ParentID == selectedType.ID[0] {
+			selectedObjects = append(selectedObjects, t)
+		}
 	}
+
+	for index, st := range selectedObjects {
+		fmt.Printf("%d. Type : %#v\n", index, st.Title.Fr)
+	}
+
 	fmt.Print("Chose a type: (use numbers..)\n")
 	var choice int
 	fmt.Scanln(&choice)
-	Type := selectedType.ItemTypes[choice]
-	return Type
+
+	if choice < 0 || choice >= len(selectedObjects) {
+		fmt.Println("Invalid choice.")
+		os.Exit(0)
+	}
+
+	return selectedObjects[choice]
 }
 
-func selectCategory(allCategoriesInfo []utils.ItemInfo) int {
+func selectCategory(allCategoriesInfo []structs.ItemInfo) int {
 	for index, item := range allCategoriesInfo {
 		fmt.Printf("Index: %v, item %#v\n", index, item.Title["fr"])
 	}
 	var categoryChoice int
 	fmt.Print("Chose a category: (use numbers..)\n")
 	fmt.Scanln(&categoryChoice)
+
+	if categoryChoice < 0 || categoryChoice >= len(allCategoriesInfo) {
+		fmt.Println("Invalid choice.")
+		os.Exit(0)
+	}
 	return categoryChoice
 }
 
-func checkForNewItems(selectedType utils.SubCategory, selectedCategory utils.ItemInfo, selectedId int) {
+func checkForNewItems(selectedType structs.SubCategory, selectedCategory structs.ItemInfo, selectedId int) {
 	var userUpdate string
 	fmt.Printf("Do you want to check for new items ? (y/n)")
 	fmt.Scanln(&userUpdate)

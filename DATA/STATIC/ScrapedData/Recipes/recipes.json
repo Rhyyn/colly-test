@@ -1,0 +1,437 @@
+{
+  "381224136": {
+    "job_id": 0,
+    "job_level": 130,
+    "job_name": {
+      "fr": "",
+      "en": ""
+    },
+    "recipe_id": 381224136,
+    "ingredients": {}
+  },
+  "381225797": {
+    "job_id": 0,
+    "job_level": 130,
+    "job_name": {
+      "fr": "",
+      "en": ""
+    },
+    "recipe_id": 381225797,
+    "ingredients": {}
+  },
+  "381227188": {
+    "job_id": 0,
+    "job_level": 130,
+    "job_name": {
+      "fr": "",
+      "en": ""
+    },
+    "recipe_id": 381227188,
+    "ingredients": {}
+  },
+  "381227189": {
+    "job_id": 0,
+    "job_level": 130,
+    "job_name": {
+      "fr": "",
+      "en": ""
+    },
+    "recipe_id": 381227189,
+    "ingredients": {}
+  },
+  "381227191": {
+    "job_id": 0,
+    "job_level": 130,
+    "job_name": {
+      "fr": "",
+      "en": ""
+    },
+    "recipe_id": 381227191,
+    "ingredients": {}
+  },
+  "581227162": {
+    "job_id": 0,
+    "job_level": 90,
+    "job_name": {
+      "fr": "",
+      "en": ""
+    },
+    "recipe_id": 581227162,
+    "ingredients": {}
+  },
+  "581228384": {
+    "job_id": 0,
+    "job_level": 130,
+    "job_name": {
+      "fr": "",
+      "en": ""
+    },
+    "recipe_id": 581228384,
+    "ingredients": {}
+  },
+  "81381224136": {
+    "job_id": 81,
+    "job_level": 130,
+    "job_name": {
+      "fr": "Ébéniste",
+      "en": "Handyman"
+    },
+    "recipe_id": 81381224136,
+    "ingredients": {
+      "24029": {
+        "id": 24029,
+        "type_id": 751,
+        "quantity": 500,
+        "ing_name": {
+          "fr": "Larme d'Ogrest",
+          "en": ""
+        }
+      },
+      "27093": {
+        "id": 27093,
+        "type_id": 751,
+        "quantity": 1000,
+        "ing_name": {
+          "fr": "Poudre",
+          "en": ""
+        }
+      },
+      "29847": {
+        "id": 29847,
+        "type_id": 751,
+        "quantity": 1,
+        "ing_name": {
+          "fr": "Pierre d'aventure",
+          "en": ""
+        }
+      },
+      "9788": {
+        "id": 9788,
+        "type_id": 751,
+        "quantity": 15,
+        "ing_name": {
+          "fr": "Emeraude Polie",
+          "en": ""
+        }
+      }
+    }
+  },
+  "81381225797": {
+    "job_id": 81,
+    "job_level": 130,
+    "job_name": {
+      "fr": "Ébéniste",
+      "en": "Handyman"
+    },
+    "recipe_id": 81381225797,
+    "ingredients": {
+      "24029": {
+        "id": 24029,
+        "type_id": 751,
+        "quantity": 500,
+        "ing_name": {
+          "fr": "Larme d'Ogrest",
+          "en": ""
+        }
+      },
+      "27093": {
+        "id": 27093,
+        "type_id": 751,
+        "quantity": 1000,
+        "ing_name": {
+          "fr": "Poudre",
+          "en": ""
+        }
+      },
+      "29595": {
+        "id": 29595,
+        "type_id": 751,
+        "quantity": 200,
+        "ing_name": {
+          "fr": "Bois démoniaque commun",
+          "en": ""
+        }
+      },
+      "29849": {
+        "id": 29849,
+        "type_id": 751,
+        "quantity": 1,
+        "ing_name": {
+          "fr": "Pierre de vitesse",
+          "en": ""
+        }
+      }
+    }
+  },
+  "81381227188": {
+    "job_id": 81,
+    "job_level": 130,
+    "job_name": {
+      "fr": "Ébéniste",
+      "en": "Handyman"
+    },
+    "recipe_id": 81381227188,
+    "ingredients": {
+      "24029": {
+        "id": 24029,
+        "type_id": 751,
+        "quantity": 500,
+        "ing_name": {
+          "fr": "Larme d'Ogrest",
+          "en": ""
+        }
+      },
+      "27093": {
+        "id": 27093,
+        "type_id": 751,
+        "quantity": 1000,
+        "ing_name": {
+          "fr": "Poudre",
+          "en": ""
+        }
+      },
+      "28795": {
+        "id": 28795,
+        "type_id": 751,
+        "quantity": 200,
+        "ing_name": {
+          "fr": "Maillet de Bonta",
+          "en": ""
+        }
+      },
+      "29847": {
+        "id": 29847,
+        "type_id": 751,
+        "quantity": 1,
+        "ing_name": {
+          "fr": "Pierre d'aventure",
+          "en": ""
+        }
+      }
+    }
+  },
+  "81381227189": {
+    "job_id": 81,
+    "job_level": 130,
+    "job_name": {
+      "fr": "Ébéniste",
+      "en": "Handyman"
+    },
+    "recipe_id": 81381227189,
+    "ingredients": {
+      "24029": {
+        "id": 24029,
+        "type_id": 751,
+        "quantity": 500,
+        "ing_name": {
+          "fr": "Larme d'Ogrest",
+          "en": ""
+        }
+      },
+      "27093": {
+        "id": 27093,
+        "type_id": 751,
+        "quantity": 1000,
+        "ing_name": {
+          "fr": "Poudre",
+          "en": ""
+        }
+      },
+      "29366": {
+        "id": 29366,
+        "type_id": 751,
+        "quantity": 40,
+        "ing_name": {
+          "fr": "Main de Phytomorphe",
+          "en": ""
+        }
+      },
+      "29848": {
+        "id": 29848,
+        "type_id": 751,
+        "quantity": 1,
+        "ing_name": {
+          "fr": "Pierre d'équilibre",
+          "en": ""
+        }
+      }
+    }
+  },
+  "81381227191": {
+    "job_id": 81,
+    "job_level": 130,
+    "job_name": {
+      "fr": "Ébéniste",
+      "en": "Handyman"
+    },
+    "recipe_id": 81381227191,
+    "ingredients": {
+      "21680": {
+        "id": 21680,
+        "type_id": 751,
+        "quantity": 75,
+        "ing_name": {
+          "fr": "Envelouté Eternel",
+          "en": ""
+        }
+      },
+      "24029": {
+        "id": 24029,
+        "type_id": 751,
+        "quantity": 500,
+        "ing_name": {
+          "fr": "Larme d'Ogrest",
+          "en": ""
+        }
+      },
+      "27093": {
+        "id": 27093,
+        "type_id": 751,
+        "quantity": 1000,
+        "ing_name": {
+          "fr": "Poudre",
+          "en": ""
+        }
+      },
+      "29849": {
+        "id": 29849,
+        "type_id": 751,
+        "quantity": 1,
+        "ing_name": {
+          "fr": "Pierre de vitesse",
+          "en": ""
+        }
+      }
+    }
+  },
+  "81581227162": {
+    "job_id": 81,
+    "job_level": 90,
+    "job_name": {
+      "fr": "Ébéniste",
+      "en": "Handyman"
+    },
+    "recipe_id": 81581227162,
+    "ingredients": {
+      "17080": {
+        "id": 17080,
+        "type_id": 751,
+        "quantity": 60,
+        "ing_name": {
+          "fr": "Peau Foncée",
+          "en": ""
+        }
+      },
+      "17226": {
+        "id": 17226,
+        "type_id": 751,
+        "quantity": 150,
+        "ing_name": {
+          "fr": "Foullule de Lenald",
+          "en": ""
+        }
+      },
+      "18148": {
+        "id": 18148,
+        "type_id": 751,
+        "quantity": 15,
+        "ing_name": {
+          "fr": "Mycélium Royal",
+          "en": ""
+        }
+      },
+      "21110": {
+        "id": 21110,
+        "type_id": 751,
+        "quantity": 10,
+        "ing_name": {
+          "fr": "Equerre Raffinée",
+          "en": ""
+        }
+      },
+      "22963": {
+        "id": 22963,
+        "type_id": 751,
+        "quantity": 90,
+        "ing_name": {
+          "fr": "Planctoi Secret",
+          "en": ""
+        }
+      },
+      "27093": {
+        "id": 27093,
+        "type_id": 751,
+        "quantity": 100,
+        "ing_name": {
+          "fr": "Poudre",
+          "en": ""
+        }
+      }
+    }
+  },
+  "81581228384": {
+    "job_id": 81,
+    "job_level": 130,
+    "job_name": {
+      "fr": "Ébéniste",
+      "en": "Handyman"
+    },
+    "recipe_id": 81581228384,
+    "ingredients": {
+      "24029": {
+        "id": 24029,
+        "type_id": 751,
+        "quantity": 1000,
+        "ing_name": {
+          "fr": "Larme d'Ogrest",
+          "en": ""
+        }
+      },
+      "27093": {
+        "id": 27093,
+        "type_id": 751,
+        "quantity": 400,
+        "ing_name": {
+          "fr": "Poudre",
+          "en": ""
+        }
+      },
+      "27831": {
+        "id": 27831,
+        "type_id": 751,
+        "quantity": 10,
+        "ing_name": {
+          "fr": "Viande de Crustargneux",
+          "en": ""
+        }
+      },
+      "27868": {
+        "id": 27868,
+        "type_id": 751,
+        "quantity": 300,
+        "ing_name": {
+          "fr": "Gneu-vette",
+          "en": ""
+        }
+      },
+      "27871": {
+        "id": 27871,
+        "type_id": 751,
+        "quantity": 75,
+        "ing_name": {
+          "fr": "Planche Divine",
+          "en": ""
+        }
+      },
+      "9790": {
+        "id": 9790,
+        "type_id": 751,
+        "quantity": 15,
+        "ing_name": {
+          "fr": "Diamant Poli",
+          "en": ""
+        }
+      }
+    }
+  }
+}

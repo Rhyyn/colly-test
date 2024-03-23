@@ -13,7 +13,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
-func ScrapItemDetails(url string, Item *structs.Item, ParamsStatsProperties structs.ParamsStatsProperties) {
+func ScrapItemDetails(url string, Item *structs.Item, Recipes map[int]structs.Recipe, ParamsStatsProperties structs.ParamsStatsProperties) {
 	c := GetNewCollector()
 	c.OnHTML(".ak-container.ak-panel-stack.ak-glue", func(h *colly.HTMLElement) {
 		Lang := utils.GetLangFromURL(h.Request.URL.String())
@@ -29,7 +29,7 @@ func ScrapItemDetails(url string, Item *structs.Item, ParamsStatsProperties stru
 		// fmt.Println("Got Stats")
 		GetDroprates(h, Item, Lang)
 		// fmt.Println("Got Droprates")
-		GetRecipes(h, Item, Lang)
+		GetRecipes(h, Item, Recipes, Lang)
 		// fmt.Println("Got Recipes")
 	})
 
@@ -60,6 +60,7 @@ func ScrapItems(ScrapingParameters structs.ScrapingParameters) {
 
 	var IDsList []int
 	Items := make(map[int]structs.Item)
+	Recipes := make(map[int]structs.Recipe)
 
 	fmt.Printf("ScrapItems called for id %d with maxPage %d\n", ScrapingParameters.SelectedId, ScrapingParameters.MaxPage)
 	c := GetNewCollector()
@@ -94,8 +95,8 @@ func ScrapItems(ScrapingParameters structs.ScrapingParameters) {
 
 		IDsList = append(IDsList, Item.ID)
 		// Scrap both FR/EN version of the item
-		ScrapItemDetails(frenchURL, &Item, ParamsStatsProperties)
-		ScrapItemDetails(englishURL, &Item, ParamsStatsProperties)
+		ScrapItemDetails(frenchURL, &Item, Recipes, ParamsStatsProperties)
+		ScrapItemDetails(englishURL, &Item, Recipes, ParamsStatsProperties)
 
 		Items[Item.ID] = Item
 		// Useless pretty print for debug
@@ -129,10 +130,11 @@ func ScrapItems(ScrapingParameters structs.ScrapingParameters) {
 		}
 	} else {
 		var Item structs.Item
+		var Recipes map[int]structs.Recipe
 
 		ParamsStatsProperties := structs.ParamsStatsProperties{AllPositivesStats: AllPositivesStats, AllNegativesStats: AllNegativesStats}
-		ScrapItemDetails(ScrapingParameters.SingleItemURL["Fr"], &Item, ParamsStatsProperties)
-		ScrapItemDetails(ScrapingParameters.SingleItemURL["En"], &Item, ParamsStatsProperties)
+		ScrapItemDetails(ScrapingParameters.SingleItemURL["Fr"], &Item, Recipes, ParamsStatsProperties)
+		ScrapItemDetails(ScrapingParameters.SingleItemURL["En"], &Item, Recipes, ParamsStatsProperties)
 
 		PrettyItem, err := json.MarshalIndent(Item, "", "    ")
 		if err != nil {

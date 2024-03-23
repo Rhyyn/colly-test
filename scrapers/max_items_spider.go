@@ -6,6 +6,7 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/Rhyyn/wakfukiscraper/structs"
 	"github.com/Rhyyn/wakfukiscraper/utils"
 	"github.com/gocolly/colly"
 )
@@ -36,19 +37,19 @@ func CountItemsInPage(url string) int {
 	return nOfItems
 }
 
-func UpdateMaxItemsAndPages(IndexOptions IndexOptions) utils.EditFileOptions {
+func UpdateMaxItemsAndPages(IndexOptions IndexOptions) structs.EditFileOptions {
 	fmt.Printf("Starting to update max_items and max_page for %s\n", IndexOptions.Title)
 	startingUrl := IndexOptions.Index_url
 	var ID int
 	// If we selected a subcategory we need to filter by its type
+	fmt.Println("IndexOptions.ID", IndexOptions.ID)
 	if IndexOptions.ID != nil {
 		ID = IndexOptions.ID[0]
 		startingUrl = startingUrl + "1&" + "type_1%5B%5D=" + strconv.Itoa(IndexOptions.ID[0])
 	}
 
 	c := GetNewCollector()
-
-	FileOptions := utils.EditFileOptions{}
+	FileOptions := structs.EditFileOptions{}
 	var maxItems int
 	// This finds the menu for pages at the bottom of the page
 	// and follows the last href and counts the number of items present in the last page
@@ -63,20 +64,25 @@ func UpdateMaxItemsAndPages(IndexOptions IndexOptions) utils.EditFileOptions {
 		maxItems = lastPageLength + ((maxPages - 1) * numOfItemPerPage)
 		// fmt.Printf("maxPages %d, maxItems %d\n", maxPages, maxItems)
 
-		// If MaxItems already set and equal to currernt maxItems ask if want to continue
-		MaxItemsInFile := utils.GetMaxItems(ID)
-		if MaxItemsInFile == maxItems && MaxItemsInFile != 0 {
+		switch IndexOptions.ID[0] {
+		case 709, 811, 812:
+			// subCategory, we dont save MaxItems to file so skip
+		default:
+			// If MaxItems already set and equal to currernt maxItems ask if want to continue
+			MaxItemsInFile := utils.GetMaxItems(ID)
+			if MaxItemsInFile == maxItems && MaxItemsInFile != 0 {
 
-			fmt.Printf("------CHOICE------\n")
-			fmt.Printf("No new items detected, do you still want to proceed ? (y/n)\n")
-			var userInput string
-			fmt.Scanln(&userInput)
+				fmt.Printf("------CHOICE------\n")
+				fmt.Printf("No new items detected, do you still want to proceed ? (y/n)\n")
+				var userInput string
+				fmt.Scanln(&userInput)
 
-			if userInput != "y" && userInput != "n" {
-				fmt.Printf("wrong input please use y/n, exiting..\n")
-				os.Exit(0)
-			} else if userInput == "n" {
-				os.Exit(0)
+				if userInput != "y" && userInput != "n" {
+					fmt.Printf("wrong input please use y/n, exiting..\n")
+					os.Exit(0)
+				} else if userInput == "n" {
+					os.Exit(0)
+				}
 			}
 		}
 
@@ -88,7 +94,7 @@ func UpdateMaxItemsAndPages(IndexOptions IndexOptions) utils.EditFileOptions {
 		// })
 		FileOptions.ID = ID
 		FileOptions.IsSubCat = true
-		FileOptions.SubCat = utils.SubCategory{MaxPage: maxPages, MaxItems: maxItems}
+		FileOptions.SubCat = structs.SubCategory{MaxPage: maxPages, MaxItems: maxItems}
 		// fmt.Printf("max_items for %s is %d\n", IndexOptions.Title, maxItems)
 	})
 
