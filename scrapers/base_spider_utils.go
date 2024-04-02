@@ -357,11 +357,11 @@ func GetSubliStats(htmlElement *colly.HTMLElement, Item *structs.Item, lang stri
 
 		statsDiv.Each(func(i int, stat *goquery.Selection) {
 			// Extract name of the Subli
-			displayString := StandardizeSpaces(statsDiv.Find("a").Text())
-			if lang == "En" && len(Item.SublimationDetails.Title.Fr) > 0 {
-				displayString = strings.Split(displayString, ">")[1]
-				Item.SublimationDetails.Title.En = displayString
-			}
+			// displayString := StandardizeSpaces(statsDiv.Find("a").Text())
+			// if lang == "En" && len(Item.SublimationDetails.Title.Fr) > 0 {
+			// 	displayString = strings.Split(displayString, ">")[1]
+			// 	Item.SublimationDetails.Title.En = displayString
+			// }
 
 			if lang == "Fr" {
 				// Find and extract level increase from the string (1.Niv)
@@ -392,12 +392,8 @@ func GetSubliStats(htmlElement *colly.HTMLElement, Item *structs.Item, lang stri
 				// TODO : fix Title lose its number Ravage II > Ravage
 				newSubliDetails = structs.SublimationDetails{
 					LevelInc: LevelIncValue,
-					Title: structs.Title{
-						Fr: displayString,
-						En: displayString,
-					},
-					ID:     dataStateId,
-					IsEpic: isEpic,
+					ID:       dataStateId,
+					IsEpic:   isEpic,
 				}
 			}
 		})
@@ -544,22 +540,29 @@ func GetRecipes(htmlElement *colly.HTMLElement, Item *structs.Item, Recipes map[
 					}
 
 					JobName := structs.Display{}
-					if lang == "Fr" {
-						for key := range jobs {
-							if jobs[key]["fr"] == jobString {
-								jobId, err = strconv.Atoi(StandardizeSpaces(key))
-								if err != nil {
-									fmt.Println("Error getting jobId")
-									jobId = 0
-								}
-								JobName.Fr = jobs[key]["fr"]
-								JobName.En = jobs[key]["en"]
+
+					for key := range jobs {
+						if jobs[key][strings.ToLower(lang)] == jobString {
+							jobId, err = strconv.Atoi(StandardizeSpaces(key))
+							if err != nil {
+								fmt.Println("Error getting jobId")
+								jobId = 0
 							}
+							JobName.Fr = jobs[key]["fr"]
+							JobName.En = jobs[key]["en"]
 						}
+					}
+
+					recipeId, err = strconv.Atoi(fmt.Sprintf("%d%d%d%d", jobId, i, Item.Params.TypeId, Item.ID))
+					if err != nil {
+						fmt.Println("error while concatenating recipeId")
+						fmt.Println(err)
+						os.Exit(0)
 					}
 
 					Ingredients := make(map[int]structs.Ingredient)
 					ingredientsRows := rd.Find(".ak-list-element")
+
 					// Each individual ingredients
 					ingredientsRows.Each(func(i int, ir *goquery.Selection) {
 						Ingredient := structs.Ingredient{}
@@ -567,12 +570,13 @@ func GetRecipes(htmlElement *colly.HTMLElement, Item *structs.Item, Recipes map[
 						quantityString := StandardizeSpaces(ir.Find(".ak-front").Text())
 						quantityValue, err := strconv.Atoi(StandardizeSpaces(strings.Split(quantityString, "x")[0]))
 						if err != nil {
-							fmt.Printf("Error getting quant value of %d\n", recipeId)
+							fmt.Printf("Error getting quant value of %d\n", Item.ID)
 							fmt.Println(err)
 						}
 
 						var ingredientArgName string
 						var ingId int
+						var ingName string
 						ingNameDiv := ir.Find(".ak-title")
 						ingTypeName := StandardizeSpaces(ingNameDiv.Find(".ak-text").Text())
 						ingredientHref, exists := ingNameDiv.Find("a").Attr("href")
@@ -590,8 +594,8 @@ func GetRecipes(htmlElement *colly.HTMLElement, Item *structs.Item, Recipes map[
 						}
 
 						// ingName
-						ingName := StandardizeSpaces(ingNameDiv.Find(".ak-linker").Text())
-
+						ingName = StandardizeSpaces(ingNameDiv.Find(".ak-linker").Text())
+						Ingredient.ID = ingId
 						// Compare ingTypeName with title.fr inside itemTypes.json
 						if lang == "Fr" {
 							ItemTypesProperties := utils.GetItemTypesPropertiesJSON()
@@ -602,49 +606,31 @@ func GetRecipes(htmlElement *colly.HTMLElement, Item *structs.Item, Recipes map[
 							}
 							Ingredient.Quantity = quantityValue
 							Ingredient.IngName.Fr = ingName
-							Ingredient.ID = ingId
 							Ingredients[ingId] = Ingredient
 						}
-						// fmt.Println("jobId: ", jobId)
-						// fmt.Println("i: ", i)
-						// fmt.Println("Item.Params.TypeId: ", Item.Params.TypeId)
-						// fmt.Println("Item.ID : ", Item.ID)
-						recipeId, err = strconv.Atoi(fmt.Sprintf("%d%d%d%d", jobId, i, Item.Params.TypeId, Item.ID))
-						if err != nil {
-							fmt.Println("error while concatenating recipeId")
-							fmt.Println(err)
-							os.Exit(0)
-						}
-						fmt.Println("recipeId:", recipeId)
 
-						if lang == "En" && len(Recipes) > 0 {
-							for _, recipe := range Recipes {
-								for ingKey, ing := range Recipes[recipeId].Ingredients {
-									if ing.ID == ingId {
-										ing.IngName.En = ingName
+						if lang == "En" {
+							ingredients := Recipes[recipeId].Ingredients[ingId]
+							fmt.Println("Update ingName.EN to : ", ingName)
+							ingredients.IngName.En = ingName
 
-										recipe.Ingredients[ingKey] = ing
-
-										// fmt.Printf("Updated English name for ingredient with ID %d to %s\n", ingId, ing.IngName.En)
-
-										break
-									}
-								}
-							}
+							Recipes[recipeId].Ingredients[ingId] = ingredients
 						}
 					})
 
-					Recipe.JobID = jobId
-					Recipe.JobLevel = jobLevel
-					Recipe.JobName = JobName
-					Recipe.RecipeId = recipeId
-					Recipe.Ingredients = Ingredients
+					if lang == "Fr" {
+						Recipe.Ingredients = Ingredients
+						Recipe.JobID = jobId
+						Recipe.JobLevel = jobLevel
+						Recipe.JobName = JobName
+						Recipe.RecipeId = recipeId
+						Recipe.ResultId = Item.ID
 
+						Recipes[recipeId] = Recipe
+					}
 					fmt.Println("Recipe", Recipe)
-					fmt.Println("recipeId", recipeId)
-
-					Recipes[recipeId] = Recipe
-					fmt.Println("Recipes --- ", Recipes)
+					// fmt.Println("recipeId", recipeId)
+					// fmt.Println("Recipes --- ", Recipes)
 				})
 			})
 

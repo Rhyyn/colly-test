@@ -1,82 +1,13 @@
 {
-  "381224136": {
-    "job_id": 0,
-    "job_level": 130,
-    "job_name": {
-      "fr": "",
-      "en": ""
-    },
-    "recipe_id": 381224136,
-    "ingredients": {}
-  },
-  "381225797": {
-    "job_id": 0,
-    "job_level": 130,
-    "job_name": {
-      "fr": "",
-      "en": ""
-    },
-    "recipe_id": 381225797,
-    "ingredients": {}
-  },
-  "381227188": {
-    "job_id": 0,
-    "job_level": 130,
-    "job_name": {
-      "fr": "",
-      "en": ""
-    },
-    "recipe_id": 381227188,
-    "ingredients": {}
-  },
-  "381227189": {
-    "job_id": 0,
-    "job_level": 130,
-    "job_name": {
-      "fr": "",
-      "en": ""
-    },
-    "recipe_id": 381227189,
-    "ingredients": {}
-  },
-  "381227191": {
-    "job_id": 0,
-    "job_level": 130,
-    "job_name": {
-      "fr": "",
-      "en": ""
-    },
-    "recipe_id": 381227191,
-    "ingredients": {}
-  },
-  "581227162": {
-    "job_id": 0,
-    "job_level": 90,
-    "job_name": {
-      "fr": "",
-      "en": ""
-    },
-    "recipe_id": 581227162,
-    "ingredients": {}
-  },
-  "581228384": {
-    "job_id": 0,
-    "job_level": 130,
-    "job_name": {
-      "fr": "",
-      "en": ""
-    },
-    "recipe_id": 581228384,
-    "ingredients": {}
-  },
-  "81381224136": {
+  "81081224136": {
     "job_id": 81,
     "job_level": 130,
     "job_name": {
       "fr": "Ébéniste",
       "en": "Handyman"
     },
-    "recipe_id": 81381224136,
+    "recipe_id": 81081224136,
+    "result_id": 24136,
     "ingredients": {
       "24029": {
         "id": 24029,
@@ -84,7 +15,7 @@
         "quantity": 500,
         "ing_name": {
           "fr": "Larme d'Ogrest",
-          "en": ""
+          "en": "Ogrest's Tear"
         }
       },
       "27093": {
@@ -93,7 +24,7 @@
         "quantity": 1000,
         "ing_name": {
           "fr": "Poudre",
-          "en": ""
+          "en": "Powder"
         }
       },
       "29847": {
@@ -102,7 +33,7 @@
         "quantity": 1,
         "ing_name": {
           "fr": "Pierre d'aventure",
-          "en": ""
+          "en": "Adventure Stone"
         }
       },
       "9788": {
@@ -111,19 +42,20 @@
         "quantity": 15,
         "ing_name": {
           "fr": "Emeraude Polie",
-          "en": ""
+          "en": "Polished Emerald"
         }
       }
     }
   },
-  "81381225797": {
+  "81081225797": {
     "job_id": 81,
     "job_level": 130,
     "job_name": {
       "fr": "Ébéniste",
       "en": "Handyman"
     },
-    "recipe_id": 81381225797,
+    "recipe_id": 81081225797,
+    "result_id": 25797,
     "ingredients": {
       "24029": {
         "id": 24029,
@@ -131,7 +63,7 @@
         "quantity": 500,
         "ing_name": {
           "fr": "Larme d'Ogrest",
-          "en": ""
+          "en": "Ogrest's Tear"
         }
       },
       "27093": {
@@ -140,7 +72,7 @@
         "quantity": 1000,
         "ing_name": {
           "fr": "Poudre",
-          "en": ""
+          "en": "Powder"
         }
       },
       "29595": {
@@ -149,7 +81,7 @@
         "quantity": 200,
         "ing_name": {
           "fr": "Bois démoniaque commun",
-          "en": ""
+          "en": "Common Demonic Wood"
         }
       },
       "29849": {
@@ -158,160 +90,20 @@
         "quantity": 1,
         "ing_name": {
           "fr": "Pierre de vitesse",
-          "en": ""
+          "en": "Speed Stone"
         }
       }
     }
   },
-  "81381227188": {
-    "job_id": 81,
-    "job_level": 130,
-    "job_name": {
-      "fr": "Ébéniste",
-      "en": "Handyman"
-    },
-    "recipe_id": 81381227188,
-    "ingredients": {
-      "24029": {
-        "id": 24029,
-        "type_id": 751,
-        "quantity": 500,
-        "ing_name": {
-          "fr": "Larme d'Ogrest",
-          "en": ""
-        }
-      },
-      "27093": {
-        "id": 27093,
-        "type_id": 751,
-        "quantity": 1000,
-        "ing_name": {
-          "fr": "Poudre",
-          "en": ""
-        }
-      },
-      "28795": {
-        "id": 28795,
-        "type_id": 751,
-        "quantity": 200,
-        "ing_name": {
-          "fr": "Maillet de Bonta",
-          "en": ""
-        }
-      },
-      "29847": {
-        "id": 29847,
-        "type_id": 751,
-        "quantity": 1,
-        "ing_name": {
-          "fr": "Pierre d'aventure",
-          "en": ""
-        }
-      }
-    }
-  },
-  "81381227189": {
-    "job_id": 81,
-    "job_level": 130,
-    "job_name": {
-      "fr": "Ébéniste",
-      "en": "Handyman"
-    },
-    "recipe_id": 81381227189,
-    "ingredients": {
-      "24029": {
-        "id": 24029,
-        "type_id": 751,
-        "quantity": 500,
-        "ing_name": {
-          "fr": "Larme d'Ogrest",
-          "en": ""
-        }
-      },
-      "27093": {
-        "id": 27093,
-        "type_id": 751,
-        "quantity": 1000,
-        "ing_name": {
-          "fr": "Poudre",
-          "en": ""
-        }
-      },
-      "29366": {
-        "id": 29366,
-        "type_id": 751,
-        "quantity": 40,
-        "ing_name": {
-          "fr": "Main de Phytomorphe",
-          "en": ""
-        }
-      },
-      "29848": {
-        "id": 29848,
-        "type_id": 751,
-        "quantity": 1,
-        "ing_name": {
-          "fr": "Pierre d'équilibre",
-          "en": ""
-        }
-      }
-    }
-  },
-  "81381227191": {
-    "job_id": 81,
-    "job_level": 130,
-    "job_name": {
-      "fr": "Ébéniste",
-      "en": "Handyman"
-    },
-    "recipe_id": 81381227191,
-    "ingredients": {
-      "21680": {
-        "id": 21680,
-        "type_id": 751,
-        "quantity": 75,
-        "ing_name": {
-          "fr": "Envelouté Eternel",
-          "en": ""
-        }
-      },
-      "24029": {
-        "id": 24029,
-        "type_id": 751,
-        "quantity": 500,
-        "ing_name": {
-          "fr": "Larme d'Ogrest",
-          "en": ""
-        }
-      },
-      "27093": {
-        "id": 27093,
-        "type_id": 751,
-        "quantity": 1000,
-        "ing_name": {
-          "fr": "Poudre",
-          "en": ""
-        }
-      },
-      "29849": {
-        "id": 29849,
-        "type_id": 751,
-        "quantity": 1,
-        "ing_name": {
-          "fr": "Pierre de vitesse",
-          "en": ""
-        }
-      }
-    }
-  },
-  "81581227162": {
+  "81081227162": {
     "job_id": 81,
     "job_level": 90,
     "job_name": {
       "fr": "Ébéniste",
       "en": "Handyman"
     },
-    "recipe_id": 81581227162,
+    "recipe_id": 81081227162,
+    "result_id": 27162,
     "ingredients": {
       "17080": {
         "id": 17080,
@@ -319,7 +111,7 @@
         "quantity": 60,
         "ing_name": {
           "fr": "Peau Foncée",
-          "en": ""
+          "en": "Dark Skin"
         }
       },
       "17226": {
@@ -328,7 +120,7 @@
         "quantity": 150,
         "ing_name": {
           "fr": "Foullule de Lenald",
-          "en": ""
+          "en": "Lenald Ful"
         }
       },
       "18148": {
@@ -337,7 +129,7 @@
         "quantity": 15,
         "ing_name": {
           "fr": "Mycélium Royal",
-          "en": ""
+          "en": "Royal Mycelium"
         }
       },
       "21110": {
@@ -346,7 +138,7 @@
         "quantity": 10,
         "ing_name": {
           "fr": "Equerre Raffinée",
-          "en": ""
+          "en": "Refined Bracket"
         }
       },
       "22963": {
@@ -355,7 +147,7 @@
         "quantity": 90,
         "ing_name": {
           "fr": "Planctoi Secret",
-          "en": ""
+          "en": "Secret Hydawhey"
         }
       },
       "27093": {
@@ -364,19 +156,164 @@
         "quantity": 100,
         "ing_name": {
           "fr": "Poudre",
-          "en": ""
+          "en": "Powder"
         }
       }
     }
   },
-  "81581228384": {
+  "81081227188": {
     "job_id": 81,
     "job_level": 130,
     "job_name": {
       "fr": "Ébéniste",
       "en": "Handyman"
     },
-    "recipe_id": 81581228384,
+    "recipe_id": 81081227188,
+    "result_id": 27188,
+    "ingredients": {
+      "24029": {
+        "id": 24029,
+        "type_id": 751,
+        "quantity": 500,
+        "ing_name": {
+          "fr": "Larme d'Ogrest",
+          "en": "Ogrest's Tear"
+        }
+      },
+      "27093": {
+        "id": 27093,
+        "type_id": 751,
+        "quantity": 1000,
+        "ing_name": {
+          "fr": "Poudre",
+          "en": "Powder"
+        }
+      },
+      "28795": {
+        "id": 28795,
+        "type_id": 751,
+        "quantity": 200,
+        "ing_name": {
+          "fr": "Maillet de Bonta",
+          "en": "Bonta Mallet"
+        }
+      },
+      "29847": {
+        "id": 29847,
+        "type_id": 751,
+        "quantity": 1,
+        "ing_name": {
+          "fr": "Pierre d'aventure",
+          "en": "Adventure Stone"
+        }
+      }
+    }
+  },
+  "81081227189": {
+    "job_id": 81,
+    "job_level": 130,
+    "job_name": {
+      "fr": "Ébéniste",
+      "en": "Handyman"
+    },
+    "recipe_id": 81081227189,
+    "result_id": 27189,
+    "ingredients": {
+      "24029": {
+        "id": 24029,
+        "type_id": 751,
+        "quantity": 500,
+        "ing_name": {
+          "fr": "Larme d'Ogrest",
+          "en": "Ogrest's Tear"
+        }
+      },
+      "27093": {
+        "id": 27093,
+        "type_id": 751,
+        "quantity": 1000,
+        "ing_name": {
+          "fr": "Poudre",
+          "en": "Powder"
+        }
+      },
+      "29366": {
+        "id": 29366,
+        "type_id": 751,
+        "quantity": 40,
+        "ing_name": {
+          "fr": "Main de Phytomorphe",
+          "en": "Phytomorph Hand"
+        }
+      },
+      "29848": {
+        "id": 29848,
+        "type_id": 751,
+        "quantity": 1,
+        "ing_name": {
+          "fr": "Pierre d'équilibre",
+          "en": "Balance Stone"
+        }
+      }
+    }
+  },
+  "81081227191": {
+    "job_id": 81,
+    "job_level": 130,
+    "job_name": {
+      "fr": "Ébéniste",
+      "en": "Handyman"
+    },
+    "recipe_id": 81081227191,
+    "result_id": 27191,
+    "ingredients": {
+      "21680": {
+        "id": 21680,
+        "type_id": 751,
+        "quantity": 75,
+        "ing_name": {
+          "fr": "Envelouté Eternel",
+          "en": "Eternal Tiramisoup"
+        }
+      },
+      "24029": {
+        "id": 24029,
+        "type_id": 751,
+        "quantity": 500,
+        "ing_name": {
+          "fr": "Larme d'Ogrest",
+          "en": "Ogrest's Tear"
+        }
+      },
+      "27093": {
+        "id": 27093,
+        "type_id": 751,
+        "quantity": 1000,
+        "ing_name": {
+          "fr": "Poudre",
+          "en": "Powder"
+        }
+      },
+      "29849": {
+        "id": 29849,
+        "type_id": 751,
+        "quantity": 1,
+        "ing_name": {
+          "fr": "Pierre de vitesse",
+          "en": "Speed Stone"
+        }
+      }
+    }
+  },
+  "81081228384": {
+    "job_id": 81,
+    "job_level": 130,
+    "job_name": {
+      "fr": "Ébéniste",
+      "en": "Handyman"
+    },
+    "recipe_id": 81081228384,
+    "result_id": 28384,
     "ingredients": {
       "24029": {
         "id": 24029,
@@ -384,7 +321,7 @@
         "quantity": 1000,
         "ing_name": {
           "fr": "Larme d'Ogrest",
-          "en": ""
+          "en": "Ogrest's Tear"
         }
       },
       "27093": {
@@ -393,7 +330,7 @@
         "quantity": 400,
         "ing_name": {
           "fr": "Poudre",
-          "en": ""
+          "en": "Powder"
         }
       },
       "27831": {
@@ -402,7 +339,7 @@
         "quantity": 10,
         "ing_name": {
           "fr": "Viande de Crustargneux",
-          "en": ""
+          "en": "Crabstacean Meat"
         }
       },
       "27868": {
@@ -411,7 +348,7 @@
         "quantity": 300,
         "ing_name": {
           "fr": "Gneu-vette",
-          "en": ""
+          "en": "Grawnble"
         }
       },
       "27871": {
@@ -420,7 +357,7 @@
         "quantity": 75,
         "ing_name": {
           "fr": "Planche Divine",
-          "en": ""
+          "en": "Divine Plank"
         }
       },
       "9790": {
@@ -429,7 +366,379 @@
         "quantity": 15,
         "ing_name": {
           "fr": "Diamant Poli",
-          "en": ""
+          "en": "Polished Diamond"
+        }
+      }
+    }
+  },
+  "81181224136": {
+    "job_id": 81,
+    "job_level": 130,
+    "job_name": {
+      "fr": "Ébéniste",
+      "en": "Handyman"
+    },
+    "recipe_id": 81181224136,
+    "result_id": 24136,
+    "ingredients": {
+      "24029": {
+        "id": 24029,
+        "type_id": 751,
+        "quantity": 500,
+        "ing_name": {
+          "fr": "Larme d'Ogrest",
+          "en": "Ogrest's Tear"
+        }
+      },
+      "27093": {
+        "id": 27093,
+        "type_id": 751,
+        "quantity": 1000,
+        "ing_name": {
+          "fr": "Poudre",
+          "en": "Powder"
+        }
+      },
+      "29847": {
+        "id": 29847,
+        "type_id": 751,
+        "quantity": 1,
+        "ing_name": {
+          "fr": "Pierre d'aventure",
+          "en": "Adventure Stone"
+        }
+      },
+      "9788": {
+        "id": 9788,
+        "type_id": 751,
+        "quantity": 15,
+        "ing_name": {
+          "fr": "Emeraude Polie",
+          "en": "Polished Emerald"
+        }
+      }
+    }
+  },
+  "81181225797": {
+    "job_id": 81,
+    "job_level": 130,
+    "job_name": {
+      "fr": "Ébéniste",
+      "en": "Handyman"
+    },
+    "recipe_id": 81181225797,
+    "result_id": 25797,
+    "ingredients": {
+      "24029": {
+        "id": 24029,
+        "type_id": 751,
+        "quantity": 500,
+        "ing_name": {
+          "fr": "Larme d'Ogrest",
+          "en": "Ogrest's Tear"
+        }
+      },
+      "27093": {
+        "id": 27093,
+        "type_id": 751,
+        "quantity": 1000,
+        "ing_name": {
+          "fr": "Poudre",
+          "en": "Powder"
+        }
+      },
+      "29595": {
+        "id": 29595,
+        "type_id": 751,
+        "quantity": 200,
+        "ing_name": {
+          "fr": "Bois démoniaque commun",
+          "en": "Common Demonic Wood"
+        }
+      },
+      "29849": {
+        "id": 29849,
+        "type_id": 751,
+        "quantity": 1,
+        "ing_name": {
+          "fr": "Pierre de vitesse",
+          "en": "Speed Stone"
+        }
+      }
+    }
+  },
+  "81181227162": {
+    "job_id": 81,
+    "job_level": 90,
+    "job_name": {
+      "fr": "Ébéniste",
+      "en": "Handyman"
+    },
+    "recipe_id": 81181227162,
+    "result_id": 27162,
+    "ingredients": {
+      "17080": {
+        "id": 17080,
+        "type_id": 751,
+        "quantity": 60,
+        "ing_name": {
+          "fr": "Peau Foncée",
+          "en": "Dark Skin"
+        }
+      },
+      "17226": {
+        "id": 17226,
+        "type_id": 751,
+        "quantity": 150,
+        "ing_name": {
+          "fr": "Foullule de Lenald",
+          "en": "Lenald Ful"
+        }
+      },
+      "18148": {
+        "id": 18148,
+        "type_id": 751,
+        "quantity": 15,
+        "ing_name": {
+          "fr": "Mycélium Royal",
+          "en": "Royal Mycelium"
+        }
+      },
+      "21110": {
+        "id": 21110,
+        "type_id": 751,
+        "quantity": 10,
+        "ing_name": {
+          "fr": "Equerre Raffinée",
+          "en": "Refined Bracket"
+        }
+      },
+      "22963": {
+        "id": 22963,
+        "type_id": 751,
+        "quantity": 90,
+        "ing_name": {
+          "fr": "Planctoi Secret",
+          "en": "Secret Hydawhey"
+        }
+      },
+      "27093": {
+        "id": 27093,
+        "type_id": 751,
+        "quantity": 100,
+        "ing_name": {
+          "fr": "Poudre",
+          "en": "Powder"
+        }
+      }
+    }
+  },
+  "81181227188": {
+    "job_id": 81,
+    "job_level": 130,
+    "job_name": {
+      "fr": "Ébéniste",
+      "en": "Handyman"
+    },
+    "recipe_id": 81181227188,
+    "result_id": 27188,
+    "ingredients": {
+      "24029": {
+        "id": 24029,
+        "type_id": 751,
+        "quantity": 500,
+        "ing_name": {
+          "fr": "Larme d'Ogrest",
+          "en": "Ogrest's Tear"
+        }
+      },
+      "27093": {
+        "id": 27093,
+        "type_id": 751,
+        "quantity": 1000,
+        "ing_name": {
+          "fr": "Poudre",
+          "en": "Powder"
+        }
+      },
+      "28795": {
+        "id": 28795,
+        "type_id": 751,
+        "quantity": 200,
+        "ing_name": {
+          "fr": "Maillet de Bonta",
+          "en": "Bonta Mallet"
+        }
+      },
+      "29847": {
+        "id": 29847,
+        "type_id": 751,
+        "quantity": 1,
+        "ing_name": {
+          "fr": "Pierre d'aventure",
+          "en": "Adventure Stone"
+        }
+      }
+    }
+  },
+  "81181227189": {
+    "job_id": 81,
+    "job_level": 130,
+    "job_name": {
+      "fr": "Ébéniste",
+      "en": "Handyman"
+    },
+    "recipe_id": 81181227189,
+    "result_id": 27189,
+    "ingredients": {
+      "24029": {
+        "id": 24029,
+        "type_id": 751,
+        "quantity": 500,
+        "ing_name": {
+          "fr": "Larme d'Ogrest",
+          "en": "Ogrest's Tear"
+        }
+      },
+      "27093": {
+        "id": 27093,
+        "type_id": 751,
+        "quantity": 1000,
+        "ing_name": {
+          "fr": "Poudre",
+          "en": "Powder"
+        }
+      },
+      "29366": {
+        "id": 29366,
+        "type_id": 751,
+        "quantity": 40,
+        "ing_name": {
+          "fr": "Main de Phytomorphe",
+          "en": "Phytomorph Hand"
+        }
+      },
+      "29848": {
+        "id": 29848,
+        "type_id": 751,
+        "quantity": 1,
+        "ing_name": {
+          "fr": "Pierre d'équilibre",
+          "en": "Balance Stone"
+        }
+      }
+    }
+  },
+  "81181227191": {
+    "job_id": 81,
+    "job_level": 130,
+    "job_name": {
+      "fr": "Ébéniste",
+      "en": "Handyman"
+    },
+    "recipe_id": 81181227191,
+    "result_id": 27191,
+    "ingredients": {
+      "21680": {
+        "id": 21680,
+        "type_id": 751,
+        "quantity": 75,
+        "ing_name": {
+          "fr": "Envelouté Eternel",
+          "en": "Eternal Tiramisoup"
+        }
+      },
+      "24029": {
+        "id": 24029,
+        "type_id": 751,
+        "quantity": 500,
+        "ing_name": {
+          "fr": "Larme d'Ogrest",
+          "en": "Ogrest's Tear"
+        }
+      },
+      "27093": {
+        "id": 27093,
+        "type_id": 751,
+        "quantity": 1000,
+        "ing_name": {
+          "fr": "Poudre",
+          "en": "Powder"
+        }
+      },
+      "29849": {
+        "id": 29849,
+        "type_id": 751,
+        "quantity": 1,
+        "ing_name": {
+          "fr": "Pierre de vitesse",
+          "en": "Speed Stone"
+        }
+      }
+    }
+  },
+  "81181228384": {
+    "job_id": 81,
+    "job_level": 130,
+    "job_name": {
+      "fr": "Ébéniste",
+      "en": "Handyman"
+    },
+    "recipe_id": 81181228384,
+    "result_id": 28384,
+    "ingredients": {
+      "24029": {
+        "id": 24029,
+        "type_id": 751,
+        "quantity": 1000,
+        "ing_name": {
+          "fr": "Larme d'Ogrest",
+          "en": "Ogrest's Tear"
+        }
+      },
+      "27093": {
+        "id": 27093,
+        "type_id": 751,
+        "quantity": 400,
+        "ing_name": {
+          "fr": "Poudre",
+          "en": "Powder"
+        }
+      },
+      "27831": {
+        "id": 27831,
+        "type_id": 751,
+        "quantity": 10,
+        "ing_name": {
+          "fr": "Viande de Crustargneux",
+          "en": "Crabstacean Meat"
+        }
+      },
+      "27868": {
+        "id": 27868,
+        "type_id": 751,
+        "quantity": 300,
+        "ing_name": {
+          "fr": "Gneu-vette",
+          "en": "Grawnble"
+        }
+      },
+      "27871": {
+        "id": 27871,
+        "type_id": 751,
+        "quantity": 75,
+        "ing_name": {
+          "fr": "Planche Divine",
+          "en": "Divine Plank"
+        }
+      },
+      "9790": {
+        "id": 9790,
+        "type_id": 751,
+        "quantity": 15,
+        "ing_name": {
+          "fr": "Diamant Poli",
+          "en": "Polished Diamond"
         }
       }
     }

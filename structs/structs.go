@@ -43,6 +43,7 @@ type Recipe struct {
 	JobLevel    int                `json:"job_level"`
 	JobName     Display            `json:"job_name"`
 	RecipeId    int                `json:"recipe_id"`
+	ResultId    int                `json:"result_id"`
 	Ingredients map[int]Ingredient `json:"ingredients"`
 }
 
@@ -109,7 +110,6 @@ type SublimationDetails struct {
 	LevelInc      int    `json:"level_inc"`
 	SocketsColors string `json:"sockets_colors"`
 	MaxLevel      int    `json:"max_level"`
-	Title         Title  `json:"title"`
 	Desc          Title  `json:"desc"`
 	ID            int    `json:"id"`
 }

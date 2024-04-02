@@ -17,10 +17,6 @@
       "level_inc": 1,
       "sockets_colors": "",
       "max_level": 0,
-      "title": {
-        "fr": "Alternance",
-        "en": "Alternation"
-      },
       "desc": {
         "fr": "",
         "en": ""
@@ -46,10 +42,6 @@
       "level_inc": 1,
       "sockets_colors": "",
       "max_level": 0,
-      "title": {
-        "fr": "Force herculéenne",
-        "en": "Herculean Strength"
-      },
       "desc": {
         "fr": "",
         "en": ""
@@ -84,10 +76,6 @@
       "level_inc": 2,
       "sockets_colors": "",
       "max_level": 0,
-      "title": {
-        "fr": "Ravage",
-        "en": "Devastate"
-      },
       "desc": {
         "fr": "",
         "en": ""
@@ -122,10 +110,6 @@
       "level_inc": 2,
       "sockets_colors": "",
       "max_level": 0,
-      "title": {
-        "fr": "Embuscade",
-        "en": "Ambush"
-      },
       "desc": {
         "fr": "",
         "en": ""
@@ -160,10 +144,6 @@
       "level_inc": 2,
       "sockets_colors": "",
       "max_level": 0,
-      "title": {
-        "fr": "Stupéfaction",
-        "en": "Stupefaction"
-      },
       "desc": {
         "fr": "",
         "en": ""
@@ -198,10 +178,6 @@
       "level_inc": 2,
       "sockets_colors": "",
       "max_level": 0,
-      "title": {
-        "fr": "Ecailles de Lune",
-        "en": "Moon Scales"
-      },
       "desc": {
         "fr": "",
         "en": ""
@@ -236,10 +212,6 @@
       "level_inc": 2,
       "sockets_colors": "",
       "max_level": 0,
-      "title": {
-        "fr": "Vélocité",
-        "en": "Swiftness"
-      },
       "desc": {
         "fr": "",
         "en": ""
@@ -274,10 +246,6 @@
       "level_inc": 2,
       "sockets_colors": "",
       "max_level": 0,
-      "title": {
-        "fr": "Visibilité",
-        "en": "Visibility"
-      },
       "desc": {
         "fr": "",
         "en": ""
@@ -312,10 +280,6 @@
       "level_inc": 2,
       "sockets_colors": "",
       "max_level": 0,
-      "title": {
-        "fr": "Esquive Berserk",
-        "en": "Berserk Dodge"
-      },
       "desc": {
         "fr": "",
         "en": ""
@@ -350,10 +314,6 @@
       "level_inc": 2,
       "sockets_colors": "",
       "max_level": 0,
-      "title": {
-        "fr": "Persistance",
-        "en": "Persistence"
-      },
       "desc": {
         "fr": "",
         "en": ""
@@ -388,10 +348,6 @@
       "level_inc": 2,
       "sockets_colors": "",
       "max_level": 0,
-      "title": {
-        "fr": "Aisance",
-        "en": "Poise"
-      },
       "desc": {
         "fr": "",
         "en": ""
@@ -426,10 +382,6 @@
       "level_inc": 2,
       "sockets_colors": "",
       "max_level": 0,
-      "title": {
-        "fr": "Influence",
-        "en": "Influence"
-      },
       "desc": {
         "fr": "",
         "en": ""
@@ -464,10 +416,6 @@
       "level_inc": 2,
       "sockets_colors": "",
       "max_level": 0,
-      "title": {
-        "fr": "Muraille",
-        "en": "Wall"
-      },
       "desc": {
         "fr": "",
         "en": ""
@@ -502,10 +450,6 @@
       "level_inc": 2,
       "sockets_colors": "",
       "max_level": 0,
-      "title": {
-        "fr": "Expert des Parades",
-        "en": "Blocking Expert"
-      },
       "desc": {
         "fr": "",
         "en": ""
@@ -531,10 +475,6 @@
       "level_inc": 2,
       "sockets_colors": "",
       "max_level": 0,
-      "title": {
-        "fr": "Enveloppe rocheuse",
-        "en": "Rocky Envelope"
-      },
       "desc": {
         "fr": "",
         "en": ""
@@ -569,10 +509,6 @@
       "level_inc": 2,
       "sockets_colors": "",
       "max_level": 0,
-      "title": {
-        "fr": "Influence lente",
-        "en": "Slow Influence"
-      },
       "desc": {
         "fr": "",
         "en": ""
@@ -598,10 +534,6 @@
       "level_inc": 1,
       "sockets_colors": "",
       "max_level": 0,
-      "title": {
-        "fr": "Maniement : Bouclier",
-        "en": "Wield type: Shield"
-      },
       "desc": {
         "fr": "",
         "en": ""
@@ -627,10 +559,6 @@
       "level_inc": 1,
       "sockets_colors": "",
       "max_level": 0,
-      "title": {
-        "fr": "Pacte Wakfu",
-        "en": "Wakfu Pact"
-      },
       "desc": {
         "fr": "",
         "en": ""
@@ -656,10 +584,6 @@
       "level_inc": 1,
       "sockets_colors": "",
       "max_level": 0,
-      "title": {
-        "fr": "Brise",
-        "en": "Breeze"
-      },
       "desc": {
         "fr": "",
         "en": ""
@@ -694,10 +618,6 @@
       "level_inc": 2,
       "sockets_colors": "",
       "max_level": 0,
-      "title": {
-        "fr": "Tolérance",
-        "en": "Tolerance"
-      },
       "desc": {
         "fr": "",
         "en": ""
@@ -723,10 +643,6 @@
       "level_inc": 1,
       "sockets_colors": "",
       "max_level": 0,
-      "title": {
-        "fr": "Furie II",
-        "en": "Outrage II"
-      },
       "desc": {
         "fr": "",
         "en": ""
@@ -752,10 +668,6 @@
       "level_inc": 2,
       "sockets_colors": "",
       "max_level": 0,
-      "title": {
-        "fr": "Arme incurable",
-        "en": "Incurable Weapon"
-      },
       "desc": {
         "fr": "",
         "en": ""
@@ -781,10 +693,6 @@
       "level_inc": 2,
       "sockets_colors": "",
       "max_level": 0,
-      "title": {
-        "fr": "Manie",
-        "en": "Mania"
-      },
       "desc": {
         "fr": "",
         "en": ""
@@ -810,15 +718,692 @@
       "level_inc": 2,
       "sockets_colors": "",
       "max_level": 0,
-      "title": {
-        "fr": "Nature",
-        "en": "Natural"
-      },
       "desc": {
         "fr": "",
         "en": ""
       },
       "id": 6830
+    }
+  },
+  "28818": {
+    "id": 28818,
+    "title": {
+      "fr": "Main forte II",
+      "en": "Strong Hand II"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 2,
+      "sockets_colors": "",
+      "max_level": 0,
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6832
+    }
+  },
+  "28825": {
+    "id": 28825,
+    "title": {
+      "fr": "Dévastation III",
+      "en": "Devastation III"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 4
+    },
+    "stats": null,
+    "droprates": {
+      "3866": {
+        "monster_id": 3866,
+        "monster_name": {
+          "fr": "Grozépine",
+          "en": "Grozepin"
+        },
+        "drop_chance": 0.5
+      }
+    },
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 3,
+      "sockets_colors": "",
+      "max_level": 0,
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 5981
+    }
+  },
+  "28828": {
+    "id": 28828,
+    "title": {
+      "fr": "Carnage I",
+      "en": "Carnage I"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 2
+    },
+    "stats": null,
+    "droprates": {
+      "4260": {
+        "monster_id": 4260,
+        "monster_name": {
+          "fr": "Cendragon",
+          "en": "Ashdragon"
+        },
+        "drop_chance": 4
+      }
+    },
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 1,
+      "sockets_colors": "",
+      "max_level": 0,
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 5983
+    }
+  },
+  "28837": {
+    "id": 28837,
+    "title": {
+      "fr": "Fermeté III",
+      "en": "Resolute III"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 4
+    },
+    "stats": null,
+    "droprates": {
+      "4327": {
+        "monster_id": 4327,
+        "monster_name": {
+          "fr": "Sor'Hon, Seigneur de la Flamme",
+          "en": "Sor'Hon, Lord of the Flame"
+        },
+        "drop_chance": 0.5
+      }
+    },
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 3,
+      "sockets_colors": "",
+      "max_level": 0,
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 5990
+    }
+  },
+  "28838": {
+    "id": 28838,
+    "title": {
+      "fr": "Légèreté I",
+      "en": "Lightness I"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 2
+    },
+    "stats": null,
+    "droprates": {
+      "4400": {
+        "monster_id": 4400,
+        "monster_name": {
+          "fr": "Oeuf Antique",
+          "en": "Ancient Egg"
+        },
+        "drop_chance": 4
+      }
+    },
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 1,
+      "sockets_colors": "",
+      "max_level": 0,
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 5991
+    }
+  },
+  "28845": {
+    "id": 28845,
+    "title": {
+      "fr": "Ecailles de lune I",
+      "en": "Moon Scales I"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 2
+    },
+    "stats": null,
+    "droprates": {
+      "4400": {
+        "monster_id": 4400,
+        "monster_name": {
+          "fr": "Oeuf Antique",
+          "en": "Ancient Egg"
+        },
+        "drop_chance": 4
+      }
+    },
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 1,
+      "sockets_colors": "",
+      "max_level": 0,
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6004
+    }
+  },
+  "28849": {
+    "id": 28849,
+    "title": {
+      "fr": "Critique Berserk I",
+      "en": "Berserk Critical I"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 2
+    },
+    "stats": null,
+    "droprates": {
+      "5059": {
+        "monster_id": 5059,
+        "monster_name": {
+          "fr": "Fantôme Tanukouï-San",
+          "en": "Ghost Tanukouï San"
+        },
+        "drop_chance": 4
+      }
+    },
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 1,
+      "sockets_colors": "",
+      "max_level": 0,
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6009
+    }
+  },
+  "28861": {
+    "id": 28861,
+    "title": {
+      "fr": "Barrière Distance III",
+      "en": "Distance Barrier III"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 4
+    },
+    "stats": null,
+    "droprates": {
+      "3864": {
+        "monster_id": 3864,
+        "monster_name": {
+          "fr": "Kannistère",
+          "en": "Kannilooni"
+        },
+        "drop_chance": 0.5
+      }
+    },
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 3,
+      "sockets_colors": "",
+      "max_level": 0,
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6019
+    }
+  },
+  "28864": {
+    "id": 28864,
+    "title": {
+      "fr": "Opiniâtreté I",
+      "en": "Obstinacy I"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 2
+    },
+    "stats": null,
+    "droprates": {
+      "5052": {
+        "monster_id": 5052,
+        "monster_name": {
+          "fr": "Fléogre",
+          "en": "Blightogre"
+        },
+        "drop_chance": 4
+      }
+    },
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 1,
+      "sockets_colors": "",
+      "max_level": 0,
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6022
+    }
+  },
+  "28875": {
+    "id": 28875,
+    "title": {
+      "fr": "Cyclothymie I",
+      "en": "Cyclothymia I"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 2
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 1,
+      "sockets_colors": "",
+      "max_level": 0,
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6030
+    }
+  },
+  "28889": {
+    "id": 28889,
+    "title": {
+      "fr": "Loup solitaire I",
+      "en": "Lone Wolf I"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 2
+    },
+    "stats": null,
+    "droprates": {
+      "5165": {
+        "monster_id": 5165,
+        "monster_name": {
+          "fr": "Aguabrial",
+          "en": "Aguabrial"
+        },
+        "drop_chance": 8
+      }
+    },
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 1,
+      "sockets_colors": "",
+      "max_level": 0,
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6329
+    }
+  },
+  "28900": {
+    "id": 28900,
+    "title": {
+      "fr": "Arme empoisonnée I",
+      "en": "Poisoned Weapon I"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 2
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 1,
+      "sockets_colors": "",
+      "max_level": 0,
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6816
+    }
+  },
+  "28907": {
+    "id": 28907,
+    "title": {
+      "fr": "Contre-attaque III",
+      "en": "Counterattack III"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 4
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 3,
+      "sockets_colors": "",
+      "max_level": 0,
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6819
+    }
+  },
+  "28908": {
+    "id": 28908,
+    "title": {
+      "fr": "Expert des armes légères I",
+      "en": "Light Weapons Expert I"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 2
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 1,
+      "sockets_colors": "",
+      "max_level": 0,
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6821
+    }
+  },
+  "28913": {
+    "id": 28913,
+    "title": {
+      "fr": "Relations sociales III",
+      "en": "Social Relations III"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 4
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 3,
+      "sockets_colors": "",
+      "max_level": 0,
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6823
+    }
+  },
+  "28919": {
+    "id": 28919,
+    "title": {
+      "fr": "Longueur d'armure I",
+      "en": "Armor Length I"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 2
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 1,
+      "sockets_colors": "",
+      "max_level": 0,
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6827
+    }
+  },
+  "28922": {
+    "id": 28922,
+    "title": {
+      "fr": "Altruisme III",
+      "en": "Altruism III"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 4
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 3,
+      "sockets_colors": "",
+      "max_level": 0,
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6828
+    }
+  },
+  "28927": {
+    "id": 28927,
+    "title": {
+      "fr": "Dernier souffle I",
+      "en": "Last Breath I"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 2
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 1,
+      "sockets_colors": "",
+      "max_level": 0,
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6831
+    }
+  },
+  "28944": {
+    "id": 28944,
+    "title": {
+      "fr": "Courage III",
+      "en": "Courage III"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 4
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 3,
+      "sockets_colors": "",
+      "max_level": 0,
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6842
+    }
+  },
+  "28989": {
+    "id": 28989,
+    "title": {
+      "fr": "Revigoration II",
+      "en": "Reinvigoration II"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 3
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 2,
+      "sockets_colors": "",
+      "max_level": 0,
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6926
+    }
+  },
+  "28993": {
+    "id": 28993,
+    "title": {
+      "fr": "Précaution III",
+      "en": "Precaution III"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 4
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 3,
+      "sockets_colors": "",
+      "max_level": 0,
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6927
+    }
+  },
+  "28996": {
+    "id": 28996,
+    "title": {
+      "fr": "Parade offensive I",
+      "en": "Offensive Block I"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 2
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 1,
+      "sockets_colors": "",
+      "max_level": 0,
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6929
+    }
+  },
+  "29000": {
+    "id": 29000,
+    "title": {
+      "fr": "Critique tactique III",
+      "en": "Tactical Critical III"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 4
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 3,
+      "sockets_colors": "",
+      "max_level": 0,
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6930
+    }
+  },
+  "29004": {
+    "id": 29004,
+    "title": {
+      "fr": "Abandon I",
+      "en": "Abandon I"
+    },
+    "params": {
+      "type_id": 812,
+      "level": 1,
+      "rarity": 0
+    },
+    "stats": null,
+    "droprates": null,
+    "sublimations_details": {
+      "is_epic": false,
+      "level_inc": 1,
+      "sockets_colors": "",
+      "max_level": 0,
+      "desc": {
+        "fr": "",
+        "en": ""
+      },
+      "id": 6932
     }
   }
 }
